@@ -1,0 +1,21 @@
+{
+    "pathDefault": "./dist-ubuntu/",
+    "settings": [
+        { "script": "generate-keyssh.sh", "execute": false, "param": null },
+        { "script": "install-git.sh", "execute": false, "param": null },
+        { "script": "install-jdk.sh", "execute": false, "param": null },
+        { "script": "install-nvm.sh", "execute": true, "param": null },
+        { "script": "install-nodejs.sh", "execute": true, "param": null },
+        { "script": "install-golang.sh", "execute": false, "param": { "version": "1.7.1", "op":"--64" } },
+        { "script": "install-cfssl.sh", "execute": false, "param": null },
+        { "script": "install-config-transpiler.sh", "execute": false, "param": null },
+        { "script": "install-ansible.sh", "execute": false, "param": null },
+        { "script": "install-virtualbox.sh", "execute": false, "param": null },
+        { "script": "install-vagrant.sh", "execute": false, "param": null },
+        { "script": "install-vscode.sh", "execute": false, "param": null },
+        { "script": "install-gitkraken.sh", "execute": false, "param": null },
+        { "script": "install-staruml.sh", "execute": false, "param": null },
+        { "script": "install-netbeans.sh", "execute": false, "param": null },
+        { "script": "install-viadagens.sh", "execute": false, "param": null }
+    ]
+}
