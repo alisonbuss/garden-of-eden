@@ -22,11 +22,27 @@ function InstallJDK {
         apt-get update;
 
         apt-get install oracle-java9-installer;
-        apt-get install oracle-java9-set-default;
+        #apt-get install oracle-java9-set-default;
 
-	# Configurando a variável de ambiente do JAVA_HOME
+        # Configurando a variável de ambiente do JAVA_HOME e JRE_HOME.
+        msgWarning "O arquivo '/etc/environment' será aberto para ser configurado.";
+        msgWarning "Ao final desse arquivo, adicione as seguintes linhas:";
+        msgWarning 'JAVA_HOME="/usr/lib/jvm/java-9-oracle"';
+        msgWarning 'JRE_HOME="/usr/lib/jvm/java-9-oracle"';
+        msgWarning "Salve e saia do arquivo, para recarregar as variáveis de ambiente.";
+        sleep 1s;
+        read -p "Deseja realizar essa configuração? (yes/no): " input_proceed;
+        if [ "$input_proceed" == "yes" ]; then
+            # Abrindo o arquivo de variável de ambiente.
+            gedit /etc/environment;
+            # Recarregar o arquivo de variável de ambiente.
+            source /etc/environment;
+            # Imprimindo as variáveis de ambiente do Java.
+            echo "Variavel JAVA_HOME: " $JAVA_HOME;
+            echo "Variavel JRE_HOME: " $JRE_HOME;
+        fi
 
-	java -version;
+        java -version;
     }
 
     __initialize() {

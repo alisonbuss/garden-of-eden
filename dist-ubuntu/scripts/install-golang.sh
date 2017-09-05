@@ -81,7 +81,7 @@ function InstallGoLang {
         echo "Tip: Opening a new terminal window usually just works. :)"
         rm -f /tmp/go.tar.gz
 
-	chmod -R 777 $HOME/go;
+	    chmod -R 777 $HOME/go;
     }
 
     __initialize() {
