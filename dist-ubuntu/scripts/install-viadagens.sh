@@ -39,7 +39,12 @@ function InstallViadagens {
         #ppa-purge ppa:wine/wine-builds;
     }
 
-     __install_theme_adapta_dark() {
+    __install_tools() {
+        # FONT: http://www.edivaldobrito.com.br/dicas-de-coisas-para-fazer-depois-da-instalacao-do-ubuntu-13-10-faca-pequenos-ajustes-na-interface/#tweaks
+        apt-get install unity-tweak-tool gnome-tweak-tool;
+    }
+
+    __install_theme_adapta_dark() {
         # FONT: http://www.edivaldobrito.com.br/tema-adapta-dark-no-ubuntu/
         echo "Iniciando a instalação de um tema viadinho Adapta Dark na maquina..."; 
         apt-add-repository ppa:tista/adapta -y;
@@ -65,9 +70,10 @@ function InstallViadagens {
     }
 
     __install() {
-        #__install_chrome;
-        #__install_wine;
-        #__install_theme_adapta_dark;
+        __install_chrome;
+        __install_wine;
+        __install_tools;
+        __install_theme_arc;
     }
 
     __initialize() {
