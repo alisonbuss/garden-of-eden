@@ -21,14 +21,14 @@ function InstallJDK {
         add-apt-repository ppa:webupd8team/java;
         apt-get update;
 
-        apt-get install oracle-java9-installer;
-        #apt-get install oracle-java9-set-default;
+        apt-get install oracle-java8-installer;
+        apt-get install oracle-java8-set-default;
 
         # Configurando a variável de ambiente do JAVA_HOME e JRE_HOME.
-        msgWarning "O arquivo '/etc/environment' será aberto para ser configurado.";
+        msgWarning "O arquivo '/etc/environment' será aberto para ser configurado as variáveis de ambiente.";
         msgWarning "Ao final desse arquivo, adicione as seguintes linhas:";
-        msgWarning 'JAVA_HOME="/usr/lib/jvm/java-9-oracle"';
-        msgWarning 'JRE_HOME="/usr/lib/jvm/java-9-oracle"';
+        msgWarning 'JAVA_HOME="/usr/lib/jvm/java-8-oracle"';
+        msgWarning 'JRE_HOME="/usr/lib/jvm/java-8-oracle"';
         msgWarning "Salve e saia do arquivo, para recarregar as variáveis de ambiente.";
         sleep 1s;
         read -p "Deseja realizar essa configuração? (yes/no): " input_proceed;

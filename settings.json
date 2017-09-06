@@ -10,12 +10,12 @@
         { "script": "install-cfssl.sh", "execute": false, "param": null },
         { "script": "install-config-transpiler.sh", "execute": false, "param": null },
         { "script": "install-ansible.sh", "execute": false, "param": null },
-        { "script": "install-virtualbox.sh", "execute": true, "param": null },
-        { "script": "install-vagrant.sh", "execute": true, "param": null },
+        { "script": "install-virtualbox.sh", "execute": false, "param": null },
+        { "script": "install-vagrant.sh", "execute": false, "param": null },
         { "script": "install-vscode.sh", "execute": false, "param": null },
         { "script": "install-gitkraken.sh", "execute": false, "param": null },
         { "script": "install-staruml.sh", "execute": false, "param": null },
-        { "script": "install-netbeans.sh", "execute": false, "param": null },
+        { "script": "install-netbeans.sh", "execute": true, "param": null },
         { "script": "install-viadagens.sh", "execute": false, "param": null }
     ]
 }
