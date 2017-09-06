@@ -1,8 +1,10 @@
 #!/bin/bash
 
 ###################  DOC  ###################
-# @descr: ...  
-# @fonts: ...
+# @descr: Instalação do Ansible na maquina 
+# @fonts: http://blog.deiser.com/primeros-pasos-con-ansible/
+#         https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-16-04
+#         http://docs.ansible.com/ansible/latest/intro_installation.html#latest-releases-via-apt-ubuntu
 # @param: param | json
 # @example: 
 #    $ sudo chmod a+x install-ansible.sh
@@ -11,13 +13,18 @@
 
 function InstallAnsible {
     local jsonParam=$1;
-    local action="$(echo ${jsonParam} | jq -r '.action')";
-    local version="$(echo ${jsonParam} | jq -r '.version')";
 
     __install() {
-        echo "Instalando o Ansible...";
-        echo "$jsonParam";
-        sleep 1s;
+        msgInfo "Iniciando a instalação do Ansible na maquina..."; 
+
+        apt-get install software-properties-common;
+        apt-add-repository ppa:ansible/ansible;
+        apt-get update;
+
+        apt-get install ansible;
+
+        echo -n "Version Ansible: ";
+        ansible --version;
     }
 
     __uninstall() {
@@ -28,7 +35,6 @@ function InstallAnsible {
         if [ `isInstalled "ansible"` == 1 ]; then
             echo "Ansible já está instalanda na maquina...";
         else
-            echo "Iniciando a instalação do Ansible na maquina..."; 
             __install;
         fi 
     }

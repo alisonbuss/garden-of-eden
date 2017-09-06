@@ -15,8 +15,8 @@ function InstallCFSSL {
     __install() {
         msgInfo "Iniciando a instalação do CFSSL na maquina..."; 
 
-	go get -u github.com/cloudflare/cfssl/cmd/cfssl;
-	cfssl version;
+        go get -u github.com/cloudflare/cfssl/cmd/cfssl;
+        cfssl version;
     }
 
     __initialize() {
