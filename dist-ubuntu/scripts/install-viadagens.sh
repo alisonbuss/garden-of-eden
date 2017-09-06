@@ -39,9 +39,22 @@ function InstallViadagens {
         #ppa-purge ppa:wine/wine-builds;
     }
 
-    __install_tools() {
+    __install_tools_desktop() {
         # FONT: http://www.edivaldobrito.com.br/dicas-de-coisas-para-fazer-depois-da-instalacao-do-ubuntu-13-10-faca-pequenos-ajustes-na-interface/#tweaks
-        apt-get install unity-tweak-tool gnome-tweak-tool;
+        apt-get install unity-tweak-tool;
+        apt-get install gnome-tweak-tool;
+    }
+
+    __install_theme_arc() {
+        # FONT: http://www.edivaldobrito.com.br/combinando-o-tema-e-os-icones-arc/
+        echo "Iniciando a instalação de um tema viadinho Arc na maquina..."; 
+        add-apt-repository ppa:noobslab/themes;
+        add-apt-repository ppa:noobslab/icons;
+        apt-get update;
+        apt-get install arc-theme arc-icons;
+
+        # desinstalar tema
+        #sudo apt-get remove arc-theme arc-icons
     }
 
     __install_theme_adapta_dark() {
@@ -57,23 +70,17 @@ function InstallViadagens {
         #sudo apt-get autoremove
     }
 
-    __install_theme_arc() {
-        # FONT: http://www.edivaldobrito.com.br/combinando-o-tema-e-os-icones-arc/
-        echo "Iniciando a instalação de um tema viadinho Arc na maquina..."; 
-        add-apt-repository ppa:noobslab/themes;
-        add-apt-repository ppa:noobslab/icons;
-        apt-get update;
-        apt-get install arc-theme arc-icons;
-
-        # desinstalar tema
-        #sudo apt-get remove arc-theme arc-icons
+    __config_change_wallpaper() {
+        local wallpaper="$PWD/files/wallpaper1.jpg"; 
+        gsettings set org.gnome.desktop.background picture-uri "file://$wallpaper";
     }
 
     __install() {
         __install_chrome;
         __install_wine;
-        __install_tools;
+        __install_tools_desktop;
         __install_theme_arc;
+        __config_change_wallpaper;
     }
 
     __initialize() {
