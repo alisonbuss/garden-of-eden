@@ -3,6 +3,7 @@
 ###################  DOC  ###################
 # @descr: Instalação do VirtualBox na maquina.  
 # @fonts: https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
+#         https://www.howtoinstall.co/pt/ubuntu/xenial/virtualbox?action=remove
 # @param: param | json
 # @example: 
 #    $ sudo chmod a+x install-virtualbox.sh

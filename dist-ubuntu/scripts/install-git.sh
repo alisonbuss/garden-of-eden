@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################  DOC  ###################
-# @descr: Instalar   
+# @descr: Instalação do Git na maquina.      
 # @fonts: https://www.youtube.com/watch?v=BettUg-L8M4&list=PLV7VqBqvsd_1h7zmEpE-xwgOPqp2IBGCV
 # @param: param | json
 # @example: 

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 ###################  DOC  ###################
-# @descr: ...  
+# @descr: Instalação do Netbeans na maquina.
 # @fonts: http://www.edivaldobrito.com.br/ultima-versao-do-netbeans-no-linux/
 #         http://ubuntuhandbook.org/index.php/2016/10/netbeans-8-2-released-how-to-install-it-in-ubuntu-16-04/
 # @param: param | json

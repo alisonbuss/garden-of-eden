@@ -15,7 +15,7 @@
         { "script": "install-vscode.sh", "execute": false, "param": null },
         { "script": "install-gitkraken.sh", "execute": false, "param": null },
         { "script": "install-staruml.sh", "execute": false, "param": null },
-        { "script": "install-netbeans.sh", "execute": true, "param": null },
-        { "script": "install-viadagens.sh", "execute": false, "param": null }
+        { "script": "install-netbeans.sh", "execute": false, "param": null },
+        { "script": "install-viadagens.sh", "execute": true, "param": null }
     ]
 }
