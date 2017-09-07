@@ -1,0 +1,38 @@
+##########################################################################
+
+    ,---.            .               ,_   `.---   .        
+    |  -'  ,-. ,-. ,-| ,-. ,-.   ,-. |_    |__  ,-| ,-. ,-.
+    |  ,-' ,-| |   | | |-' | |   | | |    ,|    | | |-' | |
+    `---|  `-^ '   `-' `-' ' '   `-' |    `^--- `-' `-' ' '
+     ,-.|                            '                     
+     `-+'  O INICIO DE TUDO...
+                Provisionando seu ambiente básico de desenvolvimento...
+
+##########################################################################
+
+Documentação:
+
+  | Comandos        | Descrição                                         |
+  | -------------   | ------------------------------------------------- |
+  | --run           | Executa um script com parametro ou sem            |
+  | --run-all       | Executa todos os scrits                           |
+  | --list-set      | lista as configurações de execução dos scripts    |
+  | --edit-set      | Edita as configuração de execução passando editor |
+  | --edit-script   | Edita um script passando editor                   |
+  | --view-docs     | Visualizá a documentação                          |
+  | --exit          | Sair do modo Eden                                 |
+
+---------------------------------------------------------------------------
+
+  | Comandos        | Exemplo                                           |
+  | -------------   | ------------------------------------------------- |
+  | --run           | --run script-git.sh install                       |
+  |                 | --run script-git.sh install '{"version":"2.7.4"}' |
+  | --run-all       | --run-all                                         |
+  | --list-set      | --list-settings                                   |
+  | --edit-set      | --edit-settings gedit                             |
+  | --edit-script   | --edit-script script-git.sh gedit                 |
+  | --view-docs     | --view-docs                                       |
+  | --exit          | --exit                                            |
+
+O que tu queres fazer? $ 
