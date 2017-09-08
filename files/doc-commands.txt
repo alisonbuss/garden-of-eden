@@ -1,26 +1,15 @@
-##########################################################################
-
-    ,---.            .               ,_   `.---   .        
-    |  -'  ,-. ,-. ,-| ,-. ,-.   ,-. |_    |__  ,-| ,-. ,-.
-    |  ,-' ,-| |   | | |-' | |   | | |    ,|    | | |-' | |
-    `---|  `-^ '   `-' `-' ' '   `-' |    `^--- `-' `-' ' '
-     ,-.|                            '                     
-     `-+'  O INICIO DE TUDO...
-                Provisionando seu ambiente básico de desenvolvimento...
-
-##########################################################################
-
 Documentação:
 
-  | Comandos        | Descrição                                         |
-  | -------------   | ------------------------------------------------- |
-  | --run           | Executa um script com parametro ou sem            |
-  | --run-all       | Executa todos os scrits                           |
-  | --list-set      | lista as configurações de execução dos scripts    |
-  | --edit-set      | Edita as configuração de execução passando editor |
-  | --edit-script   | Edita um script passando editor                   |
-  | --view-docs     | Visualizá a documentação                          |
-  | --exit          | Sair do modo Eden                                 |
+  | Comandos        | Descrição                                          |
+  | -------------   | -------------------------------------------------- |
+  | --run           | Executa um script com parametro ou sem             |
+  | --run-all       | Executa todos os scrits                            |
+  | --list-set      | lista as configurações de execução dos scripts     |
+  | --edit-set      | Edita as configurações de execução passando editor |
+  | --edit-script   | Edita um script passando editor                    |
+  | --view-log      | Visualizar um log de um script passando editor     |
+  | --view-doc      | Visualizar documentação                            |
+  | --exit          | Sair do modo Eden                                  |
 
 ---------------------------------------------------------------------------
 
@@ -32,7 +21,7 @@ Documentação:
   | --list-set      | --list-settings                                   |
   | --edit-set      | --edit-settings gedit                             |
   | --edit-script   | --edit-script script-git.sh gedit                 |
-  | --view-docs     | --view-docs                                       |
+  | --view-log      | --view-log script-git.sh gedit                    |
+  | --view-doc      | --view-doc                                        |
   | --exit          | --exit                                            |
 
-O que tu queres fazer? $ 

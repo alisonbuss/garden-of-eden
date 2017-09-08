@@ -10,14 +10,3 @@
 
 ##########################################################################
 
-Comandos:
-
-    $ --run 
-    $ --run-all
-    $ --list-set
-    $ --edit-set
-    $ --edit-script
-    $ --view-docs
-    $ --exit
-
-O que tu queres fazer? 

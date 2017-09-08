@@ -14,36 +14,26 @@
 source "./shell-script-tools/linux/utility.sh";
 source "./shell-script-tools/ubuntu/extension-jq.sh";
 
-function InstallEnvironmentUI {
+function StartDivineCreation {
+    local paramScript="$1";
+    local paramOfScript="$2";
+    local pathDefault=$(cat settings.json | jq -r '.pathDefault');
 
     __initialize() {
-        clear;
-
-        #http://www.kammerl.de/ascii/AsciiSignature.php
-        #http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
-        cat ./files/header.txt;
-
-
-
-        select option in Factorial Addition Quit; do
-        case "$option" in
-            "Factorial")
-                echo "Factorial"
-                break ;;
-            "Addition")
-                echo "Addition"
-                break ;;
-            "Quit") exit ;;
-        esac
-        done
-        
-
+        # Caso não exista o "jq" instalado na maquina, instale o "jq".
+        if [ `isInstalled "jq"` == 1 ]; then
+            msgInfo "A extenção 'jq' já está instalanda na maquina...";
+        else
+            msgInfo "Instalando a extenção 'jq' na maquina...";
+            installExtensionJQ;
+        fi
+ 
     }
 
     __initialize;
 } 
 
 # chamar a função e gerar log dela
-InstallEnvironmentUI;
+StartDivineCreation $@ | tee -a ./${0##*/}.log;
 
 exit 0

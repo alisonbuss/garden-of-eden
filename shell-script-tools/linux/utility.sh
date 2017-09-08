@@ -48,18 +48,6 @@ function Utility {
     export -f ifInline;
 
     # @descr: 
-    # @font: https://stackoverflow.com/questions/3811345/how-to-pass-all-arguments-passed-to-my-bash-script-to-a-function-of-mine
-    # @example:
-    #    $ testSetParameters a1 a2 a3;
-    function testSetParameters {
-        args=("$@")
-        echo args: "$@";
-        echo Number of arguments: $#;
-        echo 1st argument: ${args[0]};
-        echo 2nd argument: ${args[1]};
-    }
-
-    # @descr: 
     # @font: http://wiki.bash-hackers.org/commands/builtin/printf
     #        https://linuxconfig.org/bash-printf-syntax-basics-with-examples
     #        https://www.vivaolinux.com.br/dica/Conhecendo-o-printf
@@ -87,50 +75,62 @@ function Utility {
     # @descr: 
     # @example:
     #
-    function msgInfo {
+    function print.info {
         local message=$1;
         # Text in bold and blue  
         print.out '%b' "\033[1;34m";
         print.notify "${message}";
         print.out '%b' "\033[0m";
     }
-    export -f msgInfo;
+    export -f print.info;
 
     # @descr: 
     # @example:
     #
-    function msgSuccess {
+    function print.success {
         local message=$1;
         # Text in bold and green
         print.out '%b' "\033[1;32m";
         print.notify "${message}";
         print.out '%b' "\033[0m";
     }
-    export -f msgSuccess;
+    export -f print.success;
 
     # @descr: 
     # @example:
     #
-    function msgWarning {
+    function print.warning {
         local message=$1;
         # Text in bold and yellow
         print.out '%b' "\033[1;33m";
         print.notify "${message}";
         print.out '%b' "\033[0m";
     }
-    export -f msgWarning;
+    export -f print.warning;
 
     # @descr: 
     # @example:
     #
-    function msgError {
+    function print.error {
         local message=$1;
         # Text in bold and red
         print.out '%b' "\033[1;31m";
         print.notify "${message}";
         print.out '%b' "\033[0m";
     }
-    export -f msgError;
+    export -f print.error;
+
+    # @descr: example a script the parameters
+    # @font: https://stackoverflow.com/questions/3811345/how-to-pass-all-arguments-passed-to-my-bash-script-to-a-function-of-mine
+    # @example:
+    #    $ testSetParameters a1 a2 a3;
+    #function testSetParameters {
+    #    args=("$@")
+    #    echo args: "$@";
+    #    echo Number of arguments: $#;
+    #    echo 1st argument: ${args[0]};
+    #    echo 2nd argument: ${args[1]};
+    #}
 
 } 
 Utility; #->>> Initializing the Utility;

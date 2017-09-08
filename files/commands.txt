@@ -1,0 +1,11 @@
+Comandos:
+
+    $ --run 
+    $ --run-all
+    $ --list-set
+    $ --edit-set
+    $ --edit-script
+    $ --view-log
+    $ --view-doc
+    $ --exit
+
