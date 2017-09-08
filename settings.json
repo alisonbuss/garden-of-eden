@@ -1,5 +1,5 @@
 {
-    "pathDefault": "./dist-ubuntu/",
+    "pathDefault": "./dist-ubuntu",
     "settings": [
         { "script": "script-keyssh.sh", "execute": false, "action": "create", "param": null },
         { "script": "script-git.sh", "execute": false, "action": "install", "param": null },

@@ -17,7 +17,9 @@ function StartDivineCreationUI {
     local file_path_menu="./files/commands.txt";
 
     __stopAfterExecution() {
-        print.out '%s' "Comando executado! Presione [ENTER] para continuar..."; read;
+        print.out '%b' "\033[1;33m";
+        print.out '%b' "Comando executado! Presione [ENTER] para continuar..."; read;
+        print.out '%b' "\033[0m";
     }
 
     __runScript() {
@@ -27,11 +29,6 @@ function StartDivineCreationUI {
 
     __runAllScripts() {
         bash start-divine-creation.sh "--run-all";
-        __stopAfterExecution;
-    }
-
-    __listSettings() {
-        bash start-divine-creation.sh "--list-set";
         __stopAfterExecution;
     }
 
@@ -56,30 +53,29 @@ function StartDivineCreationUI {
     }
 
     __exit() {
-        print.info "__exit";
+        print.out '%b\n\n' "\033[1;33mSaindo do modo Eden...\033[0m"; sleep 1s;
         exit 0;
     }
 
     __initialize() {
+        # Isso irá limpar a tela para que possamos exibir o menu.
         clear;
         while [ true ]; do 
-            #http://www.kammerl.de/ascii/AsciiSignature.php
-            #http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
             cat ./files/header.txt;
             cat $file_path_menu;
             file_path_menu="./files/commands.txt";
-            # If error exists, display it
+            # Se houver algum erro, exiba-o.
             if [ "$error_command" != "" ]; then
-                print.error "Error: $error_command";
-                # Clear the error message
+                print.error "Erro: $error_command";
+                # Limpe a mensagem de erro.
                 error_command="";
             fi
-            # Read the user input
-            print.out '%s' "O que tu queres fazer? $ "; read -a input_commands;
+            # Leia a entrada do usuário
+            print.out '%b' "O que tu queres fazer? \033[1;32m$ "; read -a input_commands;
+            print.out '%b' "\033[0m";
             case ${input_commands[0]} in
                 --run) __runScript "${input_commands[@]}"; ;;
                 --run-all) __runAllScripts; ;;
-                --list-set) __listSettings; ;;
                 --edit-set) __editSettings "${input_commands[@]}"; ;;
                 --edit-script) __editScript "${input_commands[@]}"; ;;
                 --view-log) __viewLog "${input_commands[@]}"; ;;
@@ -87,7 +83,7 @@ function StartDivineCreationUI {
                 --exit) __exit; ;;
                 *) error_command="Seu burro! Digite a porra do comando certo!";
             esac
-            # This will clear the screen so we can redisplay the menu.
+            # Isso irá limpar a tela para que possamos exibir novamente o menu.
             clear;
         done
     }

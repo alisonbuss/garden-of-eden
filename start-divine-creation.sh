@@ -16,8 +16,10 @@ source "./shell-script-tools/linux/utility.sh";
 source "./shell-script-tools/ubuntu/extension-jq.sh";
 
 function StartDivineCreation {
+    
     # Converter os parametros em um array.
     declare -a parameters=("$@");
+
     local pathDefault=$(cat settings.json | jq -r '.pathDefault');
 
     __execute() {
@@ -25,6 +27,12 @@ function StartDivineCreation {
         local action="$2";
         local param="$3";
         local pathScript="$pathDefault/scripts/$script";
+
+        print.out '%b\n' "\033[0;101m--> INICIANDO A EXECUÇÃO DO SCRIPT...  \033[0m";
+        print.out '%b\n'   "--> script: '$pathScript'";
+        print.out '%b\n'   "--> action: '$action'";
+        print.out '%b\n\n' "--> param:  $param";
+        
         # chamar o shell-script e gerar log dela
         ( exec $pathScript $action $param | tee -a ./$pathDefault/logs/$script.log );
     }
@@ -48,10 +56,6 @@ function StartDivineCreation {
                 __execute $script $action $param;
             fi
         done 
-    }
-
-    __listSettings() {
-        cat ./settings.json;
     }
 
     __editSettings() {
@@ -85,11 +89,12 @@ function StartDivineCreation {
         case $action in
             --run) __runScript; ;;
             --run-all) __runAllScripts; ;;
-            --list-set) __listSettings; ;;
             --edit-set) __editSettings; ;;
             --edit-script) __editScript; ;;
             --view-log) __viewLog; ;;
-            *) print.error "Error: Tipo da (AÇÃO) não encontrada! [--run|--run-all|--list-set|--edit-set|--edit-script|--view-log]!";
+            *) 
+            print.out '%b\n' "Erro: Tipo do (COMANDO) não encontrado!";
+            print.out '%b\n' "Comandos: [--run, --run-all, --list-set, --edit-set, --edit-script, --view-log]";
         esac
     }
 

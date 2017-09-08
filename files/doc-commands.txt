@@ -1,27 +1,29 @@
 Documentação:
 
-  | Comandos        | Descrição                                          |
-  | -------------   | -------------------------------------------------- |
-  | --run           | Executa um script com parametro ou sem             |
-  | --run-all       | Executa todos os scrits                            |
-  | --list-set      | lista as configurações de execução dos scripts     |
-  | --edit-set      | Edita as configurações de execução passando editor |
-  | --edit-script   | Edita um script passando editor                    |
-  | --view-log      | Visualizar um log de um script passando editor     |
-  | --view-doc      | Visualizar documentação                            |
-  | --exit          | Sair do modo Eden                                  |
+  | Comandos      | Descrição                                            |
+  | ------------- | ---------------------------------------------------- |
+  | --run         | Executa um script passando alguns parametros:        |
+  |               | (script, ação, parametro em json).                   |
+  | --run-all     | Executa todos os scrits do settings.json.            |
+  | --edit-set    | Editar as configurações do settings.json passando    |
+  |               | parametro do editor de texto, padrão é gedit.        |
+  | --edit-script | Editar um script passando 2 parametros: (script,     |
+  |               | editor de texto), padrão do editor é gedit.          |
+  | --view-log    | Visualizar o log de um script passando 2 parametros: |
+  |               | (script, editor de texto), padrão do editor é gedit. |
+  | --view-doc    | Visualizar documentação dos comandos                 |
+  | --exit        | Sair do modo Eden                                    |
 
 ---------------------------------------------------------------------------
 
-  | Comandos        | Exemplo                                           |
-  | -------------   | ------------------------------------------------- |
-  | --run           | --run script-git.sh install                       |
-  |                 | --run script-jdk.sh uninstall '{"version":"5"}'   |
-  | --run-all       | --run-all                                         |
-  | --list-set      | --list-set                                        |
-  | --edit-set      | --edit-set gedit                                  |
-  | --edit-script   | --edit-script script-git.sh gedit                 |
-  | --view-log      | --view-log script-git.sh gedit                    |
-  | --view-doc      | --view-doc                                        |
-  | --exit          | --exit                                            |
+  | Comandos      | Exemplo                                              |
+  | ------------- | ---------------------------------------------------- |
+  | --run         | --run script-git.sh install                          |
+  |               | --run script-jdk.sh uninstall '{"version":"5"}'      |
+  | --run-all     | --run-all                                            |
+  | --edit-set    | --edit-set gedit                                     |
+  | --edit-script | --edit-script script-git.sh gedit                    |
+  | --view-log    | --view-log script-git.sh gedit                       |
+  | --view-doc    | --view-doc                                           |
+  | --exit        | --exit                                               |
 
