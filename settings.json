@@ -1,21 +1,21 @@
 {
     "pathDefault": "./dist-ubuntu/",
     "settings": [
-        { "script": "generate-keyssh.sh", "execute": false, "param": null },
-        { "script": "install-git.sh", "execute": false, "param": null },
-        { "script": "install-jdk.sh", "execute": false, "param": null },
-        { "script": "install-nvm.sh", "execute": false, "param": null },
-        { "script": "install-nodejs.sh", "execute": false, "param": null },
-        { "script": "install-golang.sh", "execute": false, "param": { "version": "1.7.1", "op":"--64" } },
-        { "script": "install-cfssl.sh", "execute": false, "param": null },
-        { "script": "install-config-transpiler.sh", "execute": false, "param": null },
-        { "script": "install-ansible.sh", "execute": false, "param": null },
-        { "script": "install-virtualbox.sh", "execute": false, "param": null },
-        { "script": "install-vagrant.sh", "execute": false, "param": null },
-        { "script": "install-vscode.sh", "execute": false, "param": null },
-        { "script": "install-gitkraken.sh", "execute": false, "param": null },
-        { "script": "install-staruml.sh", "execute": false, "param": null },
-        { "script": "install-netbeans.sh", "execute": false, "param": null },
-        { "script": "install-viadagens.sh", "execute": false, "param": null }
+        { "script": "script-keyssh.sh", "execute": false, "action": "create", "param": null },
+        { "script": "script-git.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-jdk.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-nvm.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-nodejs.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-golang.sh", "execute": false, "action": "install", "param": { "version": "1.7.1", "op":"--64" } },
+        { "script": "script-cfssl.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-config-transpiler.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-ansible.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-virtualbox.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-vagrant.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-vscode.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-gitkraken.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-staruml.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-netbeans.sh", "execute": false, "action": "install", "param": null },
+        { "script": "script-viadagens.sh", "execute": false, "action": "install", "param": null }
     ]
 }

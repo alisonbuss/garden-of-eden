@@ -16,10 +16,10 @@ Documentação:
   | Comandos        | Exemplo                                           |
   | -------------   | ------------------------------------------------- |
   | --run           | --run script-git.sh install                       |
-  |                 | --run script-git.sh install '{"version":"2.7.4"}' |
+  |                 | --run script-jdk.sh uninstall '{"version":"5"}'   |
   | --run-all       | --run-all                                         |
-  | --list-set      | --list-settings                                   |
-  | --edit-set      | --edit-settings gedit                             |
+  | --list-set      | --list-set                                        |
+  | --edit-set      | --edit-set gedit                                  |
   | --edit-script   | --edit-script script-git.sh gedit                 |
   | --view-log      | --view-log script-git.sh gedit                    |
   | --view-doc      | --view-doc                                        |
