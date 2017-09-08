@@ -93,8 +93,8 @@ function StartDivineCreation {
             --edit-script) __editScript; ;;
             --view-log) __viewLog; ;;
             *) 
-            print.out '%b\n' "Erro: Tipo do (COMANDO) não encontrado!";
-            print.out '%b\n' "Comandos: [--run, --run-all, --list-set, --edit-set, --edit-script, --view-log]";
+            print.error "Erro: Tipo do (COMANDO) não encontrado!";
+            cat ./files/doc-commands.txt;
         esac
     }
 
