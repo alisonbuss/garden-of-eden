@@ -23,18 +23,18 @@ function StartDivineCreation {
     local pathDefault=$(cat settings.json | jq -r '.pathDefault');
 
     __execute() {
-        local script="$1";
-        local action="$2";
-        local param="$3";
+        local script=$1;
+        local action=$2;
+        local param=$3;
         local pathScript="$pathDefault/scripts/$script";
 
         print.out '%b\n' "\033[0;101m--> INICIANDO A EXECUÇÃO DO SCRIPT...  \033[0m";
         print.out '%b\n'   "--> script: '$pathScript'";
         print.out '%b\n'   "--> action: '$action'";
-        print.out '%b\n\n' "--> param:  $param";
+        print.out '%b\n\n' "--> param:  '$param'";
         
-        # chamar o shell-script e gerar log dela
-        ( exec $pathScript $action $param | tee -a ./$pathDefault/logs/$script.log );
+        # chamar o (shell script) e gerar log dele.
+        bash "$pathScript" "$action" "$param" | tee -a ./$pathDefault/logs/$script.log 
     }
 
     __runScript() {
@@ -42,20 +42,21 @@ function StartDivineCreation {
         local action="${parameters[2]}";
         local param="${parameters[3]}";
 
-       __execute $script $action $param;
+        __execute "$script" "$action" "$param";
     }
 
     __runAllScripts() {
-        for row in $(cat settings.json | jq -c '.settings[]'); do    
-            local script=$(echo ${row} | jq -r '.script');  
-            local action=$(echo ${row} | jq '.action');
-            local param=$(echo ${row} | jq -c '.param');
-
-            local execute=$(echo ${row} | jq '.execute');
+        local counter=$(cat settings.json | jq '.settings | length'); 
+        for (( i=1; i<=$counter; i++ )); do
+            local index=$(($i-1));
+            local execute=$(cat settings.json | jq ".settings[$index].execute");
             if [ "${execute}" == "true" ]; then
-                __execute $script $action $param;
+                local script=$(cat settings.json | jq -r ".settings[$index].script"); 
+                local action=$(cat settings.json | jq -r ".settings[$index].action"); 
+                local param=$(cat settings.json | jq -c ".settings[$index].param"); 
+                __execute "$script" "$action" "$param";
             fi
-        done 
+        done
     }
 
     __editSettings() {

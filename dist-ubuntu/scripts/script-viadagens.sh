@@ -12,15 +12,6 @@
 function InstallViadagens {
     local param=$1;
 
-    __install_chrome() {
-        echo "Iniciando a instalação do Chrome na maquina..."; 
-        wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O ./binaries/chrome.deb;
-        chmod -R 777 ./binaries/chrome.deb;
-        dpkg -i ./binaries/chrome.deb;
-        # Remover o download do Chrome
-        rm ./binaries/chrome.deb;
-    }
-
     __install_wine() {
         # FONT: http://www.edivaldobrito.com.br/playonlinux-chega-a-versao-4-2-4-veja-como-instalar-no-ubuntu/
         #       https://sempreupdate.com.br/2017/04/instalar-o-wine-2-6-no-ubuntu.html
@@ -76,7 +67,6 @@ function InstallViadagens {
     }
 
     __install() {
-        __install_chrome;
         __install_wine;
         __install_tools_desktop;
         __install_theme_arc;

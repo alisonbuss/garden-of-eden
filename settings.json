@@ -1,21 +1,34 @@
 {
     "pathDefault": "./dist-ubuntu",
     "settings": [
-        { "script": "script-keyssh.sh", "execute": false, "action": "create", "param": null },
-        { "script": "script-git.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-jdk.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-nvm.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-nodejs.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-golang.sh", "execute": false, "action": "install", "param": { "version": "1.7.1", "op":"--64" } },
-        { "script": "script-cfssl.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-config-transpiler.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-ansible.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-virtualbox.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-vagrant.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-vscode.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-gitkraken.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-staruml.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-netbeans.sh", "execute": false, "action": "install", "param": null },
-        { "script": "script-viadagens.sh", "execute": false, "action": "install", "param": null }
+        { "script": "script-keyssh.sh", "action": "create", "execute": true, 
+            "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
+        },
+        { "script": "script-git.sh", "action": "install", "execute": false, 
+            "param": { "nameUser": "Lúcifer", "emailUser": "lucifer.dev@ghell.com" }
+        },
+        { "script": "script-jdk.sh", "action": "install", "execute": false, 
+            "param": { "version": "8" } 
+        },
+        { "script": "script-nvm.sh", "action": "install", "execute": false, 
+            "param": { "version": "0.33.4" } 
+        },
+        { "script": "script-nodejs.sh", "action": "install", "execute": false, 
+            "param": { "version": "8.4.0" } 
+        },
+        { "script": "script-golang.sh", "action": "install", "execute": false, 
+            "param": { "version": "1.9" } 
+        },
+        { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-config-transpiler.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-ansible.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-virtualbox.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-vagrant.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-vscode.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-gitkraken.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-staruml.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-chrome.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-netbeans.sh", "action": "install", "execute": false, "param": null },
+        { "script": "script-viadagens.sh", "action": "install", "execute": false, "param": null }
     ]
 }
