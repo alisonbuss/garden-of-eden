@@ -5,19 +5,20 @@
 # @fonts: https://www.youtube.com/watch?v=iVUnXw64Ez8&list=PLV7VqBqvsd_1h7zmEpE-xwgOPqp2IBGCV&index=8
 # @param: 
 #    action | text: (create, recreate)
-#    paramJson | josn: ('{"comment":"...","passwordKey":"...","pathKey":"...","nameKey":"..."}')   
-# @example: 
-#    $ sudo chmod a+x script-keyssh.sh
-#    $ sudo ./script-keyssh.sh create {"comment":"key You","passwordKey":"666","pathKey":"/home/??/.ssh","nameKey":"id_rsa"}
+#    paramJson | josn: {"comment":"...","passwordKey":"...","pathKey":"...","nameKey":"..."}
 #############################################
 
+source "./shell-script-tools/ubuntu/extension-jq.sh";
+
 function ScriptKeySSH {
-    local action=$1;
-    local paramJson=$2;
-    local comment=$(echo ${paramJson} | jq -r '.comment');
-    local passwordKey=$(echo ${paramJson} | jq -r '.passwordKey');
-    local pathKey=$(echo ${paramJson} | jq -r '.pathKey');
-    local nameKey=$(echo ${paramJson} | jq -r '.nameKey');
+
+    local ACTION=$1;
+    local PARAM_JSON=$2;
+
+    local comment=$(echo ${PARAM_JSON} | jq -r '.comment');
+    local passwordKey=$(echo ${PARAM_JSON} | jq -r '.passwordKey');
+    local pathKey=$(echo ${PARAM_JSON} | jq -r '.pathKey');
+    local nameKey=$(echo ${PARAM_JSON} | jq -r '.nameKey');
 
     __create() {
         print.info "Iniciando criação da chave SSH na maquina..."; 
@@ -38,7 +39,7 @@ function ScriptKeySSH {
     } 
 
     __actionError() {
-        print.error "Erro: 'action' passado:($action) não coincide com [create, recreate]!";
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [create, recreate]!";
     } 
 
     __generate() {
@@ -55,7 +56,7 @@ function ScriptKeySSH {
     } 
 
     __initialize() {
-        case ${action} in
+        case ${ACTION} in
             create) __create; ;;
             recreate) __recreate; ;;
             *) __actionError;

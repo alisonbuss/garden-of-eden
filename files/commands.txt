@@ -1,8 +1,7 @@
 Comandos:
 
     $ --run 
-    $ --run-all
-    $ --edit-set
+    $ --edit-settings
     $ --edit-script
     $ --view-log
     $ --view-doc

@@ -11,6 +11,7 @@ Documentação:
   | --view-log      | Visualizar o log de um script passando 2 parametros: |
   |                 | (script, editor de texto), padrão do editor é gedit. |
   | --view-doc      | Visualizar documentação dos comandos                 |
+  | --exit          | Sair do modo Eden                                    |
 
 -----------------------------------------------------------------------------
 
@@ -21,4 +22,5 @@ Documentação:
   | --edit-script   | --edit-script script-git.sh gedit                    |
   | --view-log      | --view-log script-git.sh gedit                       |
   | --view-doc      | --view-doc                                           |
+  | --exit          | --exit                                               |
 

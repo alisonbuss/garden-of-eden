@@ -22,13 +22,8 @@ function StartDivineCreationUI {
         print.out '%b' "\033[0m";
     }
 
-    __runScript() {
-        bash start-divine-creation.sh "$@";
-        __stopAfterExecution;
-    }
-
     __runAllScripts() {
-        bash start-divine-creation.sh "--run-all";
+        bash start-divine-creation.sh "--run";
         __stopAfterExecution;
     }
 
@@ -48,8 +43,7 @@ function StartDivineCreationUI {
     }
 
     __viewDoc() {
-        print.info "__viewDoc";
-        file_path_menu="./files/doc-commands.txt";
+        file_path_menu="./files/doc-for-ui-commands.txt";
     }
 
     __exit() {
@@ -74,9 +68,8 @@ function StartDivineCreationUI {
             print.out '%b' "O que tu queres fazer? \033[1;32m$ "; read -a input_commands;
             print.out '%b' "\033[0m";
             case ${input_commands[0]} in
-                --run) __runScript "${input_commands[@]}"; ;;
-                --run-all) __runAllScripts; ;;
-                --edit-set) __editSettings "${input_commands[@]}"; ;;
+                --run) __runAllScripts; ;;
+                --edit-settings) __editSettings "${input_commands[@]}"; ;;
                 --edit-script) __editScript "${input_commands[@]}"; ;;
                 --view-log) __viewLog "${input_commands[@]}"; ;;
                 --view-doc) __viewDoc; ;;
