@@ -8,8 +8,6 @@
 #    paramJson | josn: {"comment":"...","passwordKey":"...","pathKey":"...","nameKey":"..."}
 #############################################
 
-source "./shell-script-tools/ubuntu/extension-jq.sh";
-
 function ScriptKeySSH {
 
     local ACTION=$1;
@@ -23,36 +21,38 @@ function ScriptKeySSH {
     __create() {
         print.info "Iniciando criação da chave SSH na maquina..."; 
 
-        print.out '%s\n' "comment: $comment";
-        print.out '%s\n' "passwordKey: $passwordKey";
-        print.out '%s\n' "pathKey: $pathKey";
-        print.out '%s\n' "nameKey: $nameKey";
+        # verifica se tem a pasta, caso não tenha é criada uma pasta.
+        if [ ! -d "$pathKey" ] ; then
+            mkdir ${pathKey/nameKey};
+            chmod -R 777 ${pathKey/nameKey};
+
+            # gera a chave SSH do usuario da maquina.
+            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
+        else
+            print.warning "Aviso: Sua chave SSH já foi criada!";
+        fi 
     } 
 
     __recreate() {
         print.info "Iniciando a recriação da chave SSH na maquina..."; 
         
-        print.out '%s\n' "comment: $comment";
-        print.out '%s\n' "passwordKey: $passwordKey";
-        print.out '%s\n' "pathKey: $pathKey";
-        print.out '%s\n' "nameKey: $nameKey";
+        # verifica se tem a pasta, caso não tenha é criada uma pasta.
+        if [ -d "$pathKey" ] ; then
+            rm -rf "$pathKey/*";
+
+            # gera a chave SSH do usuario da maquina.
+            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
+        else
+            mkdir ${pathKey/nameKey};
+            chmod -R 777 ${pathKey/nameKey};
+
+            # gera a chave SSH do usuario da maquina.
+            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
+        fi  
     } 
 
     __actionError() {
         print.error "Erro: 'action' passado:($ACTION) não coincide com [create, recreate]!";
-    } 
-
-    __generate() {
-         echo "temp....";
-        #msgInfo "Iniciando geração da chave SSH na maquina..."; 
-       
-        # verifica se tem a pasta, caso não tenha é criada uma pasta.
-        #if [ ! -d "$pathKey" ] ; then
-        #    mkdir ${pathKey/nameKey};
-        #    chmod -R 777 ${pathKey/nameKey};
-        #fi
-        # gera a chave SSH do usuario da maquina.
-        #ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
     } 
 
     __initialize() {

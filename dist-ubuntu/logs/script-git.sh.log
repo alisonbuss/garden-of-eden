@@ -1,0 +1,59 @@
+[1;34m
++---------------------------------------------+
+| Iniciando a instalação do Git na maquina... |
++---------------------------------------------+
+
+[0mVersion Git: git version 2.7.4
+user.name=Alison Buss de Arruda
+user.email=alisonbuss.dev@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/alisonbuss/garden-of-eden.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+Sua chave SSH já foi publicada no GitHub? [yes/no]: [1;33m
++------------------------------------+
+| Testando a conexão com o GitHub... |
++------------------------------------+
+
+[0m[1;34m
++---------------------------------------------+
+| Iniciando a instalação do Git na maquina... |
++---------------------------------------------+
+
+[0mgit version 2.7.4
+user.name=Alison Buss de Arruda
+user.email=alisonbuss.dev@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/alisonbuss/garden-of-eden.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+Sua chave SSH já foi publicada no GitHub? [yes/no]: [1;34m
++---------------------------------------------+
+| Iniciando a instalação do Git na maquina... |
++---------------------------------------------+
+
+[0mgit version 2.7.4
+user.name=Alison Buss de Arruda
+user.email=alisonbuss.dev@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=https://github.com/alisonbuss/garden-of-eden.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.master.remote=origin
+branch.master.merge=refs/heads/master
+Sua chave SSH já foi publicada no GitHub? [yes/no]: [1;33m
++------------------------------------+
+| Testando a conexão com o GitHub... |
++------------------------------------+
+
+[0m

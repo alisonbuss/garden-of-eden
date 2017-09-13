@@ -1,35 +1,39 @@
 #!/bin/bash
 
 ###################  DOC  ###################
-# @descr: ...  
-# @fonts: ...
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-cfssl.sh
-#    $ sudo ./install-cfssl.sh
+# @descr: Instalação do CFSSL na maquina 
+# @fonts: https://github.com/cloudflare/cfssl
+# @param: 
+#    action | text: (install)
 #############################################
 
-function InstallCFSSL {
-    local param=$1;
+function ScriptCFSSL {
+    
+    local ACTION=$1;
 
     __install() {
-        msgInfo "Iniciando a instalação do CFSSL na maquina..."; 
+        print.info "Iniciando a instalação do CFSSL na maquina..."; 
 
         go get -u github.com/cloudflare/cfssl/cmd/cfssl;
+
+        print.out '%s' "Version CFSSL: ";
         cfssl version;
     }
 
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "cfssl"` == 1 ]; then
-            echo "CFSSL já está instalanda na maquina...";
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallCFSSL $1;
+ScriptCFSSL "$@";
 
 exit 0;

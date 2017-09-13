@@ -5,17 +5,16 @@
 # @fonts: http://blog.deiser.com/primeros-pasos-con-ansible/
 #         https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-ansible-on-ubuntu-16-04
 #         http://docs.ansible.com/ansible/latest/intro_installation.html#latest-releases-via-apt-ubuntu
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-ansible.sh
-#    $ sudo ./install-ansible.sh
+# @param: 
+#    action | text: (install, uninstall)
 #############################################
 
-function InstallAnsible {
-    local jsonParam=$1;
+function ScriptAnsible {
+
+    local ACTION=$1;
 
     __install() {
-        msgInfo "Iniciando a instalação do Ansible na maquina..."; 
+        print.info "Iniciando a instalação do Ansible na maquina..."; 
 
         apt-get install software-properties-common;
         apt-add-repository ppa:ansible/ansible;
@@ -23,25 +22,32 @@ function InstallAnsible {
 
         apt-get install ansible;
 
-        echo -n "Version Ansible: ";
+        print.out '%s' "Version Ansible: ";
         ansible --version;
     }
 
     __uninstall() {
-         echo "Desinstalando o Ansible...";
+        print.info "Iniciando a desinstalação do Ansible na maquina..."; 
+        
+        apt-get remove --auto-remove ansible;
+        apt-get purge --auto-remove ansible;
     }
 
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "ansible"` == 1 ]; then
-            echo "Ansible já está instalanda na maquina...";
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallAnsible $1;
+ScriptAnsible "$@";
 
 exit 0;

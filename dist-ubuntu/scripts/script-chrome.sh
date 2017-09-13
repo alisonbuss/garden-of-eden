@@ -1,18 +1,14 @@
 #!/bin/bash
 
 ###################  DOC  ###################
-# @descr: Instalação do Vagrant na maquina. 
-# @fonts: https://howtoprogram.xyz/2016/07/23/install-vagrant-ubuntu-16-04/
-#         http://danielfilho.github.io/2013/10/20/front-end-ops-vagrant/
-#         https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-chrome.sh
-#    $ sudo ./install-chrome.sh
+# @descr: Instalação do Chrome na maquina. 
+# @param: 
+#    action | text: (install, uninstall)
 #############################################
 
-function InstallChrome {
-    local param=$1;
+function ScriptChrome {
+    
+    local ACTION=$1;
 
     __install() {
         echo "Iniciando a instalação do Chrome na maquina..."; 
@@ -24,17 +20,28 @@ function InstallChrome {
         rm ./binaries/chrome.deb;
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do Chrome na maquina..."; 
+        
+        apt-get remove --auto-remove google-chrome-stable;
+        apt-get purge --auto-remove google-chrome-stable;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "vagrant"` == 1 ]; then
-            echo "Vagrant já está instalanda na maquina...";
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallChrome $1;
+ScriptChrome "$@";
 
 exit 0;

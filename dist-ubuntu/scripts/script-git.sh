@@ -3,46 +3,59 @@
 ###################  DOC  ###################
 # @descr: Instalação do Git na maquina.      
 # @fonts: https://www.youtube.com/watch?v=BettUg-L8M4&list=PLV7VqBqvsd_1h7zmEpE-xwgOPqp2IBGCV
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-git.sh
-#    $ sudo ./install-git.sh
+# @param: 
+#    action | text: (install, uninstall)
+#    paramJson | josn: {"nameUser":"...","emailUser":"..."}
 #############################################
 
-function InstallGit {
-    local param=$1;
-    local nameUser="Alison Buss de Arruda";
-    local emailUser="alisonbuss.dev@gmail.com";
+function ScriptGit {
+
+    local ACTION=$1;
+    local PARAM_JSON=$2;
+
+    local nameUser=$(echo ${PARAM_JSON} | jq -r '.nameUser');
+    local emailUser=$(echo ${PARAM_JSON} | jq -r '.emailUser');
 
     __install() {
-        msgInfo "Iniciando a instalação do Git na maquina..."; 
+        print.info "Iniciando a instalação do Git na maquina..."; 
 
         apt-get install git;
-        git --version;
         git config --global user.name "$nameUser";
         git config --global user.email $emailUser;
+
+        git --version;
         git config --list;
-        read -p "Sua chave SSH já foi publicada no GitHub? (yes/no): " input_isPublishedKey;
+
+        print.out '%s' "Sua chave SSH já foi publicada no GitHub? [yes/no]: "; read input_isPublishedKey;
         # Caso a chave SSH foi publicada no GitHub teste a conexão.
         if [ "$input_isPublishedKey" == "yes" ]; then
-            msgInfo "Testando a conexão com o GitHub...";
+            print.warning "Testando a conexão com o GitHub...";
             ssh -T git@github.com;
         fi
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do Git na maquina..."; 
+        
+        apt-get remove --auto-remove git;
+        apt-get purge --auto-remove git;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "git"` == 1 ]; then
-            msgInfo "Git já está instalanda na maquina...";
-            git --version;
-            git config --list;
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallGit $1;
+ScriptGit "$@";
 
 exit 0;
