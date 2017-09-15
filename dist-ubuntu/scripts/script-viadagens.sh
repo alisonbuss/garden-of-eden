@@ -2,21 +2,34 @@
 
 ###################  DOC  ###################
 # @descr: Instalação e Configurações de customizações do Ubuntu.    
-# @fonts: ...
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-viadagens.sh
-#    $ sudo ./install-viadagens.sh
+# @param: 
+#    action | text: (myeggs)
 #############################################
 
-function InstallViadagens {
-    local param=$1;
+function ScriptViadagens {
+    
+    local ACTION=$1;
 
+    # @fonts: http://www.edivaldobrito.com.br/como-instalar-a-ultima-versao-do-vlc/
+    __install_vlc() {
+        print.info "Iniciando a instalação do VLC na maquina..."; 
+        
+        add-apt-repository ppa:nicola-onorata/desktop;
+        apt-get update;
+        apt-get install vlc;
+
+        # desinstalar o VLC
+        #add-apt-repository ppa:nicola-onorata/desktop --remove;
+        #apt-get remove vlc;
+        #apt-get autoremove;
+    }
+
+    # @fonts: http://www.edivaldobrito.com.br/playonlinux-chega-a-versao-4-2-4-veja-como-instalar-no-ubuntu/
+    #         https://sempreupdate.com.br/2017/04/instalar-o-wine-2-6-no-ubuntu.html
     __install_wine() {
-        # FONT: http://www.edivaldobrito.com.br/playonlinux-chega-a-versao-4-2-4-veja-como-instalar-no-ubuntu/
-        #       https://sempreupdate.com.br/2017/04/instalar-o-wine-2-6-no-ubuntu.html
-        echo "Iniciando a instalação do Wine na maquina..."; 
-        sudo add-apt-repository ppa:noobslab/apps
+        print.info "Iniciando a instalação do playonlinux na maquina..."; 
+        
+        add-apt-repository ppa:noobslab/apps
         apt-get update;
         apt-get install playonlinux;
         
@@ -30,17 +43,21 @@ function InstallViadagens {
         #ppa-purge ppa:wine/wine-builds;
     }
 
+    # @fonts: http://www.edivaldobrito.com.br/dicas-de-coisas-para-fazer-depois-da-instalacao-do-ubuntu-13-10-faca-pequenos-ajustes-na-interface/#tweaks
     __install_tools_desktop() {
-        # FONT: http://www.edivaldobrito.com.br/dicas-de-coisas-para-fazer-depois-da-instalacao-do-ubuntu-13-10-faca-pequenos-ajustes-na-interface/#tweaks
+        print.info "Iniciando a instalação das Ferramentas (Unity Tweak Tool, Ferramenta de ajustes do GNOME)"; 
+        
         apt-get install unity-tweak-tool;
         apt-get install gnome-tweak-tool;
     }
 
+    # @fonts: http://www.edivaldobrito.com.br/combinando-o-tema-e-os-icones-arc/
     __install_theme_arc() {
-        # FONT: http://www.edivaldobrito.com.br/combinando-o-tema-e-os-icones-arc/
-        echo "Iniciando a instalação de um tema viadinho Arc na maquina..."; 
+        print.info "Iniciando a instalação de um tema viadinho Arc na maquina..."; 
+        
         add-apt-repository ppa:noobslab/themes;
         add-apt-repository ppa:noobslab/icons;
+
         apt-get update;
         apt-get install arc-theme arc-icons;
 
@@ -48,9 +65,9 @@ function InstallViadagens {
         #sudo apt-get remove arc-theme arc-icons
     }
 
+    # @fonts: http://www.edivaldobrito.com.br/tema-adapta-dark-no-ubuntu/
     __install_theme_adapta_dark() {
-        # FONT: http://www.edivaldobrito.com.br/tema-adapta-dark-no-ubuntu/
-        echo "Iniciando a instalação de um tema viadinho Adapta Dark na maquina..."; 
+        print.info "Iniciando a instalação de um tema viadinho Adapta Dark na maquina..."; 
         apt-add-repository ppa:tista/adapta -y;
         apt-get update;
         apt-get install adapta-gtk-theme;
@@ -62,25 +79,36 @@ function InstallViadagens {
     }
 
     __config_change_wallpaper() {
+        print.info "Iniciando alteração do papel de parede bem gay."; 
+
         local wallpaper="$PWD/files/wallpaper1.jpg"; 
         gsettings set org.gnome.desktop.background picture-uri "file://$wallpaper";
     }
 
     __install() {
+        print.info "Iniciando as instalações e configurações de customizações do Ubuntu..."; 
+
+        __install_vlc;
         __install_wine;
         __install_tools_desktop;
         __install_theme_arc;
         __config_change_wallpaper;
     }
 
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        echo "Iniciando as instalações e configurações de customizações do Ubuntu..."; 
-        __install;
+        case ${ACTION} in
+            myeggs) __install; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallViadagens $1;
+ScriptViadagens "$@";
 
 exit 0;

@@ -6,16 +6,16 @@
 #         https://www.youtube.com/watch?v=zGdwylAeZCY
 #         https://packages.ubuntu.com/uk/trusty-updates/amd64/libgcrypt11/download
 #         http://staruml.io/download
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-staruml.sh
-#    $ sudo ./install-staruml.sh
+# @param: 
+#    action | text: (install, uninstall)
 #############################################
 
-function InstallStarUML {
+function ScriptStarUML {
     local param=$1;
 
     __install() {
+        print.info "Iniciando a instalação do StarUML na maquina..."; 
+
         wget "http://ubuntu.cs.utah.edu/ubuntu/pool/main/libg/libgcrypt11/libgcrypt11_1.5.3-2ubuntu4.5_amd64.deb" -O ./binaries/libgcrypt11.deb;
         chmod -R 777 ./binaries/libgcrypt11.deb;
 
@@ -30,18 +30,28 @@ function InstallStarUML {
         rm ./binaries/staruml.deb;
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do StarUML na maquina..."; 
+
+        apt-get remove --auto-remove staruml;
+        apt-get purge --auto-remove staruml;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "staruml"` == 1 ]; then
-            echo "StarUML já está instalanda na maquina...";
-        else
-            echo "Iniciando a instalação do StarUML na maquina..."; 
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallStarUML $1;
+ScriptStarUML "$@";
 
 exit 0;

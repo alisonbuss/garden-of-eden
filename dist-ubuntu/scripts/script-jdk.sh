@@ -4,58 +4,76 @@
 # @descr: Instalação do JDK na maquina.
 # @fonts: http://www.edivaldobrito.com.br/instalar-o-oracle-java-no-ubuntu/
 #         https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-get-no-ubuntu-16-04-pt#configurando-a-vari%C3%A1vel-de-ambiente-java_home
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-jdk.sh
-#    $ sudo ./install-jdk.sh
+# @param: 
+#    action | text: (install, uninstall)
+#    paramJson | josn: {"version":"..."}
 #############################################
 
-function InstallJDK {
-    local param=$1;
+function ScriptJDK {
+    
+    local ACTION=$1;
+    local PARAM_JSON=$2;
+
+    local version=$(echo ${PARAM_JSON} | jq -r '.version');
 
     __install() {
-        msgInfo "Iniciando a instalação do JDK na maquina...";
-         
+        print.info "Iniciando a instalação do JDK na maquina...";
+
         apt-get purge openjdk*;
 
         add-apt-repository ppa:webupd8team/java;
         apt-get update;
 
-        apt-get install oracle-java8-installer;
-        apt-get install oracle-java8-set-default;
+        apt-get install "oracle-java$version-installer";
+        apt-get install "oracle-java$version-set-default";
 
         # Configurando a variável de ambiente do JAVA_HOME e JRE_HOME.
-        msgWarning "O arquivo '/etc/environment' será aberto para ser configurado as variáveis de ambiente.";
-        msgWarning "Ao final desse arquivo, adicione as seguintes linhas:";
-        msgWarning 'JAVA_HOME="/usr/lib/jvm/java-8-oracle"';
-        msgWarning 'JRE_HOME="/usr/lib/jvm/java-8-oracle"';
-        msgWarning "Salve e saia do arquivo, para recarregar as variáveis de ambiente.";
+        print.out '%b' "\033[1;32m";
+        print.out '%s' "O arquivo '/etc/environment' será aberto para ser configurado as variáveis de ambiente.";
+        print.out '%s' "Ao final desse arquivo, adicione as seguintes linhas:";
+        print.out '%s' 'JAVA_HOME="/usr/lib/jvm/java-8-oracle"';
+        print.out '%s' 'JRE_HOME="/usr/lib/jvm/java-8-oracle"';
+        print.out '%s' "Salve e saia do arquivo, para recarregar as variáveis de ambiente.";
+        print.out '%b' "\033[0m";
         sleep 1s;
-        read -p "Deseja realizar essa configuração? (yes/no): " input_proceed;
+
+        print.out '%s' "Deseja realizar essa configuração? [yes/no] $ "; read input_proceed;
         if [ "$input_proceed" == "yes" ]; then
             # Abrindo o arquivo de variável de ambiente.
             gedit /etc/environment;
             # Recarregar o arquivo de variável de ambiente.
             source /etc/environment;
             # Imprimindo as variáveis de ambiente do Java.
-            echo "Variavel JAVA_HOME: " $JAVA_HOME;
-            echo "Variavel JRE_HOME: " $JRE_HOME;
+            print.out '%s' "Variavel JAVA_HOME: " $JAVA_HOME;
+            print.out '%s' "Variavel JRE_HOME: " $JRE_HOME;
         fi
 
         java -version;
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do JDK na maquina..."; 
+        
+        apt-get remove "oracle-java$version-installer";
+        apt-get purge "oracle-java$version-installer";
+        apt-get autoremove;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "jdk"` == 1 ]; then
-            msgInfo "JDK já está instalanda na maquina...";
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallJDK $1;
+ScriptJDK "$@";
 
 exit 0;

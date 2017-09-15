@@ -3,17 +3,16 @@
 ###################  DOC  ###################
 # @descr: Instalação do GitKraken na maquina.  
 # @fonts: https://support.gitkraken.com/how-to-install
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-gitkraken.sh
-#    $ sudo ./install-gitkraken.sh
+# @param: 
+#    action | text: (install, uninstall)
 #############################################
 
-function InstallGitKraken {
-    local param=$1;
+function ScriptGitKraken {
+    
+    local ACTION=$1;
 
     __install() {
-        echo "Iniciando a instalação do GitKraken na maquina..."; 
+        print.info "Iniciando a instalação do GitKraken na maquina..."; 
 
         wget "https://release.gitkraken.com/linux/gitkraken-amd64.deb" -O ./binaries/gitkraken.deb;
         chmod -R 777 ./binaries/gitkraken.deb;
@@ -24,17 +23,28 @@ function InstallGitKraken {
         rm ./binaries/gitkraken.deb;
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do GitKraken na maquina..."; 
+        
+        apt-get remove --auto-remove gitkraken;
+        apt-get purge --auto-remove gitkraken;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "gitkraken"` == 1 ]; then
-            echo "GitKraken já está instalanda na maquina...";
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallGitKraken $1;
+ScriptGitKraken "$@";
 
 exit 0;

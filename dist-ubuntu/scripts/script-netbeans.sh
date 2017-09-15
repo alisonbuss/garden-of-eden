@@ -4,16 +4,17 @@
 # @descr: Instalação do Netbeans na maquina.
 # @fonts: http://www.edivaldobrito.com.br/ultima-versao-do-netbeans-no-linux/
 #         http://ubuntuhandbook.org/index.php/2016/10/netbeans-8-2-released-how-to-install-it-in-ubuntu-16-04/
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-netbeans.sh
-#    $ sudo ./install-netbeans.sh
+# @param: 
+#    action | text: (install, uninstall)
 #############################################
 
-function InstallNetbeans {
-    local param=$1;
+function ScriptNetbeans {
+    
+    local ACTION=$1;
 
     __install() {
+        print.info "Iniciando a instalação do Netbeans na maquina...";
+
         wget "http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-linux.sh" -O ./binaries/netbeans.sh;
         chmod -R 777 ./binaries/netbeans.sh;
 
@@ -24,18 +25,27 @@ function InstallNetbeans {
         rm ./binaries/netbeans.sh;
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do Netbeans na maquina..."; 
+        
+        $HOME/netbeans-8.2/uninstall.sh;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "netbeans"` == 1 ]; then
-            echo "Netbeans já está instalanda na maquina...";
-        else
-            echo "Iniciando a instalação do Netbeans na maquina..."; 
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallNetbeans $1;
+ScriptNetbeans "$@";
 
 exit 0;

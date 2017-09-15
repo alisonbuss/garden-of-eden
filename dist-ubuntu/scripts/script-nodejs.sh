@@ -5,44 +5,57 @@
 # @fonts: https://tableless.com.br/como-instalar-node-js-no-linux-corretamente-ubuntu-debian-elementary-os/
 #         https://www.digitalocean.com/community/tutorials/como-instalar-o-node-js-no-ubuntu-16-04-pt#como-instalar-utilizando-o-nvm
 #         https://www.youtube.com/watch?v=BleYojqCaeQ
-# @param: param | json
-# @example: 
-#    $ sudo chmod a+x install-nodejs.sh
-#    $ sudo ./install-nodejs.sh
+# @param: 
+#    action | text: (install, uninstall)
+#    paramJson | josn: {"version":"..."}
 #############################################
 
-function InstallNodeJS {
-    local param=$1;
+function ScriptNodeJS {
+    
+    local ACTION=$1;
+    local PARAM_JSON=$2;
+
+    local version=$(echo ${PARAM_JSON} | jq -r '.version');
 
     __install() {
-        msgInfo "Iniciando a instalação do NodeJS na maquina..."; 
+        print.info "Iniciando a instalação do NodeJS na maquina..."; 
         source ~/.nvm/nvm.sh;
         source ~/.profile;
         source ~/.bashrc;
 
-	#chown -R $USER:$(id -gn $USER) /home/user/.config;
+	    #chown -R $USER:$(id -gn $USER) /home/user/.config;
 
-        nvm install 8.4.0;
-        nvm use 8.4.0;
+        nvm install $version;
+        nvm use $version;
 
         echo -n "Version Node.js: ";
         node -v;
 
-	echo -n "Version NPM: ";
+	    echo -n "Version NPM: ";
         npm -v;
     }
 
+    __uninstall() {
+        print.info "Iniciando a desinstalação do NodeJS na maquina..."; 
+        
+        nvm uninstall $version;
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+    } 
+
     __initialize() {
-        if [ `isInstalled "node"` == 1 ]; then
-            msgInfo "NodeJS já está instalanda na maquina...";
-        else
-            __install;
-        fi 
+        case ${ACTION} in
+            install) __install; ;;
+            uninstall) __uninstall; ;;
+            *) __actionError;
+        esac
     }
 
     __initialize;
 }
 
-InstallNodeJS $1;
+ScriptNodeJS "$@";
 
 exit 0;

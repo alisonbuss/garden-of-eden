@@ -88,10 +88,12 @@ function StartDivineCreationUI {
 if [ `isInstalled "jq"` == 1 ]; then
     StartDivineCreationUI;
 else
-    print.warning "Aviso: É necessario ter instalado a extenção 'jq' na maquina!";
+    print.warning "Aviso: É necessario ter instalado a extensão 'jq' na maquina!";
     print.out '%s' "Deseja que o Garden of Eden instale? [yes/no] $ "; read input_install_jq;
     if [ "$input_install_jq" == "yes" ]; then
         installExtensionJQ;
+        # Após a instalação da extensão 'jq' execute o Garden of Eden UI.
+        StartDivineCreationUI;
     fi
 fi
 
