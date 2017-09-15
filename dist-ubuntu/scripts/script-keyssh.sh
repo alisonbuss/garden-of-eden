@@ -5,7 +5,7 @@
 # @fonts: https://www.youtube.com/watch?v=iVUnXw64Ez8&list=PLV7VqBqvsd_1h7zmEpE-xwgOPqp2IBGCV&index=8
 # @param: 
 #    action | text: (create, recreate)
-#    paramJson | josn: {"comment":"...","passwordKey":"...","pathKey":"...","nameKey":"..."}
+#    paramJson | json: {"comment":"...","passwordKey":"...","pathKey":"...","nameKey":"..."}
 #############################################
 
 function ScriptKeySSH {

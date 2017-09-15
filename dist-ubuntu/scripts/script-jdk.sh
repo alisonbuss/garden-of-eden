@@ -6,7 +6,7 @@
 #         https://www.digitalocean.com/community/tutorials/como-instalar-o-java-com-apt-get-no-ubuntu-16-04-pt#configurando-a-vari%C3%A1vel-de-ambiente-java_home
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | josn: {"version":"..."}
+#    paramJson | json: {"version":"..."}
 #############################################
 
 function ScriptJDK {
@@ -54,9 +54,8 @@ function ScriptJDK {
     __uninstall() {
         print.info "Iniciando a desinstalação do JDK na maquina..."; 
         
-        apt-get remove "oracle-java$version-installer";
-        apt-get purge "oracle-java$version-installer";
-        apt-get autoremove;
+        apt-get --auto-remove remove "oracle-java$version-installer";
+        apt-get --auto-remove purge "oracle-java$version-installer";
     }
 
     __actionError() {

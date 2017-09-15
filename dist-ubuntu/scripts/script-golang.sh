@@ -6,7 +6,7 @@
 # @font: https://github.com/canha/golang-tools-install-script
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | josn: {"version":"..."}
+#    paramJson | json: {"version":"..."}
 #############################################
 
 function ScriptGoLang {

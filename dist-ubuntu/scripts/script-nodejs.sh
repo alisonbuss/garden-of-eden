@@ -7,7 +7,7 @@
 #         https://www.youtube.com/watch?v=BleYojqCaeQ
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | josn: {"version":"..."}
+#    paramJson | json: {"version":"..."}
 #############################################
 
 function ScriptNodeJS {

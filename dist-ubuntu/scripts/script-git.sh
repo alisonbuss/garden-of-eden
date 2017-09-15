@@ -5,7 +5,7 @@
 # @fonts: https://www.youtube.com/watch?v=BettUg-L8M4&list=PLV7VqBqvsd_1h7zmEpE-xwgOPqp2IBGCV
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | josn: {"nameUser":"...","emailUser":"..."}
+#    paramJson | json: {"nameUser":"...","emailUser":"..."}
 #############################################
 
 function ScriptGit {

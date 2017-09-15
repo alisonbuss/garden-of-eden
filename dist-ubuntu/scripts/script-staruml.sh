@@ -11,7 +11,8 @@
 #############################################
 
 function ScriptStarUML {
-    local param=$1;
+
+    local ACTION=$1;
 
     __install() {
         print.info "Iniciando a instalação do StarUML na maquina..."; 
