@@ -6,22 +6,22 @@ ambiente básico de desenvolvimento para Ubuntu.
 
 O "Garden of Eden" provisiona os seguentes programas:
 
-Gera chave SSH.
-Instala Git.
-Instala JDK.
-Instala NVM.
-Instala Node.js + NPM.
-Instala Go.
-Instala CFSSL.
-Instala Config Transpiler.
-Instala Ansible.
-Instala VirtualBox.
-Instala Vagrant.
-Instala VS Code.
-Instala GitKraken.
-Instala StarUML.
-Instala Chrome.
-Instala NetBeans.
+- Gera chave SSH.
+- Instala Git.
+- Instala JDK.
+- Instala NVM.
+- Instala Node.js + NPM.
+- Instala Go.
+- Instala CFSSL.
+- Instala Config Transpiler.
+- Instala Ansible.
+- Instala VirtualBox.
+- Instala Vagrant.
+- Instala VS Code.
+- Instala GitKraken.
+- Instala StarUML.
+- Instala Chrome.
+- Instala NetBeans.
 
 > **Nota:**
 > *O intuito do projeto "Garden of Eden" é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e de Shell Script, qualquer opinião, sugestão será bem vinda.* 
@@ -33,6 +33,7 @@ A estrutura base do projeto consiste em um arquivo "settings.json", esse arquivo
 defini a distribuição linux a ser usada e a ordem de execução dos Shell Scripts e 
 seus parâmetros. Um exemplo do arquivo "settings.json":
 
+```json
 {
     "pathDefault": "./dist-ubuntu",
     "settings": [
@@ -44,23 +45,24 @@ seus parâmetros. Um exemplo do arquivo "settings.json":
         ...
     ]
 }
+```
 
 No arquivo "settings.json" consiste de 2 parâmetros básicos (pathDefault e o settings) 
 como mostra o exemplo acima: 
 
-"pathDefault": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
-"settings": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no 
-parâmetro "pathDefault", essa lista contem 4 parâmetros padrões que são (script, action, execute, param).
+- "pathDefault": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
+- "settings": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro "pathDefault", essa lista contem 4 parâmetros padrões que são (script, action, execute, param).
 
 Os parâmetros do "settings: [{...}, ...]" consiste em:
 
-"script": define o nome do Shell Script a ser executado.
-"action" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
-"execute": define se o script vai ser executado, (true ou false), se for "true" esse script será executado caso contrario ele não é executado.
-"param": define um json de (chave e valor), esse json será repassado para o Shell Script especificado para ser consumido na execução.
+- "script": define o nome do Shell Script a ser executado.
+- "action" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
+- "execute": define se o script vai ser executado, (true ou false), se for "true" esse script será executado caso contrario ele não é executado.
+- "param": define um json de (chave e valor), esse json será repassado para o Shell Script especificado para ser consumido na execução.
 
 ### Como ficaria o arquivo "settings.json" do "Garden of Eden":
 
+```json
 {
     "pathDefault": "./dist-ubuntu",
     "settings": [
@@ -95,6 +97,7 @@ Os parâmetros do "settings: [{...}, ...]" consiste em:
         { "script": "script-viadagens.sh", "action": "myeggs", "execute": true, "param": null }
     ]
 }
+```
 
 ## Executando o "Garden of Eden". 
 
@@ -175,6 +178,7 @@ $ bash start-divine-creation-ui.sh
 ## A estrutura do projeto "Garden of Eden". 
 
 
+```
 garden-of-eden
   |--binaries/........''
   |--dist-ubuntu/........''
@@ -189,19 +193,4 @@ garden-of-eden
   |--settings.json ........''
   |--start-divine-creation-ui.sh........''
   |--start-divine-creation.sh........''
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
