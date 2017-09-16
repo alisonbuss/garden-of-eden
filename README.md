@@ -110,10 +110,10 @@ $ unzip ~/Downloads/garden-of-eden-master.zip -d ~/Downloads/
 $ cd ~/Downloads/garden-of-eden-master
 $ ls -a
 ```
-Pronto agora você pode executar um dos 2 Shell Scripts do "Garden of Eden" que são:
+Pronto agora você pode executar um dos dois Shell Scripts do "Garden of Eden" que são:
 
-"start-divine-creation.sh" em modo de comandos.
-"start-divine-creation-ui.sh" em modo gráfico.
+- "start-divine-creation.sh" em modo de comandos.
+- "start-divine-creation-ui.sh" em modo gráfico.
 
 ### Executando em modo de comandos:
 
