@@ -23,13 +23,15 @@ function ScriptNodeJS {
         source ~/.profile;
         source ~/.bashrc;
 
-	    #chown -R $USER:$(id -gn $USER) /home/user/.config;
-
         nvm install $version;
         nvm use $version;
 
         echo -n "Version Node.js: ";
         node -v;
+
+        # @fonts: https://www.computerhope.com/unix/uchown.htm
+        #         http://manpages.ubuntu.com/manpages/trusty/man1/chown.1.html
+        chown -R $USER:$(id -gn $USER) /home/user/.config;
 
 	    echo -n "Version NPM: ";
         npm -v;

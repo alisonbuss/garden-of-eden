@@ -13,6 +13,7 @@ function ScriptCFSSL {
 
     __install() {
         print.info "Iniciando a instalação do CFSSL na maquina..."; 
+        source ~/.bashrc;
 
         go get -u github.com/cloudflare/cfssl/cmd/cfssl;
 

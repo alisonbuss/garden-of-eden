@@ -94,7 +94,7 @@ Os parâmetros do "settings: [{...}, ...]" consiste em:
         { "script": "script-staruml.sh", "action": "install", "execute": true, "param": null },
         { "script": "script-chrome.sh", "action": "install", "execute": true, "param": null },
         { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null },
-        { "script": "script-viadagens.sh", "action": "myeggs", "execute": true, "param": null }
+        { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null }
     ]
 }
 ```
@@ -128,35 +128,35 @@ Visualizar a documentação, passando o parametro --view-doc.
 
 Terminal:
 ```bash
-$ bash start-divine-creation.sh --view-doc
+$ sudo bash start-divine-creation.sh --view-doc
 ```
 
 Visualizar ou editar o "settings.json", passando o parametro --edit-settings e o editor de texto.
 
 Terminal:
 ```bash
-$ bash start-divine-creation.sh --edit-settings gedit
+$ sudo bash start-divine-creation.sh --edit-settings gedit
 ```
 
 Visualizar ou editar o script, passando o parametro --edit-script e nome do script e o editor de texto.
 
 Terminal:
 ```bash
-$ bash start-divine-creation.sh --edit-script script-git.sh gedit
+$ sudo bash start-divine-creation.sh --edit-script script-git.sh gedit
 ```
 
 Executando os scripts do "settings.json", passando o parametro --rum.
 
 Terminal:
 ```bash
-$ bash start-divine-creation.sh --run
+$ sudo bash start-divine-creation.sh --run
 ```
 
 Visualizar o log de um determinado script, passando o parametro --view-log o nome do script e o editor de texto.
 
 Terminal:
 ```bash
-$ bash start-divine-creation.sh --view-log script-git.sh gedit
+$ sudo bash start-divine-creation.sh --view-log script-git.sh gedit
 ```
 
 ### Executando em modo de gráfico:
@@ -172,7 +172,7 @@ Agora só é executar.
 
 Terminal:
 ```bash
-$ bash start-divine-creation-ui.sh
+$ sudo bash start-divine-creation-ui.sh
 ```
 
 ## A estrutura do projeto "Garden of Eden". 
@@ -180,17 +180,17 @@ $ bash start-divine-creation-ui.sh
 
 ```
 garden-of-eden
-  |--binaries/........''
-  |--dist-ubuntu/........''
-     |--logs/........''
-     |--scripts/........''
-  |--files/........''
-  |--shell-script-tools/........''
-     |--linux/utility.sh........''
-     |--ubuntu/extension-jq.sh........''
-  |--LICENSE........'Licença Pública Geral GNU v3.0'
-  |--README.md........''
-  |--settings.json ........''
-  |--start-divine-creation-ui.sh........''
-  |--start-divine-creation.sh........''
+  |--binaries/....................''
+  |--dist-ubuntu/.................''
+     |--logs/.....................''
+     |--scripts/..................''
+  |--files/.......................''
+  |--shell-script-tools/..........''
+     |--linux/utility.sh..........''
+     |--ubuntu/extension-jq.sh....''
+  |--LICENSE......................'Licença Pública Geral GNU v3.0'
+  |--README.md....................''
+  |--settings.json ...............''
+  |--start-divine-creation-ui.sh..''
+  |--start-divine-creation.sh.....''
 ```

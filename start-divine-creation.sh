@@ -23,6 +23,13 @@ function StartDivineCreation {
 
     local PATH_DEFAULT=$(cat settings.json | jq -r '.pathDefault');
 
+    __stopAfterExecution() {
+        print.out '%b' "\033[1;33m";
+        print.out '%b\n' "Script '$1' executado!";
+        print.out '%b' "\033[0m";
+        print.out '%b' "Presione [ENTER] para continuar..."; read;
+    }
+
     __execute() {
         local script=$1;
         local action=$2;
@@ -30,12 +37,15 @@ function StartDivineCreation {
         local pathScript="$PATH_DEFAULT/scripts/$script";
 
         print.out '%b\n' "\033[0;101m--> INICIANDO A EXECUÇÃO DO SCRIPT!  \033[0m";
-        print.out '%b\n'   "--> script: '$pathScript'";
-        print.out '%b\n'   "--> action: '$action'";
-        print.out '%b\n\n' "--> param:  '$param'";
+        print.out '%b\n' "--> script: '$pathScript'";
+        print.out '%b\n' "--> action: '$action'";
+        print.out '%b\n' "--> param:  '$param'";
         
         # chamar o (shell script) e gerar log dele.
         bash "$pathScript" "$action" "$param" | tee -a ./$PATH_DEFAULT/logs/$script.log;
+        chmod -R 777 ./$PATH_DEFAULT/logs/$script.log;
+
+        __stopAfterExecution $pathScript;
     }
 
     __runAllScripts() {
@@ -116,6 +126,7 @@ function StartDivineCreation {
 if [ `isInstalled "jq"` == 1 ]; then
     # chamar a função e gerar log dela
     StartDivineCreation "$@" | tee -a ./${0##*/}.log;
+    chmod -R 777 ./${0##*/}.log;
 else
     print.warning "Aviso: É necessario ter instalado a extensão 'jq' na maquina!";
     print.out '%s' "Deseja que o Garden of Eden instale? [yes/no] $ "; read input_install_jq;

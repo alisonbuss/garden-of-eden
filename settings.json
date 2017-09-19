@@ -29,6 +29,6 @@
         { "script": "script-staruml.sh", "action": "install", "execute": false, "param": null },
         { "script": "script-chrome.sh", "action": "install", "execute": false, "param": null },
         { "script": "script-netbeans.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-viadagens.sh", "action": "myeggs", "execute": false, "param": null }
+        { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null }
     ]
 }

@@ -24,7 +24,6 @@ function StartDivineCreationUI {
 
     __runAllScripts() {
         bash start-divine-creation.sh "--run";
-        __stopAfterExecution;
     }
 
     __editSettings() {

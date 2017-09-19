@@ -26,7 +26,9 @@ function ScriptGit {
         git --version;
         git config --list;
 
-        print.out '%s' "Sua chave SSH já foi publicada no GitHub? [yes/no]: "; read input_isPublishedKey;
+        print.out '%b' "\033[1;33m";
+        print.out '%b' "Sua chave SSH já foi publicada no GitHub? [yes/no]: "; read input_isPublishedKey;
+        print.out '%b' "\033[0m";
         # Caso a chave SSH foi publicada no GitHub teste a conexão.
         if [ "$input_isPublishedKey" == "yes" ]; then
             print.warning "Testando a conexão com o GitHub...";

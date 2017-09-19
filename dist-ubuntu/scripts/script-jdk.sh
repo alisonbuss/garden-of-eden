@@ -29,23 +29,30 @@ function ScriptJDK {
 
         # Configurando a variável de ambiente do JAVA_HOME e JRE_HOME.
         print.out '%b' "\033[1;32m";
-        print.out '%s' "O arquivo '/etc/environment' será aberto para ser configurado as variáveis de ambiente.";
-        print.out '%s' "Ao final desse arquivo, adicione as seguintes linhas:";
-        print.out '%s' 'JAVA_HOME="/usr/lib/jvm/java-8-oracle"';
-        print.out '%s' 'JRE_HOME="/usr/lib/jvm/java-8-oracle"';
-        print.out '%s' "Salve e saia do arquivo, para recarregar as variáveis de ambiente.";
+        print.out '%s\n' "O arquivo '/etc/environment' será editado para ser adicionado as variáveis de ambiente.";
+        print.out '%s\n' "Ao final desse arquivo, será adicionado as seguintes linhas:";
+        print.out '%b\n' 'JAVA_HOME="/usr/lib/jvm/java-'$version'-oracle"';
+        print.out '%b\n' 'JRE_HOME="/usr/lib/jvm/java-'$version'-oracle"';
         print.out '%b' "\033[0m";
         sleep 1s;
 
-        print.out '%s' "Deseja realizar essa configuração? [yes/no] $ "; read input_proceed;
+        print.out '%b' "\033[1;33m";
+        print.out '%b' "Deseja realizar essa configuração? [yes/no] $ "; read input_proceed;
+        print.out '%b' "\033[0m";
         if [ "$input_proceed" == "yes" ]; then
-            # Abrindo o arquivo de variável de ambiente.
-            gedit /etc/environment;
+            # Editando o arquivo de variável de ambiente.
+            touch "/etc/environment"
+            {
+                echo 'JAVA_HOME="/usr/lib/jvm/java-'$version'-oracle"';
+                echo 'JRE_HOME="/usr/lib/jvm/java-'$version'-oracle"';
+            } >> "/etc/environment";
+  
             # Recarregar o arquivo de variável de ambiente.
             source /etc/environment;
+            
             # Imprimindo as variáveis de ambiente do Java.
-            print.out '%s' "Variavel JAVA_HOME: " $JAVA_HOME;
-            print.out '%s' "Variavel JRE_HOME: " $JRE_HOME;
+            print.out '%s\n' "Variavel JAVA_HOME: " $JAVA_HOME;
+            print.out '%s\n' "Variavel JRE_HOME: " $JRE_HOME;
         fi
 
         java -version;

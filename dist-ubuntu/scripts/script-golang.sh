@@ -17,7 +17,7 @@ function ScriptGoLang {
     local version=$(echo ${PARAM_JSON} | jq -r '.version');
 
     __install() {
-        print.info "Iniciando a instalação do GitKraken na maquina..."; 
+        print.info "Iniciando a instalação do GoLang na maquina..."; 
 
         local DFILE="go$version.linux-amd64.tar.gz";
         
@@ -35,12 +35,13 @@ function ScriptGoLang {
             mv "$HOME/go" "$HOME/.go";
             touch "$HOME/.bashrc"
             {
-                echo '# GoLang'
-                echo 'export GOROOT=$HOME/.go'
-                echo 'export PATH=$PATH:$GOROOT/bin'
-                echo 'export GOPATH=$HOME/go'
-                echo 'export PATH=$PATH:$GOPATH/bin'
-            } >> "$HOME/.bashrc"
+                echo '# GoLang';
+                echo 'export GOROOT=$HOME/.go';
+                echo 'export PATH=$PATH:$GOROOT/bin';
+                echo 'export GOPATH=$HOME/go';
+                echo 'export PATH=$PATH:$GOPATH/bin';
+            } >> "$HOME/.bashrc";
+            source ~/.bashrc;
 
             mkdir -p $HOME/go/{src,pkg,bin};
             echo -e "\nGo $version was installed.\nMake sure to relogin into your shell or run:";
@@ -56,7 +57,7 @@ function ScriptGoLang {
     }
 
     __uninstall() {
-        print.info "Iniciando a desinstalação do GitKraken na maquina..."; 
+        print.info "Iniciando a desinstalação do GoLang na maquina..."; 
         
         rm -rf "$HOME/.go/";
         rm -rf "$HOME/go/";

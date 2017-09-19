@@ -101,7 +101,7 @@ function ScriptViadagens {
 
     __initialize() {
         case ${ACTION} in
-            myeggs) __install; ;;
+            apply) __install; ;;
             *) __actionError;
         esac
     }
