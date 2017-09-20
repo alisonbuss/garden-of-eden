@@ -202,7 +202,7 @@ garden-of-eden
 - [Espanhol | Español](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=es&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhgaHMX6VZow_LV_2D6thOl3ojl1Cw)
 - [Russo | русский](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=ru&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhgUDrwtXLR16xyVuHUFVSjUYsqF1w)
 - [Chinês | 中國](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=zh-TW&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhhzK2w-woMjhAwW32tPxVeGv57DeQ)
-- [Coreano | 한국어](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=ko&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhiN-zOrr5ZpGk91vIzguZh-aavo_g)
+- [Coreano do Norte | 한국어](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=ko&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhiN-zOrr5ZpGk91vIzguZh-aavo_g)
 
 ## Licença
 
