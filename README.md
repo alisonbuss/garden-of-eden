@@ -24,7 +24,9 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala NetBeans.
 
 > **Nota:**
+>
 > **1)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e de Shell Script, qualquer opinião, sugestão será bem vinda.* 
+>
 > **2)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal do YouTube.* 
 >  
 
