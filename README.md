@@ -1,27 +1,26 @@
 
 # Garden of Eden
 
-O **Garden of Eden** é um projeto Shell Script para provisionamento de um 
-ambiente básico de desenvolvimento para Ubuntu.
+É um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para Ubuntu.
 
 O **Garden of Eden** provisiona os seguentes programas:
 
-- Gera chave SSH.
-- Instala Git.
-- Instala JDK.
-- Instala NVM.
-- Instala Node.js + NPM.
-- Instala Go.
-- Instala CFSSL.
-- Instala Config Transpiler.
-- Instala Ansible.
-- Instala VirtualBox.
-- Instala Vagrant.
-- Instala VS Code.
-- Instala GitKraken.
-- Instala StarUML.
-- Instala Chrome.
-- Instala NetBeans.
+- Gera **chave SSH**
+- Instala **Git**
+- Instala **JDK**
+- Instala **NVM**
+- Instala **Node.js + NPM**
+- Instala **Go**
+- Instala **CFSSL**
+- Instala **Config Transpiler**
+- Instala **Ansible**
+- Instala **VirtualBox**
+- Instala **Vagrant**
+- Instala **VS Code**
+- Instala **GitKraken**
+- Instala **StarUML**
+- Instala **Chrome**
+- Instala **NetBeans**
 
 > **Nota:**
 >
