@@ -1,10 +1,10 @@
 
 # Garden of Eden
 
-O "Garden of Eden" é um conjunto de Shell Scripts para provisionamento de um 
+O **Garden of Eden** é um projeto Shell Script para provisionamento de um 
 ambiente básico de desenvolvimento para Ubuntu.
 
-O "Garden of Eden" provisiona os seguentes programas:
+O **Garden of Eden** provisiona os seguentes programas:
 
 - Gera chave SSH.
 - Instala Git.
@@ -24,20 +24,21 @@ O "Garden of Eden" provisiona os seguentes programas:
 - Instala NetBeans.
 
 > **Nota:**
-> *O intuito do projeto "Garden of Eden" é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e de Shell Script, qualquer opinião, sugestão será bem vinda.* 
+> **1)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e de Shell Script, qualquer opinião, sugestão será bem vinda.* 
+> **2)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal do YouTube.* 
 >  
 
-## O funcionamento do "Garden of Eden".
+## O funcionamento do **Garden of Eden**.
 
-A estrutura base do projeto consiste em um arquivo "settings.json", esse arquivo 
+A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo 
 defini a distribuição linux a ser usada e a ordem de execução dos Shell Scripts e 
-seus parâmetros. Um exemplo do arquivo "settings.json":
+seus parâmetros. Um exemplo do arquivo **"settings.json"**:
 
 ```json
 {
     "pathDefault": "./dist-ubuntu",
     "settings": [
-        {"script": "script-git.sh", "action": "install", "execute": false, 
+        {"script": "script-git.sh", "action": "install", "execute": true, 
             "param": { 
                 "nameUser": "Lúcifer", "emailUser": "lucifer.dev@ghell.com" 
             }
@@ -47,20 +48,20 @@ seus parâmetros. Um exemplo do arquivo "settings.json":
 }
 ```
 
-No arquivo "settings.json" consiste de 2 parâmetros básicos (pathDefault e o settings) 
+No arquivo **"settings.json"** consiste de 2 parâmetros básicos (**pathDefault** e o **settings**) 
 como mostra o exemplo acima: 
 
 - "pathDefault": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
-- "settings": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro "pathDefault", essa lista contem 4 parâmetros padrões que são (script, action, execute, param).
+- "settings": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro **"pathDefault"**, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
 
-Os parâmetros do "settings: [{...}, ...]" consiste em:
+Os parâmetros do **"settings: [{...}, ...]"** consiste em:
 
 - "script": define o nome do Shell Script a ser executado.
 - "action" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
-- "execute": define se o script vai ser executado, (true ou false), se for "true" esse script será executado caso contrario ele não é executado.
-- "param": define um json de (chave e valor), esse json será repassado para o Shell Script especificado para ser consumido na execução.
+- "execute": define se o script vai ser executado, (**true ou false**), se for **"true"** esse script será executado caso contrario ele não é executado.
+- "param": define um json de (**chave e valor**), esse json será repassado para o Shell Script especificado para ser consumido na execução.
 
-### Como ficaria o arquivo "settings.json" do "Garden of Eden":
+### Como ficaria o arquivo **"settings.json"** do **Garden of Eden**:
 
 ```json
 {
@@ -93,13 +94,12 @@ Os parâmetros do "settings: [{...}, ...]" consiste em:
         { "script": "script-gitkraken.sh", "action": "install", "execute": true, "param": null },
         { "script": "script-staruml.sh", "action": "install", "execute": true, "param": null },
         { "script": "script-chrome.sh", "action": "install", "execute": true, "param": null },
-        { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null },
-        { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null }
+        { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null }
     ]
 }
 ```
 
-## Executando o "Garden of Eden". 
+## Executando o **Garden of Eden**. 
 
 Abra terminal no seu linux e execute os comandos abaixo: 
 
@@ -175,7 +175,7 @@ Terminal:
 $ sudo bash start-divine-creation-ui.sh
 ```
 
-## A estrutura do projeto "Garden of Eden". 
+## A estrutura do projeto **Garden of Eden**. 
 
 
 ```

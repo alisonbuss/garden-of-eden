@@ -134,6 +134,7 @@ else
         installExtensionJQ;
         # Após a instalação da extensão 'jq' execute o Garden of Eden.
         StartDivineCreation "$@" | tee -a ./${0##*/}.log;
+        chmod -R 777 ./${0##*/}.log;
     fi
 fi
 
