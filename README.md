@@ -206,4 +206,4 @@ garden-of-eden
 
 ## Licença
 
-[![License: GPL-3.0](https://img.shields.io/cran/l/devtools.svg)](https://github.com/alisonbuss/garden-of-eden/blob/master/LICENSE)
+-[GPL-3.0: GNU General Public License v3.0](https://github.com/alisonbuss/garden-of-eden/blob/master/LICENSE)
