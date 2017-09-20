@@ -25,12 +25,12 @@ O **Garden of Eden** provisiona os seguentes programas:
 
 > **Nota:**
 >
-> **1)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e de Shell Script, qualquer opinião, sugestão será bem vinda.* 
+> **1)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão será bem vinda.* 
 >
-> **2)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal do YouTube.* 
+> **2)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal.* 
 >  
 
-## O funcionamento do **Garden of Eden**.
+## O funcionamento do Garden of Eden.
 
 A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo 
 defini a distribuição linux a ser usada e a ordem de execução dos Shell Scripts e 
@@ -53,17 +53,17 @@ seus parâmetros. Um exemplo do arquivo **"settings.json"**:
 No arquivo **"settings.json"** consiste de 2 parâmetros básicos (**pathDefault** e o **settings**) 
 como mostra o exemplo acima: 
 
-- "pathDefault": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
-- "settings": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro **"pathDefault"**, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
+- "**pathDefault**": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
+- "**settings**": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro *pathDefault*, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
 
 Os parâmetros do **"settings: [{...}, ...]"** consiste em:
 
-- "script": define o nome do Shell Script a ser executado.
-- "action" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
-- "execute": define se o script vai ser executado, (**true ou false**), se for **"true"** esse script será executado caso contrario ele não é executado.
-- "param": define um json de (**chave e valor**), esse json será repassado para o Shell Script especificado para ser consumido na execução.
+- "**script**": define o nome do Shell Script a ser executado.
+- "**action**" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
+- "**execute**": define se o script vai ser executado, (**true** ou **false**), se for **true** esse script será executado caso contrario ele não é executado.
+- "**param**": define um json de (**chave** e **valor**), esse json será repassado para o Shell Script especificado para ser consumido na execução.
 
-### Como ficaria o arquivo **"settings.json"** do **Garden of Eden**:
+### Como ficaria o arquivo "settings.json" do Garden of Eden:
 
 ```json
 {
@@ -101,7 +101,7 @@ Os parâmetros do **"settings: [{...}, ...]"** consiste em:
 }
 ```
 
-## Executando o **Garden of Eden**. 
+## Executando o Garden of Eden. 
 
 Abra terminal no seu linux e execute os comandos abaixo: 
 
@@ -126,35 +126,35 @@ Terminal:
 $ sudo chmod a+x start-divine-creation.sh
 ```
 
-Visualizar a documentação, passando o parametro --view-doc.
+Visualizar a documentação, passando o parametro **--view-doc**.
 
 Terminal:
 ```bash
 $ sudo bash start-divine-creation.sh --view-doc
 ```
 
-Visualizar ou editar o "settings.json", passando o parametro --edit-settings e o editor de texto.
+Visualizar ou editar o "settings.json", passando o parametro **--edit-settings** e o **editor de texto**.
 
 Terminal:
 ```bash
 $ sudo bash start-divine-creation.sh --edit-settings gedit
 ```
 
-Visualizar ou editar o script, passando o parametro --edit-script e nome do script e o editor de texto.
+Visualizar ou editar o script, passando o parametro **--edit-script** e **nome do script** e o **editor de texto**.
 
 Terminal:
 ```bash
 $ sudo bash start-divine-creation.sh --edit-script script-git.sh gedit
 ```
 
-Executando os scripts do "settings.json", passando o parametro --rum.
+Executando os scripts do "settings.json", passando o parametro **--rum**.
 
 Terminal:
 ```bash
 $ sudo bash start-divine-creation.sh --run
 ```
 
-Visualizar o log de um determinado script, passando o parametro --view-log o nome do script e o editor de texto.
+Visualizar o log de um determinado script, passando o parametro **--view-log** o **nome do script** e o **editor de texto**.
 
 Terminal:
 ```bash
@@ -177,7 +177,7 @@ Terminal:
 $ sudo bash start-divine-creation-ui.sh
 ```
 
-## A estrutura do projeto **Garden of Eden**. 
+## A estrutura do projeto Garden of Eden. 
 
 
 ```
