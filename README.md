@@ -1,7 +1,7 @@
 
 # Garden of Eden
 
-É um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para Ubuntu.
+É um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis.
 
 O **Garden of Eden** provisiona os seguentes programas:
 
@@ -28,6 +28,11 @@ O **Garden of Eden** provisiona os seguentes programas:
 >
 > **2)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal.* 
 >  
+
+## Musica para uma melhor leitura do projeto :)
+                                                       
+[![Musica para uma melhor leitura](http://img.youtube.com/vi/kFLBAYR_BRc/0.jpg)](http://www.youtube.com/watch?v=kFLBAYR_BRc)
+
 
 ## O funcionamento do Garden of Eden.
 
