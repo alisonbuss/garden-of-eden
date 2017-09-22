@@ -1,6 +1,12 @@
 
+<h3>
+  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/logo-garden-of-eden.png" alt="bash logo"/> 
+  Teste teste
+</h3>
+
 
 <h2>
+  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/logo-garden-of-eden.png" width="70px" alt="logo"/> 
   Garden of Eden
 </h2>
 
