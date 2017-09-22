@@ -178,25 +178,25 @@ $ sudo bash start-divine-creation-ui.sh
 
 ## A estrutura do projeto Garden of Eden. 
 
+Descrição das pastas e arquivos do projeto:
 
 ```
 garden-of-eden
-  |--binaries/....................''
-  |--dist-ubuntu/.................''
-     |--logs/.....................''
-     |--scripts/..................''
-  |--files/.......................''
-  |--shell-script-tools/..........''
-     |--linux/utility.sh..........''
-     |--ubuntu/extension-jq.sh....''
-  |--LICENSE......................'Licença Pública Geral GNU v3.0'
-  |--README.md....................''
-  |--settings.json ...............''
-  |--start-divine-creation-ui.sh..''
-  |--start-divine-creation.sh.....''
+  |--binaries/....................'Pasta onda se salva os downloads dos binários temporários feito pelos scripts.'
+  |--dist-ubuntu/.................'Pasta de uma determinada distribuição linux, onde se encontra os scripts de execução e seus logs '
+     |--logs/.....................'Pasta onde se encontra os logs gerados por scripts de execução.'
+     |--scripts/..................'Pasta onde se encontra os scripts de execução.'
+  |--files/.......................'Pasta de apoio, onde se encontra os arquivos variados, como logo, wallpaper etc.'
+  |--shell-script-tools/..........'Pasta onde se encontra bibliotecas de utilitários para Shell Scripts.'
+     |--linux/utility.sh..........'Shell Script de utilitário em geral.'
+     |--ubuntu/extension-jq.sh....'Shell Script para instalação da extensão 'jq' para distribuição Ubuntu.'
+  |--LICENSE......................'Licença Pública Geral - GPL-3.0.'
+  |--README.md....................'Descrição e documentação do projeto Garden of Eden.'
+  |--settings.json ...............'Arquivo principal do projeto onde é definido a distribuição linux a ser usada e a ordem de execução dos Shell Scripts e seus parâmetros.'
+  |--start-divine-creation-ui.sh..'Shell Script de inicialização do projeto em modo de interface gráfico.'
+  |--start-divine-creation.sh.....'Shell Script de inicialização do projeto em modo de comandos.'
 ```
-
-
+  
 ## Tradução | Translation
 - [Inglês | English](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=en&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhjF8wXBywEnSgThP4hIo1rEuBQcIw)
 - [Espanhol | Español](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=es&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhgaHMX6VZow_LV_2D6thOl3ojl1Cw)
