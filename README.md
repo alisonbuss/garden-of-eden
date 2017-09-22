@@ -33,7 +33,8 @@ O **Garden of Eden** provisiona os seguentes programas:
                                                        
 [![Musica para uma melhor leitura](http://img.youtube.com/vi/kFLBAYR_BRc/0.jpg)](http://www.youtube.com/watch?v=kFLBAYR_BRc)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kFLBAYR_BRc" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kFLBAYR_BRc" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+
 
 ## O funcionamento do Garden of Eden.
 
