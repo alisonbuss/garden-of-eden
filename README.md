@@ -1,6 +1,6 @@
 
 <h1 align="center" >
-  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/logo-garden-of-eden.png" width="130px" alt="logo"/> 
+  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/logo-garden-of-eden.png" width="166px" alt="logo"/> 
   <br/>Garden of Eden
 </h1>
 
