@@ -1,7 +1,7 @@
 
-<h1 align="center">
+<h1 align="center" >
   <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/logo-garden-of-eden.png" width="130px" alt="logo"/> 
-  <p>Garden of Eden</p>
+  <br/>Garden of Eden
 </h1>
 
 É um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis.
