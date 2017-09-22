@@ -29,22 +29,6 @@ O **Garden of Eden** provisiona os seguentes programas:
 > **2)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal.* 
 >  
 
-## Musica para uma melhor leitura do projeto :)
-                                                       
-[![Musica para uma melhor leitura](http://img.youtube.com/vi/kFLBAYR_BRc/0.jpg)](http://www.youtube.com/watch?v=kFLBAYR_BRc)
-
-from IPython.display import IFrame
-IFrame('https://www.youtube.com/embed/kFLBAYR_BRc', 800, 350)
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kFLBAYR_BRc?wmode=opaque" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
-
-{::nomarkdown}
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/kFLBAYR_BRc?wmode=opaque" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
-
-{:/}
-
-
 ## O funcionamento do Garden of Eden.
 
 A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo 
