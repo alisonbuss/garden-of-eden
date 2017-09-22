@@ -33,6 +33,9 @@ O **Garden of Eden** provisiona os seguentes programas:
                                                        
 [![Musica para uma melhor leitura](http://img.youtube.com/vi/kFLBAYR_BRc/0.jpg)](http://www.youtube.com/watch?v=kFLBAYR_BRc)
 
+from IPython.display import IFrame
+IFrame('https://www.youtube.com/embed/kFLBAYR_BRc', 800, 350)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kFLBAYR_BRc?wmode=opaque" frameborder="0" allowfullscreen="allowfullscreen">&nbsp;</iframe>
 
 {::nomarkdown}
