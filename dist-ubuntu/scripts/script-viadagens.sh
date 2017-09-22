@@ -24,20 +24,19 @@ function ScriptViadagens {
         #apt-get autoremove;
     }
 
-    # @fonts: http://www.edivaldobrito.com.br/playonlinux-chega-a-versao-4-2-4-veja-como-instalar-no-ubuntu/
+    # @fonts: https://sysads.co.uk/2016/05/16/how-to-install-playonlinux-4-2-10-on-ubuntu-16-04/
+    #         http://www.edivaldobrito.com.br/playonlinux-chega-a-versao-4-2-4-veja-como-instalar-no-ubuntu/
     #         https://sempreupdate.com.br/2017/04/instalar-o-wine-2-6-no-ubuntu.html
-    __install_wine() {
+    __install_playonlinux() {
         print.info "Iniciando a instalação do playonlinux na maquina..."; 
         
-        add-apt-repository ppa:noobslab/apps
+        add-apt-repository ppa:noobslab/apps;
+
         apt-get update;
+
+        apt-get install wine;
         apt-get install playonlinux;
         
-        #add-apt-repository ppa:wine/wine-builds;
-        #apt-get update;
-        #sudo apt-get -f install;
-        #apt-get install --install-recommends wine-staging;
-        #apt-get install winehq-staging;
         # desinstalar o  Wine 2.6
         #apt-get install ppa-purge;
         #ppa-purge ppa:wine/wine-builds;
@@ -89,7 +88,7 @@ function ScriptViadagens {
         print.info "Iniciando as instalações e configurações de customizações do Ubuntu..."; 
 
         __install_vlc;
-        __install_wine;
+        __install_playonlinux;
         __install_tools_desktop;
         __install_theme_arc;
         __config_change_wallpaper;
