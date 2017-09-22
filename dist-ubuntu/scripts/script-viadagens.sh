@@ -96,7 +96,7 @@ function ScriptViadagens {
     }
 
     __actionError() {
-        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [apply]!";
     } 
 
     __initialize() {

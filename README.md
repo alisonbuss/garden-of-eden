@@ -196,7 +196,87 @@ garden-of-eden
   |--start-divine-creation-ui.sh..'Shell Script de inicialização do projeto em modo de interface gráfico.'
   |--start-divine-creation.sh.....'Shell Script de inicialização do projeto em modo de comandos.'
 ```
-  
+
+Caso tu queiras criar um script de instalação de um programa do seu interesse, no próprio projeto tem um template que você pode usar como base inicial, exemplo do template abaixo:
+
+Diretório: dist-ubuntu/scripts/script-template.sh
+
+Arquivo:
+
+```bash
+#!/bin/bash
+
+###################  DOC  ###################
+# @descr: Sua Descrição. 
+# @fonts: Fontes de referências
+# @param: 
+#    action | text: (açãoA, açãoB)                 "PARAMETRO "action" É PADRÃO"
+#    paramJson | json: {"versionExemplo":"..."}    "PARAMETRO DE EXEMPLO"
+#############################################
+
+function ScriptNomeDoQueVaiFazer {
+    
+    local ACTION=$1;
+    local PARAM_JSON=$2;
+    
+    local version=$(echo ${PARAM_JSON} | jq -r '.versionExemplo');
+
+    __install() {
+        print.info "Iniciando..."; 
+
+       
+    }
+
+    __uninstall() {
+        print.info "Iniciando..."; 
+        
+        
+    }
+
+    __actionError() {
+        print.error "Erro: 'action' passado:($ACTION) não coincide com [açãoA, açãoB]!";
+    } 
+
+    __initialize() {
+        case ${ACTION} in
+            açãoA) __install; ;;
+            açãoB) __uninstall; ;;
+            *) __actionError;
+        esac
+    }
+
+    __initialize;
+}
+
+ScriptNomeDoQueVaiFazer "$@";
+
+exit 0;
+```
+
+Caso tu queiras mudar de distribuição linux, exemplo *"dist-fedora"*, basta copiar a pasta "**dist-ubuntu**" e renomear para "**dist-sua-distribuição**" e mudar o parâmetro "**distribution**" do arquivo **settings.json** para **..."distribution": "./dist-sua-distribuição"...** e ajustar os scripts do diretório "**dist-sua-distribuição/scripts/**", para que possa rodar as instalações de acordo com sua distribuição, exemplo:
+
+```
+garden-of-eden
+  |--dist-ubuntu/
+     |--logs/
+     |--scripts/...
+  |--dist-fedora/
+     |--logs/
+     |--scripts/...
+```  
+
+E mudar o parametro do arquivo **"settings.json"**:
+
+```json
+{
+    "distribution": "./dist-fedora",
+    "settings": [...]
+}
+```
+
+***Pronto!! Agora você tem um ambiente de desenvolvimento básico para duas distribuições linux e homogêneas, du karalho né?? rsrsrsrs...***
+
+
 ## Tradução | Translation
 - [Inglês | English](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=en&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhjF8wXBywEnSgThP4hIo1rEuBQcIw)
 - [Espanhol | Español](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=es&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhgaHMX6VZow_LV_2D6thOl3ojl1Cw)
