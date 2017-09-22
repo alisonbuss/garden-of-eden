@@ -1,5 +1,5 @@
 {
-    "pathDefault": "./dist-ubuntu",
+    "distribution": "./dist-ubuntu",
     "settings": [
         { "script": "script-keyssh.sh", "action": "create", "execute": false, 
             "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 

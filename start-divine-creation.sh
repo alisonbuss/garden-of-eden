@@ -20,8 +20,8 @@ source "./shell-script-tools/linux/utility.sh";
 source "./shell-script-tools/ubuntu/extension-jq.sh";
 
 function StartDivineCreation {
-
-    local PATH_DEFAULT=$(cat settings.json | jq -r '.pathDefault');
+          
+    local DISTRIBUTION=$(cat settings.json | jq -r '.distribution');
 
     __stopAfterExecution() {
         print.out '%b' "\033[1;33m";
@@ -34,7 +34,7 @@ function StartDivineCreation {
         local script=$1;
         local action=$2;
         local param=$3;
-        local pathScript="$PATH_DEFAULT/scripts/$script";
+        local pathScript="$DISTRIBUTION/scripts/$script";
 
         print.out '%b\n' "\033[0;101m--> INICIANDO A EXECUÇÃO DO SCRIPT!  \033[0m";
         print.out '%b\n' "--> script: '$pathScript'";
@@ -42,8 +42,8 @@ function StartDivineCreation {
         print.out '%b\n' "--> param:  '$param'";
         
         # chamar o (shell script) e gerar log dele.
-        bash "$pathScript" "$action" "$param" | tee -a ./$PATH_DEFAULT/logs/$script.log;
-        chmod -R 777 ./$PATH_DEFAULT/logs/$script.log;
+        bash "$pathScript" "$action" "$param" | tee -a ./$DISTRIBUTION/logs/$script.log;
+        chmod -R 777 ./$DISTRIBUTION/logs/$script.log;
 
         __stopAfterExecution $pathScript;
     }
@@ -72,7 +72,7 @@ function StartDivineCreation {
     }
 
     __editScript() {
-        local script="$PATH_DEFAULT/scripts/$1";
+        local script="$DISTRIBUTION/scripts/$1";
         local editor="$2";
         if [ -f "$script" ]; then
             if [ "${editor}" == "" ]; then
@@ -86,7 +86,7 @@ function StartDivineCreation {
     }
 
     __viewLog() {
-        local scriptLog="$PATH_DEFAULT/logs/$1.log";
+        local scriptLog="$DISTRIBUTION/logs/$1.log";
         local editor="$2";
         if [ -f "$scriptLog" ]; then
             if [ "${editor}" == "" ]; then

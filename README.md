@@ -37,7 +37,7 @@ seus parâmetros. Um exemplo do arquivo **"settings.json"**:
 
 ```json
 {
-    "pathDefault": "./dist-ubuntu",
+    "distribution": "./dist-ubuntu",
     "settings": [
         {"script": "script-git.sh", "action": "install", "execute": true, 
             "param": { 
@@ -49,11 +49,11 @@ seus parâmetros. Um exemplo do arquivo **"settings.json"**:
 }
 ```
 
-No arquivo **"settings.json"** consiste de 2 parâmetros básicos (**pathDefault** e o **settings**) 
+No arquivo **"settings.json"** consiste de 2 parâmetros básicos (**distribution** e o **settings**) 
 como mostra o exemplo acima: 
 
-- "**pathDefault**": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
-- "**settings**": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro *pathDefault*, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
+- "**distribution**": destina-se ao diretório de um tipo de distribuição linux, nesse projeto se usa o Ubuntu.
+- "**settings**": é uma lista de scripts em ordem a ser executados de acordo com a distribuição linux setada no parâmetro *distribution*, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
 
 Os parâmetros do **"settings: [{...}, ...]"** consiste em:
 
@@ -66,7 +66,7 @@ Os parâmetros do **"settings: [{...}, ...]"** consiste em:
 
 ```json
 {
-    "pathDefault": "./dist-ubuntu",
+    "distribution": "./dist-ubuntu",
     "settings": [
         { "script": "script-keyssh.sh", "action": "create", "execute": true, 
             "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
