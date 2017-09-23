@@ -29,7 +29,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 >
 > **1)** *Este projeto foi **TESTADO no Ubuntu 16.04 LTS (Xenial Xerus)** e o provisionamento levou aproximadamente **1 hora e 43 minutos** por conta da internet discada do 'NET Combo Bosta', se você mora fora do Brasil o tempo de provisionamento pode ser reduzido drasticamente.*
 >
-> **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão será bem vinda.* 
+> **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão, será bem vinda.* 
 >
 > **3)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal.* 
 >  
@@ -123,12 +123,10 @@ Pronto agora você pode executar um dos dois Shell Scripts do "Garden of Eden" q
 
 ### Executando em modo de comandos:
 
-Você tem que dar permissão root ao script.
-
 > **Nota:**
->
 > *Antes de executar o **Garden of Eden**, certifique-se de ter ajustado os parâmetros do arquivo **settings.json** para sua realidade.*
->
+
+Você tem que dar permissão root ao script.
 
 Terminal:
 ```bash
@@ -172,12 +170,10 @@ $ sudo bash start-divine-creation.sh --view-log script-git.sh gedit
 
 ### Executando em modo de gráfico:
 
-Você tem que dar permissão root ao script.
-
 > **Nota:**
->
 > *Antes de executar o **Garden of Eden**, certifique-se de ter ajustado os parâmetros do arquivo **settings.json** para sua realidade.*
->
+
+Você tem que dar permissão root ao script.
 
 Terminal:
 ```bash
