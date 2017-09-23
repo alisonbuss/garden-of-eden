@@ -27,7 +27,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 
 > **Nota:**
 >
-> **1)** *Este projeto foi **TESTADO no Ubuntu 16.04 LTS (Xenial Xerus)** e o provisionamento levou aproximadamente **44 minutos** por conta da internet discada do "NET Combo Bosta".*
+> **1)** *Este projeto foi **TESTADO no Ubuntu 16.04 LTS (Xenial Xerus)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada do "NET Combo Bosta".*
 >
 > **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão, será bem vinda.* 
 >
@@ -301,3 +301,4 @@ E mudar o parametro do arquivo **"settings.json"**:
 ## Licença
 
 - [GPL-3.0: GNU General Public License v3.0](https://github.com/alisonbuss/garden-of-eden/blob/master/LICENSE)
+
