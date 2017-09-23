@@ -31,7 +31,8 @@ function ScriptNodeJS {
 
         # @fonts: https://www.computerhope.com/unix/uchown.htm
         #         http://manpages.ubuntu.com/manpages/trusty/man1/chown.1.html
-        chown -R $USER:$(id -gn $USER) /home/user/.config;
+        # CUIDADO COM ESSE COMMANDO FILHO DA PUTA, DE UM BUG DU INFERNU.
+        # chown -R $USER:$(id -gn $USER) /home/user/.config;
 
 	    echo -n "Version NPM: ";
         npm -v;
