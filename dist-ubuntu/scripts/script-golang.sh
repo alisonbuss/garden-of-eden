@@ -33,6 +33,18 @@ function ScriptGoLang {
 
             tar -C "$HOME" -xzf ./binaries/go.tar.gz;
             mv "$HOME/go" "$HOME/.go";
+
+            # Setando variáveis de ambiente.
+            touch "$HOME/.profile"
+            {
+                echo '# GoLang';
+                echo 'export GOROOT=$HOME/.go';
+                echo 'export PATH=$PATH:$GOROOT/bin';
+                echo 'export GOPATH=$HOME/go';
+                echo 'export PATH=$PATH:$GOPATH/bin';
+            } >> "$HOME/.profile";
+            source ~/.profile;
+
             touch "$HOME/.bashrc"
             {
                 echo '# GoLang';
