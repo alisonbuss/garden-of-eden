@@ -288,7 +288,7 @@ E mudar o parametro do arquivo **"settings.json"**:
 ***Pronto!! Agora você tem um ambiente de desenvolvimento básico para duas distribuições linux e homogêneas, du karalho né?? rsrsrsrs...***
 
 <p align="center">
-    <img src="your_relative_path_here" width="287px"/>
+    <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/end-bender.gif" width="287px"/>
 </p>
 
 ## Tradução | Translation
