@@ -27,7 +27,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 
 > **Nota:**
 >
-> **1)** *Este projeto foi **TESTADO no Ubuntu 16.04 LTS (Xenial Xerus)** e o provisionamento levou aproximadamente **1 hora e 43 minutos** por conta da internet discada do 'NET Combo Bosta', se você mora fora do Brasil o tempo de provisionamento pode ser reduzido drasticamente.*
+> **1)** *Este projeto foi **TESTADO no Ubuntu 16.04 LTS (Xenial Xerus)** e o provisionamento levou aproximadamente **44 minutos** por conta da internet discada do "NET Combo Bosta".*
 >
 > **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão, será bem vinda.* 
 >
@@ -287,6 +287,9 @@ E mudar o parametro do arquivo **"settings.json"**:
 
 ***Pronto!! Agora você tem um ambiente de desenvolvimento básico para duas distribuições linux e homogêneas, du karalho né?? rsrsrsrs...***
 
+<p align="center">
+    <img src="your_relative_path_here" width="287px"/>
+</p>
 
 ## Tradução | Translation
 - [Inglês | English](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=en&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhjF8wXBywEnSgThP4hIo1rEuBQcIw)
