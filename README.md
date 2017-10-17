@@ -16,6 +16,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala **Go**
 - Instala **CFSSL**
 - Instala **Config Transpiler**
+- Instala **Terraform**
 - Instala **Ansible**
 - Instala **VirtualBox**
 - Instala **Vagrant**
