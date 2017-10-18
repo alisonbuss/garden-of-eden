@@ -8,6 +8,8 @@
 #    action | text: (install, uninstall)
 #############################################
 
+source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
+
 function ScriptNetbeans {
     
     local ACTION=$1;

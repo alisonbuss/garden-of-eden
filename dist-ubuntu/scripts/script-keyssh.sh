@@ -8,6 +8,8 @@
 #    paramJson | json: {"comment":"...","passwordKey":"...","pathKey":"...","nameKey":"..."}
 #############################################
 
+source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
+
 function ScriptKeySSH {
 
     local ACTION=$1;

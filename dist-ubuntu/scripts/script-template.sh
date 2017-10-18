@@ -8,6 +8,8 @@
 #    paramJson | json: {"versionExemplo":"..."}    "PARAMETRO DE EXEMPLO"
 #############################################
 
+source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
+
 function ScriptNomeDoQueVaiFazer {
     
     local ACTION=$1;

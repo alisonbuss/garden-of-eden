@@ -10,6 +10,8 @@
 #    paramJson | json: {"version":"..."}
 #############################################
 
+source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
+
 function ScriptNodeJS {
     
     local ACTION=$1;

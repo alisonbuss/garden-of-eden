@@ -8,8 +8,9 @@
 #    $ sudo bash start-divine-creation-ui.sh
 #############################################
 
-source "./shell-script-tools/linux/utility.sh";
-source "./shell-script-tools/ubuntu/extension-jq.sh";
+SST_URL="https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master";
+source <(wget -qO- "$SST_URL/linux/utility.sh");
+source <(wget -qO- "$SST_URL/ubuntu/extension-jq.sh");
 
 function StartDivineCreationUI {
     

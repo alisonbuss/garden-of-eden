@@ -6,6 +6,8 @@
 #    action | text: (myeggs)
 #############################################
 
+source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
+
 function ScriptViadagens {
     
     local ACTION=$1;

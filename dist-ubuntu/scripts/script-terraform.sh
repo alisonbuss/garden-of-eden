@@ -1,24 +1,32 @@
 #!/bin/bash
 
 ###################  DOC  ###################
-# @descr: O Config Transpiler, ct, é o utilitário responsável por transformar 
-#         uma Configuração de Container Linux configurada pelo usuário em uma 
-#         configuração Ignition.
-# @fonts: https://coreos.com/os/docs/latest/provisioning.html
-#         https://coreos.com/os/docs/1478.0.0/overview-of-ct.html
+# @descr: Instalação do Terraform na Maquina.
+# @fonts: 
 # @param: 
-#    action | text: (install)
+#    action | text: (install, uninstall)
+#    paramJson | json: {"version":"..."}
 #############################################
 
 source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
 
-function ScriptConfigTranspiler {
-    
+function ScriptTerraform {
+
     local ACTION=$1;
+    local PARAM_JSON=$2;
+    
+    local version=$(echo ${PARAM_JSON} | jq -r '.version');
 
     __install() {
-        echo "Instalando o Config Transpiler...";
-        sleep 1s;
+        print.info "Iniciando a instalação do ScriptTerraform na maquina..."; 
+
+        
+    }
+
+    __uninstall() {
+        print.info "Iniciando a desinstalação ScriptTerraform na maquina..."; 
+
+    
     }
 
     __actionError() {
@@ -28,6 +36,7 @@ function ScriptConfigTranspiler {
     __initialize() {
         case ${ACTION} in
             install) __install; ;;
+            uninstall) __uninstall; ;;
             *) __actionError;
         esac
     }
@@ -35,6 +44,6 @@ function ScriptConfigTranspiler {
     __initialize;
 }
 
-ScriptConfigTranspiler "$@";
+ScriptTerraform "$@";
 
-exit 0
+exit 0;
