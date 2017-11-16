@@ -1,36 +1,41 @@
 #!/bin/bash
 
-###################  DOC  ###################
-# @descr: Instalação do Terraform na Maquina.
-# @fonts: 
+#-----------------------|DOCUMENTATION|-----------------------#
+# @descr: Instalação do Terraform na maquina.
 # @param: 
 #    action | text: (install, uninstall)
 #    paramJson | json: {"version":"..."}
-#############################################
+# @example:
+#       bash script-terraform.sh --action='install' --param='{"version":"0.10.7"}'
+#   OR
+#       bash script-terraform.sh --action='uninstall' --param='{"version":"0.10.7"}'    
+#-------------------------------------------------------------#
 
-source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
+source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
+
+import.ShellScriptTools "/linux/utility.sh";
 
 function ScriptTerraform {
 
-    local ACTION=$1;
-    local PARAM_JSON=$2;
+    local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
+    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
     
-    local version=$(echo ${PARAM_JSON} | jq -r '.version');
+    local version=$(echo "${PARAM_JSON}" | jq -r '.version');
 
     __install() {
-        print.info "Iniciando a instalação do ScriptTerraform na maquina..."; 
+        util.print.info "Iniciando a instalação do Terraform na maquina..."; 
 
         
     }
 
     __uninstall() {
-        print.info "Iniciando a desinstalação ScriptTerraform na maquina..."; 
+        util.print.info "Iniciando a desinstalação Terraform na maquina..."; 
 
     
     }
 
     __actionError() {
-        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+        util.print.error "Erro: 'action' passado:(${ACTION}) não coincide com [install, uninstall]!";
     } 
 
     __initialize() {
@@ -44,6 +49,10 @@ function ScriptTerraform {
     __initialize;
 }
 
-ScriptTerraform "$@";
+# SCRIPT INITIALIZE...
+util.try; ( ScriptTerraform "$@" ); util.catch || {
+    util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
+    util.throw $exception;
+}
 
 exit 0;

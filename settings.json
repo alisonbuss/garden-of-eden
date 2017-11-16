@@ -1,63 +1,103 @@
 {
-    "distribution": "./dist-ubuntu",
-    "settings": [
-        { "script": "script-keyssh.sh", "action": "create", "execute": false, 
-            "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
-        },
-        { "script": "script-git.sh", "action": "install", "execute": false, 
-            "param": { "nameUser": "Lúcifer", "emailUser": "lucifer.dev@ghell.com" }
-        },
-        { "script": "script-jdk.sh", "action": "install", "execute": false, 
-            "param": { "version": "8" } 
-        },
-        { "script": "script-nvm.sh", "action": "install", "execute": false, 
-            "param": { "version": "0.33.4" } 
-        },
-        { "script": "script-nodejs.sh", "action": "install", "execute": false, 
-            "param": { "version": "8.4.0" } 
-        },
-        { "script": "script-golang.sh", "action": "install", "execute": false, 
-            "param": { "version": "1.9" } 
-        },
-        { "script": "script-terraform.sh", "action": "install", "execute": true, 
-            "param": { "version": "0.10.7" }
-        },
-        { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-config-transpiler.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-ansible.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-virtualbox.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-vagrant.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-vscode.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-gitkraken.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-staruml.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-chrome.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-netbeans.sh", "action": "install", "execute": false, "param": null },
-        { "script": "script-repositories-git.sh", "action": "clone", "execute": true, 
-            "param": { 
-                "defaultRepositoryPath": "/mnt/sda2/git-repositories", 
-                "repositories": [
-                    {
-                        "repositoryPath": "/work",
-                        "clonesAddress": []
-                    }, {
-                        "repositoryPath": "/private",
-                        "clonesAddress": []
-                    }, {
-                        "repositoryPath": "/public",
-                        "clonesAddress": [
-                            "https://github.com/alisonbuss/aurora.git",
-                            "https://github.com/alisonbuss/Formulation.git",
-                            "https://github.com/alisonbuss/garden-of-eden.git",
-                            "https://github.com/alisonbuss/shell-script-tools.git",
-                            "https://github.com/alisonbuss/coreos-kids-vagrant.git",
-                            "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
-                            "https://github.com/alisonbuss/cluster-coreos-terraform.git",
-                            "https://github.com/alisonbuss/terraform-provider-vagrant.git"
+    "distribution": "ubuntu",
+    "pathLogGeneral": "./logs/",
+    "pathLogScripts": "./logs/dist-ubuntu/",
+    "scriptsRepositories": [
+        {
+            "repository": "local", 
+            "repositoryPath": "./dist-ubuntu/scripts/",
+            "scripts": [
+                { "script": "script-keyssh.sh", "action": "create", "execute": false, 
+                    "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
+                },
+                { "script": "script-git.sh", "action": "install", "execute": false, 
+                    "param": { "nameUser": "Lúcifer", "emailUser": "lucifer.dev@ghell.com" }
+                },
+                { "script": "script-jdk.sh", "action": "install", "execute": false, 
+                    "param": { "version": "8" } 
+                },
+                { "script": "script-nvm.sh", "action": "install", "execute": false, 
+                    "param": { "version": "0.33.4" } 
+                },
+                { "script": "script-nodejs.sh", "action": "install", "execute": false, 
+                    "param": { "version": "8.4.0" } 
+                },
+                { "script": "script-golang.sh", "action": "install", "execute": false, 
+                    "param": { "version": "1.9" } 
+                },
+                { "script": "script-terraform.sh", "action": "install", "execute": true, 
+                    "param": { "version": "0.10.7" }
+                },
+                { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-config-transpiler.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-ansible.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-virtualbox.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-vagrant.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-vscode.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-gitkraken.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-staruml.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-chrome.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-netbeans.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-repositories-git.sh", "action": "clone", "execute": true, 
+                    "param": { 
+                        "defaultRepositoryPath": "/mnt/sda2/git-repositories", 
+                        "repositories": [
+                            {
+                                "repositoryPath": "/work",
+                                "clonesAddress": []
+                            }, {
+                                "repositoryPath": "/private",
+                                "clonesAddress": []
+                            }, {
+                                "repositoryPath": "/public",
+                                "clonesAddress": [
+                                    "https://github.com/alisonbuss/aurora.git",
+                                    "https://github.com/alisonbuss/Formulation.git",
+                                    "https://github.com/alisonbuss/garden-of-eden.git",
+                                    "https://github.com/alisonbuss/shell-script-tools.git",
+                                    "https://github.com/alisonbuss/coreos-kids-vagrant.git",
+                                    "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-terraform.git",
+                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git"
+                                ]
+                            }
                         ]
-                    }
-                ]
-            } 
+                    } 
+                }
+            ]
         },
-        { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null }
+        {
+            "repository": "garden-of-eden-cloud", 
+            "repositoryPath": "https://raw.githubusercontent.com/alisonbuss/garden-of-eden/master/dist-ubuntu/scripts/",
+            "scripts": [
+                { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null },
+                { "script": "script-repositories-git.sh", "action": "status", "execute": true, 
+                    "param": { 
+                        "defaultRepositoryPath": "/mnt/sda2/git-repositories", 
+                        "repositories": [
+                            {
+                                "repositoryPath": "/work",
+                                "clonesAddress": []
+                            }, {
+                                "repositoryPath": "/private",
+                                "clonesAddress": []
+                            }, {
+                                "repositoryPath": "/public",
+                                "clonesAddress": [
+                                    "https://github.com/alisonbuss/aurora.git",
+                                    "https://github.com/alisonbuss/Formulation.git",
+                                    "https://github.com/alisonbuss/garden-of-eden.git",
+                                    "https://github.com/alisonbuss/shell-script-tools.git",
+                                    "https://github.com/alisonbuss/coreos-kids-vagrant.git",
+                                    "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-terraform.git",
+                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git"
+                                ]
+                            }
+                        ]
+                    } 
+                }
+            ]
+        }
     ]
 }

@@ -1,0 +1,213 @@
+
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 02:43:00 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:15:26 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;31mFalha ao executar o script [0;36m'script-repositories-git.sh'[1;31m![0m
+[1;31mException Code: [0;31m1[0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:00   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:18:33 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;31mFalha ao executar o script [0;36m'script-repositories-git.sh'[1;31m![0m
+[1;31mException Code: [0;31m1[0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:00   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:19:40 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+. sleep 1 echo .. sleep 1 echo ... sleep 1 echo .... sleep 1 echo ..... sleep 1
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:00   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:21:38 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+. sleep 1s echo .. sleep 1s echo ... sleep 1s echo .... sleep 1s echo ..... sleep 1s
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:00   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:22:11 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+.
+..
+...
+....
+.....
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:06   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:23:15 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+......1s.........[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:04   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:24:37 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:33:06 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:37:19 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:40:07 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 03:46:03 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:00:46 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:03:24 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:17:13 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+......
+[1;34m
++----------------------------------+
+| ℹ️ Iniciando clone na maquina... |
++----------------------------------+
+
+[0m[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:03   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:19:51 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34m
++----------------------------------+
+| ℹ️ Iniciando clone na maquina... |
++----------------------------------+
+
+[0m[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:01   [0m
+[1;37mPresione [ENTER] para continuar... [0m
+
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:21:23 [0m
+[1;37m--> Script........:[1;36m 'script-repositories-git.sh'[0m
+[1;37m--> Action........:[0;36m 'clone'[0m
+[1;37m--> Param.........:[0;36m '{"defaultRepositoryPath":"/mnt/sda2/git-repositories","repositories":[{"repositoryPath":"/work","clonesAddress":[]},{"repositoryPath":"/private","clonesAddress":[]},{"repositoryPath":"/public","clonesAddress":["https://github.com/alisonbuss/aurora.git","https://github.com/alisonbuss/Formulation.git","https://github.com/alisonbuss/garden-of-eden.git","https://github.com/alisonbuss/shell-script-tools.git","https://github.com/alisonbuss/coreos-kids-vagrant.git","https://github.com/alisonbuss/multiple-nodes-vagrant.git","https://github.com/alisonbuss/cluster-coreos-terraform.git","https://github.com/alisonbuss/terraform-provider-vagrant.git"]}]}'[0m
+[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
+
+[1;34m
++----------------------------------+
+| ℹ️ Iniciando clone na maquina... |
++----------------------------------+
+
+[0m[1;34mScript [0;36m'script-repositories-git.sh' [1;34mExecutado com sucesso![0m
+[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:01   [0m
+[1;37mPresione [ENTER] para continuar... [0m

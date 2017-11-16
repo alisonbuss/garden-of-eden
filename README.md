@@ -292,6 +292,20 @@ E mudar o parametro do arquivo **"settings.json"**:
     <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/end-bender.gif" width="287px"/>
 </p>
 
+
+## Referências:
+
+* Canal YouTube Bóson Treinamentos, Fábio dos Reis. ***Programação no Linux*** 
+  Acessado: *29 de Julho de 2017.*
+  Disponível: *[https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)*.
+* Shell Scriptx Blog, Shamam. ***Trabalhando com funções Shell*** 
+  Acessado: *19 de Setembro de 2017.*
+  Disponível: *[http://shellscriptx.blogspot.com.br/2016/12/trabalhando-com-funcoes.html](http://shellscriptx.blogspot.com.br/2016/12/trabalhando-com-funcoes.html)*.
+* mhavila, Márcio d'Ávila. ***Scripts Shell sob Controle*** 
+  Acessado: *19 de Setembro de 2017.*
+  Disponível: *[http://www.mhavila.com.br/topicos/unix/shscript.html](http://www.mhavila.com.br/topicos/unix/shscript.html)*.
+
+
 ## Tradução | Translation
 - [Inglês | English](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=en&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhjF8wXBywEnSgThP4hIo1rEuBQcIw)
 - [Espanhol | Español](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=es&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhgaHMX6VZow_LV_2D6thOl3ojl1Cw)
