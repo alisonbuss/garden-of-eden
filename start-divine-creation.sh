@@ -71,7 +71,7 @@ function StartDivineCreation {
 
     # @descr: 
     __runScript() {
-        local distributionPath="$1"; 
+        local repositoryPath="$1"; 
         local script="$2"; 
         local action="$3"; 
         local param="$4";
@@ -84,13 +84,13 @@ function StartDivineCreation {
         util.print.out '%b\n' "${B_WHITE}--> Script........:${B_CYAN} '${script}'${COLOR_OFF}";
         util.print.out '%b\n' "${B_WHITE}--> Action........:${CYAN} '${action}'${COLOR_OFF}";
         util.print.out '%b\n' "${B_WHITE}--> Param.........:${CYAN} '${param}'${COLOR_OFF}";
-        util.print.out '%b\n' "${B_WHITE}--> Default Path..:${CYAN} '${distributionPath}'${COLOR_OFF}";
+        util.print.out '%b\n' "${B_WHITE}--> Default Path..:${CYAN} '${repositoryPath}'${COLOR_OFF}";
         util.print.out '%b\n' "";
 
-        if [[ $distributionPath == "http"* ]]; then
-            __executeBashCloud "${distributionPath}${script}" "${action}" "${param}";
+        if [[ $repositoryPath == "http"* ]]; then
+            __executeBashCloud "${repositoryPath}${script}" "${action}" "${param}";
         else
-            __executeBash "${distributionPath}${script}" "${action}" "${param}";
+            __executeBash "${repositoryPath}${script}" "${action}" "${param}";
         fi
         local executionWasOk=$?;
         if [[ $executionWasOk -eq 0 ]]; then
@@ -126,6 +126,8 @@ function StartDivineCreation {
             local repositoryPath=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryPath");
             local scriptSize=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts | length"); 
 
+            mkdir -p "${pathLogScripts}${repository}";
+
             for (( y=1; y<=$scriptSize; y++ )); do
                 local scriptIndex=$(($y-1));
                 local execute=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].execute");
@@ -134,8 +136,6 @@ function StartDivineCreation {
                     local action=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].action"); 
                     local param=$(cat "${settingFile}" | jq -c ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].param");
 
-                    mkdir -p "${pathLogScripts}${repository}";
-                    
                     __runScript "${repositoryPath}" "${script}" "${action}" "${param}" | tee -a "${pathLogScripts}${repository}/${script}.log";
                 fi
             done
@@ -186,7 +186,7 @@ function StartDivineCreation {
                     util.print.out '%b\n' "${B_WHITE}-----> Action.............:${CYAN} '${action}' ${COLOR_OFF}";
                     util.print.out '%b\n' "${B_WHITE}-----> Param..............:${CYAN} '${param}' ${COLOR_OFF}";
                     util.print.out '%b\n' "";
-                    sleep 0.4s;
+                    sleep 0.3s;
                 fi
             done
         done
@@ -261,12 +261,15 @@ function StartDivineCreation {
 
     # @descr: 
     __help() {
-        echo "Go read the code...";
+        util.print.out '%b\n' "${GREEN}";
+        cat "./files/header.txt";
+        util.print.out '%b\n' "${COLOR_OFF}";
+        cat "./files/doc-commands.txt";
     }
 
     # @descr: 
     __version() {
-        echo "3.3.666";
+        echo "3.3.666-beta";
     }
 
     # @descr: 
@@ -275,12 +278,15 @@ function StartDivineCreation {
         local _params="$@";
         case $_params in
             *--run*|*-r*) { 
+                clear;
                 __prepareScriptsExecution "$@"; 
             };;
             *--list*|*-l*) { 
+                clear;
                 __showScriptsAll "$@"; 
             };;
             *--help*|*-help*|*-h*|*help*) {
+                clear;
                 __help "$@"; 
             };;
             *--version*|*-version*|*-v*|*version*) {

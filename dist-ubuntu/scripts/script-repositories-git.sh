@@ -27,7 +27,7 @@ function ScriptRepositoriesGit {
     __clone() {
         util.print.info "Iniciando clone na maquina..."; 
 
-        
+
     }
 
     __status() {

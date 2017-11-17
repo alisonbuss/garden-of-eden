@@ -1,133 +1,6 @@
 
 
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT! [0m
-[1;37m--> Script........:[1;33m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:00 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT! [0m
-[1;37m--> Script........:[1;33m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:00 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT! [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:00 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT: 05:08:21 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:00 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT: 05:09:11 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:00 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT: 05:10:14 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:01 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT: 05:11:04 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DE EXECUÇÃO DE..: 00:00:02 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT: 05:13:41 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DA EXECUÇÃO.....: 00:00:02 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 05:15:47 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DA EXECUÇÃO --> 00:00:02 [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 05:16:29 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DA EXECUÇÃO --> 00:00:02   [0m
-[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:16:57 [0m
-[1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
-[1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
-[1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
-
-......
-[1;34m
-+------------------------------------------------------+
-| ℹ️ Iniciando a instalação do Terraform na maquina... |
-+------------------------------------------------------+
-
-[0m[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
-[44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DA EXECUÇÃO --> 00:00:03   [0m
-[1;37mPresione [ENTER] para continuar... [0m
-
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:19:45 [0m
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 02:58:07 [0m
 [1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
 [1;37m--> Action........:[0;36m 'install'[0m
 [1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
@@ -140,18 +13,18 @@
 
 [0m[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m
 [44m--> FINALIZADA A EXECUÇÃO DO SCRIPT! [0m
-[44m--> TEMPO DA EXECUÇÃO --> 00:00:01   [0m
+[44m--> TEMPO DA EXECUÇÃO --> 00:00:00   [0m
 [1;37mPresione [ENTER] para continuar... [0m
 
-[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 04:21:20 [0m
+[44m--> INICIANDO A EXECUÇÃO DO SCRIPT --> 02:58:18 [0m
 [1;37m--> Script........:[1;36m 'script-terraform.sh'[0m
-[1;37m--> Action........:[0;36m 'install'[0m
+[1;37m--> Action........:[0;36m 'uninstall'[0m
 [1;37m--> Param.........:[0;36m '{"version":"0.10.7"}'[0m
 [1;37m--> Default Path..:[0;36m './dist-ubuntu/scripts/'[0m
 
 [1;34m
 +------------------------------------------------------+
-| ℹ️ Iniciando a instalação do Terraform na maquina... |
+| ℹ️ Iniciando a desinstalação Terraform na maquina... |
 +------------------------------------------------------+
 
 [0m[1;34mScript [0;36m'script-terraform.sh' [1;34mExecutado com sucesso![0m

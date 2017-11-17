@@ -28,6 +28,9 @@
                 { "script": "script-terraform.sh", "action": "install", "execute": true, 
                     "param": { "version": "0.10.7" }
                 },
+                { "script": "script-terraform.sh", "action": "uninstall", "execute": true, 
+                    "param": { "version": "0.10.7" }
+                },
                 { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
                 { "script": "script-config-transpiler.sh", "action": "install", "execute": false, "param": null },
                 { "script": "script-ansible.sh", "action": "install", "execute": false, "param": null },
