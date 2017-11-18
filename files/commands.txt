@@ -1,9 +1,0 @@
-Comandos:
-
-    $ --run 
-    $ --edit-settings
-    $ --edit-script
-    $ --view-log
-    $ --view-doc
-    $ --exit
-
