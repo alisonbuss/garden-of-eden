@@ -22,6 +22,8 @@ function ScriptTerraform {
     
     local version=$(echo "${PARAM_JSON}" | jq -r '.version');
 
+    # @descr: Instalação do Terraform na maquina.
+    # @param: 
     __install() {
         util.print.info "Iniciando a instalação do Terraform na maquina..."; 
 

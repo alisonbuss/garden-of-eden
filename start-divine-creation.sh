@@ -85,7 +85,7 @@ function StartDivineCreation {
         util.print.out '%b\n' "${B_WHITE}--> Action........:${CYAN} '${action}'${COLOR_OFF}";
         util.print.out '%b\n' "${B_WHITE}--> Param.........:${CYAN} '${param}'${COLOR_OFF}";
         util.print.out '%b\n' "${B_WHITE}--> Default Path..:${CYAN} '${repositoryPath}'${COLOR_OFF}";
-        util.print.out '%b\n' "";
+        #util.print.out '%b\n' "";
 
         if [[ $repositoryPath == "http"* ]]; then
             __executeBashCloud "${repositoryPath}${script}" "${action}" "${param}";
@@ -168,11 +168,13 @@ function StartDivineCreation {
             local scriptSize=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts | length"); 
 
             local repository=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repository");
+            local repositoryInfo=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryInfo");
             local repositoryPath=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryPath");
             local repositoryActive=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].repositoryActive");
 
             if [ "${repositoryActive}" == "true" ]; then
                 util.print.out '%b\n' "${B_RED}--> Repository......:${B_YELLOW} '${repository}' ${COLOR_OFF}";
+                util.print.out '%b\n' "${B_RED}--> Repository Info.:${B_YELLOW} '${repositoryInfo}' ${COLOR_OFF}";
                 util.print.out '%b\n' "${B_RED}--> Repository Path.:${B_YELLOW} '${repositoryPath}' ${COLOR_OFF}";
                 util.print.out '%b\n' "${B_RED}--> Script Numbers..:${B_YELLOW} '${scriptSize}' ${COLOR_OFF}";
 
@@ -215,10 +217,12 @@ function StartDivineCreation {
             local scriptSize=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts | length"); 
 
             local repository=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repository");
+            local repositoryInfo=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryInfo");
             local repositoryPath=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryPath");
             local repositoryActive=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].repositoryActive");
 
             util.print.out '%b\n' "${B_RED}--> Repository........:${B_YELLOW} '${repository}' ${COLOR_OFF}";
+            util.print.out '%b\n' "${B_RED}--> Repository Info...:${B_YELLOW} '${repositoryInfo}' ${COLOR_OFF}";
             util.print.out '%b\n' "${B_RED}--> Repository Path...:${B_YELLOW} '${repositoryPath}' ${COLOR_OFF}";
             util.print.out '%b\n' "${B_RED}--> Repository Active.:${B_YELLOW} '${repositoryActive}' ${COLOR_OFF}";
             util.print.out '%b\n' "${B_RED}--> Script Numbers....:${B_YELLOW} '${scriptSize}' ${COLOR_OFF}";
