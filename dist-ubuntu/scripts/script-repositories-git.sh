@@ -48,7 +48,7 @@ function ScriptRepositoriesGit {
         esac
     }
 
-    __initialize;
+    __initialize "$@";
 }
 
 # SCRIPT INITIALIZE...

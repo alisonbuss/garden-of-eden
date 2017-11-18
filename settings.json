@@ -6,6 +6,7 @@
         {
             "repository": "local", 
             "repositoryPath": "./dist-ubuntu/scripts/",
+            "repositoryActive": true,
             "scripts": [
                 { "script": "script-keyssh.sh", "action": "create", "execute": false, 
                     "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
@@ -26,9 +27,6 @@
                     "param": { "version": "1.9" } 
                 },
                 { "script": "script-terraform.sh", "action": "install", "execute": true, 
-                    "param": { "version": "0.10.7" }
-                },
-                { "script": "script-terraform.sh", "action": "uninstall", "execute": true, 
                     "param": { "version": "0.10.7" }
                 },
                 { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
@@ -72,34 +70,9 @@
         {
             "repository": "garden-of-eden-cloud", 
             "repositoryPath": "https://raw.githubusercontent.com/alisonbuss/garden-of-eden/master/dist-ubuntu/scripts/",
+            "repositoryActive": false,
             "scripts": [
-                { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null },
-                { "script": "script-repositories-git.sh", "action": "status", "execute": true, 
-                    "param": { 
-                        "defaultRepositoryPath": "/mnt/sda2/git-repositories", 
-                        "repositories": [
-                            {
-                                "repositoryPath": "/work",
-                                "clonesAddress": []
-                            }, {
-                                "repositoryPath": "/private",
-                                "clonesAddress": []
-                            }, {
-                                "repositoryPath": "/public",
-                                "clonesAddress": [
-                                    "https://github.com/alisonbuss/aurora.git",
-                                    "https://github.com/alisonbuss/Formulation.git",
-                                    "https://github.com/alisonbuss/garden-of-eden.git",
-                                    "https://github.com/alisonbuss/shell-script-tools.git",
-                                    "https://github.com/alisonbuss/coreos-kids-vagrant.git",
-                                    "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
-                                    "https://github.com/alisonbuss/cluster-coreos-terraform.git",
-                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git"
-                                ]
-                            }
-                        ]
-                    } 
-                }
+                { "script": "script-viadagens.sh", "action": "apply", "execute": false, "param": null } 
             ]
         }
     ]

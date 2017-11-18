@@ -112,7 +112,7 @@ function StartDivineCreation {
     }
 
     # @descr: 
-    __runScripts() {
+    __runAllActiveScripts() {
         local settingFile="$1";
 
         local startTime=$(date +'%H:%M:%S');
@@ -121,24 +121,26 @@ function StartDivineCreation {
         local repositoriesSize=$(cat "${settingFile}" | jq ".scriptsRepositories | length"); 
         for (( x=1; x<=$repositoriesSize; x++ )); do
             local repositoryIndex=$(($x-1));
+            local scriptSize=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts | length"); 
 
             local repository=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repository");
             local repositoryPath=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryPath");
-            local scriptSize=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts | length"); 
+            local repositoryActive=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].repositoryActive");
 
-            mkdir -p "${pathLogScripts}${repository}";
+            if [ "${repositoryActive}" == "true" ]; then
+                mkdir -p "${pathLogScripts}${repository}";
+                for (( y=1; y<=$scriptSize; y++ )); do
+                    local scriptIndex=$(($y-1));
+                    local execute=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].execute");
+                    if [ "${execute}" == "true" ]; then
+                        local script=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].script"); 
+                        local action=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].action"); 
+                        local param=$(cat "${settingFile}" | jq -c ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].param");
 
-            for (( y=1; y<=$scriptSize; y++ )); do
-                local scriptIndex=$(($y-1));
-                local execute=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].execute");
-                if [ "${execute}" == "true" ]; then
-                    local script=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].script"); 
-                    local action=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].action"); 
-                    local param=$(cat "${settingFile}" | jq -c ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].param");
-
-                    __runScript "${repositoryPath}" "${script}" "${action}" "${param}" | tee -a "${pathLogScripts}${repository}/${script}.log";
-                fi
-            done
+                        __runScript "${repositoryPath}" "${script}" "${action}" "${param}" | tee -a "${pathLogScripts}${repository}/${script}.log";
+                    fi
+                done
+            fi
         done
 
         local endTime=$(date +'%H:%M:%S');
@@ -148,14 +150,14 @@ function StartDivineCreation {
     }
 
     # @descr: 
-    __showScriptExecutionDetails() {
+    __showAllActiveScripts() {
         local settingFile="$1";
         local repositoriesSize=$(cat "${settingFile}" | jq ".scriptsRepositories | length"); 
         
-        util.print.out '%b\n' "${GREEN}";
+        util.print.out '%b' "${GREEN}";
         cat "./files/header.txt";
-        util.print.out '%b\n' "${COLOR_OFF}";
-        
+        util.print.out '%b' "${COLOR_OFF}";
+
         util.print.info "Reading File: '${settingFile}'";
         sleep 2s;
         util.print.out '%b\n\n' "${ON_BLUE}--> SCRIPTS A SEREM EXECUTADOS: ${COLOR_OFF}";
@@ -167,38 +169,40 @@ function StartDivineCreation {
 
             local repository=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repository");
             local repositoryPath=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryPath");
+            local repositoryActive=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].repositoryActive");
 
-            util.print.out '%b\n' "${B_RED}--> Repository......:${B_YELLOW} '${repository}' ${COLOR_OFF}";
-            util.print.out '%b\n' "${B_RED}--> Repository Path.:${B_YELLOW} '${repositoryPath}' ${COLOR_OFF}";
-            util.print.out '%b\n' "${B_RED}--> Script Numbers..:${B_YELLOW} '${scriptSize}' ${COLOR_OFF}";
+            if [ "${repositoryActive}" == "true" ]; then
+                util.print.out '%b\n' "${B_RED}--> Repository......:${B_YELLOW} '${repository}' ${COLOR_OFF}";
+                util.print.out '%b\n' "${B_RED}--> Repository Path.:${B_YELLOW} '${repositoryPath}' ${COLOR_OFF}";
+                util.print.out '%b\n' "${B_RED}--> Script Numbers..:${B_YELLOW} '${scriptSize}' ${COLOR_OFF}";
 
-            for (( y=1; y<=$scriptSize; y++ )); do
-                local scriptIndex=$(($y-1));
-                local execute=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].execute");
-                if [ "${execute}" == "true" ]; then
-                    countScripts=$(($countScripts+1));
-                    local script=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].script"); 
-                    local action=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].action"); 
-                    local param=$(cat "${settingFile}" | jq -c ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].param");
-                 
-                    util.print.out '%b\n' "${B_WHITE}-----> N. Execution Order.:${B_CYAN} '${countScripts}ª' ${COLOR_OFF}";
-                    util.print.out '%b\n' "${B_WHITE}-----> Script.............:${B_CYAN} '${script}'${COLOR_OFF}";
-                    util.print.out '%b\n' "${B_WHITE}-----> Action.............:${CYAN} '${action}' ${COLOR_OFF}";
-                    util.print.out '%b\n' "${B_WHITE}-----> Param..............:${CYAN} '${param}' ${COLOR_OFF}";
-                    util.print.out '%b\n' "";
-                    sleep 0.3s;
-                fi
-            done
+                for (( y=1; y<=$scriptSize; y++ )); do
+                    local scriptIndex=$(($y-1));
+                    local execute=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].execute");
+                    if [ "${execute}" == "true" ]; then
+                        countScripts=$(($countScripts+1));
+                        local script=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].script"); 
+                        local action=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].action"); 
+                        local param=$(cat "${settingFile}" | jq -c ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].param");
+                    
+                        util.print.out '%b\n' "${B_WHITE}-----> N. Execution Order.:${B_CYAN} '${countScripts}ª' ${COLOR_OFF}";
+                        util.print.out '%b\n' "${B_WHITE}-----> Script.............:${B_CYAN} '${script}'${COLOR_OFF}";
+                        util.print.out '%b\n' "${B_WHITE}-----> Action.............:${CYAN} '${action}' ${COLOR_OFF}";
+                        util.print.out '%b\n' "${B_WHITE}-----> Param..............:${CYAN} '${param}' ${COLOR_OFF}";
+                        util.print.out '%b\n' "";
+                    fi
+                done
+            fi
         done
     }
 
     # @descr: 
-    __showScriptsAll() {
+    __showAllScripts() {
         local repositoriesSize=$(cat "${settingFile}" | jq ".scriptsRepositories | length"); 
         
-        util.print.out '%b\n' "${GREEN}";
+        util.print.out '%b' "${GREEN}";
         cat "./files/header.txt";
-        util.print.out '%b\n' "${COLOR_OFF}";
+        util.print.out '%b' "${COLOR_OFF}";
         
         util.print.info "Reading File: '${settingFile}'";
         sleep 2s;
@@ -212,10 +216,12 @@ function StartDivineCreation {
 
             local repository=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repository");
             local repositoryPath=$(cat "${settingFile}" | jq -r ".scriptsRepositories[${repositoryIndex}].repositoryPath");
+            local repositoryActive=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].repositoryActive");
 
-            util.print.out '%b\n' "${B_RED}--> Repository......:${B_YELLOW} '${repository}' ${COLOR_OFF}";
-            util.print.out '%b\n' "${B_RED}--> Repository Path.:${B_YELLOW} '${repositoryPath}' ${COLOR_OFF}";
-            util.print.out '%b\n' "${B_RED}--> Script Numbers..:${B_YELLOW} '${scriptSize}' ${COLOR_OFF}";
+            util.print.out '%b\n' "${B_RED}--> Repository........:${B_YELLOW} '${repository}' ${COLOR_OFF}";
+            util.print.out '%b\n' "${B_RED}--> Repository Path...:${B_YELLOW} '${repositoryPath}' ${COLOR_OFF}";
+            util.print.out '%b\n' "${B_RED}--> Repository Active.:${B_YELLOW} '${repositoryActive}' ${COLOR_OFF}";
+            util.print.out '%b\n' "${B_RED}--> Script Numbers....:${B_YELLOW} '${scriptSize}' ${COLOR_OFF}";
 
             for (( y=1; y<=$scriptSize; y++ )); do
                 countScripts=$(($countScripts+1));
@@ -245,10 +251,10 @@ function StartDivineCreation {
         if [ -n "${settingFile}" ]; then 
             local isValidPath=$(util.validateFilePath "${settingFile}");    
             if [ "${isValidPath}" == "true" ]; then
-                __showScriptExecutionDetails "${settingFile}";
+                __showAllActiveScripts "${settingFile}";
                 util.print.out '%b%s' "${B_WHITE}Deseja executar os scripts detalhados acima? [yes/no] $ ${COLOR_OFF}"; read input_run_scripts; 
                 if [ "${input_run_scripts}" == "yes" ] || [ "${input_run_scripts}" == "y" ]; then
-                    __runScripts "${settingFile}";
+                    __runAllActiveScripts "${settingFile}";
                 fi
             else 
                 util.print.out '%b\n' "${RED}--> Error: Arquivo ou diretório não encontrado! ${B_RED}'${settingFile}' ${COLOR_OFF}";
@@ -256,12 +262,13 @@ function StartDivineCreation {
             fi
         else
             util.print.error "Erro: Parametro --setting-file='...' não existe!";
+            return 1;
         fi
     }
 
     # @descr: 
     __help() {
-        util.print.out '%b\n' "${GREEN}";
+        util.print.out '%b' "${GREEN}";
         cat "./files/header.txt";
         util.print.out '%b\n' "${COLOR_OFF}";
         cat "./files/doc-commands.txt";
@@ -269,7 +276,7 @@ function StartDivineCreation {
 
     # @descr: 
     __version() {
-        echo "3.3.666-beta";
+        util.print.out '%s\n' "3.3.666-beta";
     }
 
     # @descr: 
@@ -283,7 +290,7 @@ function StartDivineCreation {
             };;
             *--list*|*-l*) { 
                 clear;
-                __showScriptsAll "$@"; 
+                __showAllScripts "$@";
             };;
             *--help*|*-help*|*-h*|*help*) {
                 clear;

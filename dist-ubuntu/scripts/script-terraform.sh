@@ -25,13 +25,11 @@ function ScriptTerraform {
     __install() {
         util.print.info "Iniciando a instalação do Terraform na maquina..."; 
 
-        
     }
 
     __uninstall() {
         util.print.info "Iniciando a desinstalação Terraform na maquina..."; 
 
-    
     }
 
     __actionError() {
@@ -46,7 +44,7 @@ function ScriptTerraform {
         esac
     }
 
-    __initialize;
+    __initialize "$@";
 }
 
 # SCRIPT INITIALIZE...
