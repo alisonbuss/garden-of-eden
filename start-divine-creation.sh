@@ -206,8 +206,8 @@ function StartDivineCreation {
         
         util.print.info "Reading File: '${settingFile}'";
         sleep 2s;
-
-        util.print.out '%b\n\n' "${ON_BLUE}--> List all scripts in the order of execution... ${COLOR_OFF}";
+                                                 
+        util.print.out '%b\n\n' "${ON_BLUE}--> LISTAR TODOS OS SCRIPTS EM ORDEM DE EXECUÇÃO... ${COLOR_OFF}";
 
         local countScripts=0;
         for (( x=1; x<=$repositoriesSize; x++ )); do
