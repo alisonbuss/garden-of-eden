@@ -11,7 +11,7 @@ source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shel
 
 import.ShellScriptTools "/linux/utility.sh";
 
-# @descr: Função principal de instalação do Ansible 
+# @descr: Função principal do script-cfssl.sh 
 # @param: 
 #    action | text: (install)
 function ScriptCFSSL {
@@ -46,9 +46,6 @@ function ScriptCFSSL {
         case ${ACTION} in
             install) { 
                 __install; 
-            };;
-            uninstall) { 
-                __uninstall;
             };;
             *) {
                __actionError "--action=${ACTION}"; 
