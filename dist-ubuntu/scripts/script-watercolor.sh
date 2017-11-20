@@ -1,20 +1,29 @@
 #!/bin/bash
 
-###################  DOC  ###################
-# @descr: Instalação e Configurações de customizações do Ubuntu.    
+#-----------------------|DOCUMENTATION|-----------------------#
+# @descr: Instalação e Configurações de customizações do Ubuntu.   
+# @fonts: http://www.edivaldobrito.com.br/instalar-visual-studio-code-no-linux-usando-pacotes/
+#         http://the-coderok.azurewebsites.net/2016/09/30/How-to-install-Visual-Studio-Code-on-Ubuntu-using-Debian-package-manager/
+# @example:
+#       bash script-watercolor.sh --action='apply' --param='{}'
+#-------------------------------------------------------------#
+
+source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
+
+import.ShellScriptTools "/linux/utility.sh";
+
+# @descr: Função principal do script-watercolor.sh
 # @param: 
-#    action | text: (myeggs)
-#############################################
-
-source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
-
-function ScriptViadagens {
+#    action | text: (apply)
+function ScriptWatercolor {
     
-    local ACTION=$1;
+    # @descr: Variavel que define a ação que o script ira realizar.
+    local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
 
+    # @descr: Função de instalação do VLC.
     # @fonts: http://www.edivaldobrito.com.br/como-instalar-a-ultima-versao-do-vlc/
     __install_vlc() {
-        print.info "Iniciando a instalação do VLC na maquina..."; 
+        util.print.info "Iniciando a instalação do VLC na maquina..."; 
         
         add-apt-repository ppa:nicola-onorata/desktop;
         apt-get update;
@@ -26,11 +35,12 @@ function ScriptViadagens {
         #apt-get autoremove;
     }
 
+    # @descr: Função de instalação do playonlinux.
     # @fonts: https://sysads.co.uk/2016/05/16/how-to-install-playonlinux-4-2-10-on-ubuntu-16-04/
     #         http://www.edivaldobrito.com.br/playonlinux-chega-a-versao-4-2-4-veja-como-instalar-no-ubuntu/
     #         https://sempreupdate.com.br/2017/04/instalar-o-wine-2-6-no-ubuntu.html
     __install_playonlinux() {
-        print.info "Iniciando a instalação do playonlinux na maquina..."; 
+        util.print.info "Iniciando a instalação do playonlinux na maquina..."; 
         
         add-apt-repository ppa:noobslab/apps;
 
@@ -44,17 +54,22 @@ function ScriptViadagens {
         #ppa-purge ppa:wine/wine-builds;
     }
 
+    # @descr: Função de instalação do tweak-tool.
     # @fonts: http://www.edivaldobrito.com.br/dicas-de-coisas-para-fazer-depois-da-instalacao-do-ubuntu-13-10-faca-pequenos-ajustes-na-interface/#tweaks
     __install_tools_desktop() {
-        print.info "Iniciando a instalação das Ferramentas (Unity Tweak Tool, Ferramenta de ajustes do GNOME)"; 
+        util.print.info "Iniciando a instalação das Ferramentas (Tweak Tool, Ferramenta de ajustes do GNOME/UNITY)"; 
         
-        apt-get install unity-tweak-tool;
-        apt-get install gnome-tweak-tool;
+        # For interface Unity the Ubuntu 16.04
+        #apt-get install unity-tweak-tool;
+
+        # For interface Unity the Ubuntu 17.10
+        #apt-get install gnome-tweak-tool;
     }
 
+    # @descr: Função de instalação do Tema Arc no Ubuntu Desktop.
     # @fonts: http://www.edivaldobrito.com.br/combinando-o-tema-e-os-icones-arc/
     __install_theme_arc() {
-        print.info "Iniciando a instalação de um tema viadinho Arc na maquina..."; 
+        util.print.info "Iniciando a instalação de um tema viadinho Arc na maquina..."; 
         
         add-apt-repository ppa:noobslab/themes;
         add-apt-repository ppa:noobslab/icons;
@@ -66,9 +81,10 @@ function ScriptViadagens {
         #sudo apt-get remove arc-theme arc-icons
     }
 
+    # @descr: Função de instalação do Tema Dark no Ubuntu Desktop.
     # @fonts: http://www.edivaldobrito.com.br/tema-adapta-dark-no-ubuntu/
     __install_theme_adapta_dark() {
-        print.info "Iniciando a instalação de um tema viadinho Adapta Dark na maquina..."; 
+        util.print.info "Iniciando a instalação de um tema viadinho Adapta Dark na maquina..."; 
         apt-add-repository ppa:tista/adapta -y;
         apt-get update;
         apt-get install adapta-gtk-theme;
@@ -79,37 +95,54 @@ function ScriptViadagens {
         #sudo apt-get autoremove
     }
 
+    # @descr: Função de alteração do papel de parade no Ubuntu Desktop.
     __config_change_wallpaper() {
-        print.info "Iniciando alteração do papel de parede bem gay."; 
+        util.print.info "Iniciando alteração do papel de parede bem gay."; 
 
         local wallpaper="$PWD/files/wallpaper1.jpg"; 
         gsettings set org.gnome.desktop.background picture-uri "file://$wallpaper";
     }
 
+    # @descr: Função de instalação geral.
     __install() {
-        print.info "Iniciando as instalações e configurações de customizações do Ubuntu..."; 
+        util.print.info "Iniciando as instalações e configurações de customizações do Ubuntu..."; 
 
-        __install_vlc;
-        __install_playonlinux;
-        __install_tools_desktop;
-        __install_theme_arc;
-        __config_change_wallpaper;
+        #__install_vlc;
+        #__install_playonlinux;
+        #__install_tools_desktop;
+        #__install_theme_arc;
+        #__config_change_wallpaper;
     }
 
+    # @descr: Função é chamada qndo a um erro de tipo de ação.
+    # @param: 
+    #    action | text: "..." | Action não encontrado.
     __actionError() {
-        print.error "Erro: 'action' passado:($ACTION) não coincide com [apply]!";
+        local actionErr=$(util.getParameterValue "(--action=|-a=)" "$@");
+        util.print.error "Erro: 'action' passado:(${actionErr}) não coincide com [install, uninstall]!";
+        return 1;
     } 
 
+    # @descr: Função principal "um construtor por exemplo".
     __initialize() {
         case ${ACTION} in
-            apply) __install; ;;
-            *) __actionError;
+            install) { 
+                __install; 
+            };;
+            *) {
+               __actionError "--action=${ACTION}"; 
+            };;
         esac
     }
 
+    # @descr: Chamada da função principal de inicialização do script.
     __initialize;
 }
 
-ScriptViadagens "$@";
+# SCRIPT INITIALIZE...
+util.try; ( ScriptWatercolor "$@" ); util.catch || {
+    util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
+    util.throw $exception;
+}
 
 exit 0;

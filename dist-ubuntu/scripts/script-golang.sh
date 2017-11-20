@@ -1,37 +1,48 @@
 #!/bin/bash
 
-###################  DOC  ###################
-# @descr: Script do Bash para automatizar as ferramentas de 
-#         instalação da linguagem programação Go em um usuário (Linux) ou remoção.
+#-----------------------|DOCUMENTATION|-----------------------#
+# @descr: Script de instalação e desinstalação da linguagem programação Go na maquina.
 # @font: https://github.com/canha/golang-tools-install-script
+# @example:
+#       bash script-golang.sh --action='install' --param='{"version":"8"}'
+#   OR
+#       bash script-golang.sh --action='uninstall' --param='{"version":"8"}'    
+#-------------------------------------------------------------#
+
+source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
+
+import.ShellScriptTools "/linux/utility.sh";
+
+# @descr: Função principal do script-golang.sh
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | json: {"version":"..."}
-#############################################
-
-source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
-
+#    param | json: '{"version":"..."}'
 function ScriptGoLang {
 
-    local ACTION=$1;
-    local PARAM_JSON=$2;
+    # @descr: Variavel que define a ação que o script ira realizar.
+    local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
 
+    # @descr: Variavel de parametros JSON.
+    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
+
+    # @descr: Variavel da versão de instalação.
     local version=$(echo ${PARAM_JSON} | jq -r '.version');
 
+    # @descr: Função de instalação.
     __install() {
-        print.info "Iniciando a instalação do GoLang na maquina..."; 
+        util.print.info "Iniciando a instalação do GoLang na maquina..."; 
 
         local DFILE="go$version.linux-amd64.tar.gz";
         
         if [ -d "$HOME/.go" ] || [ -d "$HOME/go" ]; then
-            print.warning "Aviso: GoLang já está instalanda na maquina!";
+            util.print.warning "Aviso: GoLang já está instalanda na maquina!";
         else
-            print.info "Downloading $DFILE...";
+            util.print.info "Downloading $DFILE...";
 
             wget "https://storage.googleapis.com/golang/$DFILE" -O ./binaries/go.tar.gz;
             chmod -R 777 ./binaries/go.tar.gz;
 
-            print.info "Extracting GoLang...";
+            util.print.info "Extracting GoLang...";
 
             tar -C "$HOME" -xzf ./binaries/go.tar.gz;
             mv "$HOME/go" "$HOME/.go";
@@ -70,8 +81,9 @@ function ScriptGoLang {
         fi
     }
 
+    # @descr: Função de desinstalação.
     __uninstall() {
-        print.info "Iniciando a desinstalação do GoLang na maquina..."; 
+        util.print.info "Iniciando a desinstalação do GoLang na maquina..."; 
         
         rm -rf "$HOME/.go/";
         rm -rf "$HOME/go/";
@@ -81,24 +93,41 @@ function ScriptGoLang {
         sed -i '/export GOPATH/d' "$HOME/.bashrc";
         sed -i '/:$GOPATH/d' "$HOME/.bashrc";
 
-        print.info "Go removed."
+        util.print.info "Go removed."
     }
 
+    # @descr: Função é chamada qndo a um erro de tipo de ação.
+    # @param: 
+    #    action | text: "..." | Action não encontrado.
     __actionError() {
-        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+        local actionErr=$(util.getParameterValue "(--action=|-a=)" "$@");
+        util.print.error "Erro: 'action' passado:(${actionErr}) não coincide com [install, uninstall]!";
+        return 1;
     } 
 
+    # @descr: Função principal "um construtor por exemplo".
     __initialize() {
         case ${ACTION} in
-            install) __install; ;;
-            uninstall) __uninstall; ;;
-            *) __actionError;
+            install) { 
+                __install; 
+            };;
+            uninstall) { 
+                __uninstall;
+            };;
+            *) {
+               __actionError "--action=${ACTION}"; 
+            };;
         esac
     }
 
+    # @descr: Chamada da função principal de inicialização do script.
     __initialize;
 }
 
-ScriptGoLang "$@";
+# SCRIPT INITIALIZE...
+util.try; ( ScriptGoLang "$@" ); util.catch || {
+    util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
+    util.throw $exception;
+}
 
 exit 0;

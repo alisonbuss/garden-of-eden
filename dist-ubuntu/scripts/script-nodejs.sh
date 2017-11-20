@@ -1,26 +1,38 @@
 #!/bin/bash
 
-###################  DOC  ###################
-# @descr: Instalação do NodeJS na maquina 
+#-----------------------|DOCUMENTATION|-----------------------#
+# @descr: Script de instalação e desinstalação do NodeJS na maquina.
 # @fonts: https://tableless.com.br/como-instalar-node-js-no-linux-corretamente-ubuntu-debian-elementary-os/
 #         https://www.digitalocean.com/community/tutorials/como-instalar-o-node-js-no-ubuntu-16-04-pt#como-instalar-utilizando-o-nvm
 #         https://www.youtube.com/watch?v=BleYojqCaeQ
+# @example:
+#       bash script-nodejs.sh --action='install' --param='{"version":"8.4.0"}'
+#   OR
+#       bash script-nodejs.sh --action='uninstall' --param='{"version":"8.4.0"}'    
+#-------------------------------------------------------------#
+
+source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
+
+import.ShellScriptTools "/linux/utility.sh";
+
+# @descr: Função principal do script-nodejs.sh
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | json: {"version":"..."}
-#############################################
-
-source <(wget -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/linux/utility.sh");
-
+#    param | json: '{"version":"..."}'
 function ScriptNodeJS {
     
-    local ACTION=$1;
-    local PARAM_JSON=$2;
+    # @descr: Variavel que define a ação que o script ira realizar.
+    local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
 
+    # @descr: Variavel de parametros JSON.
+    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
+
+    # @descr: Variavel da versão de instalação.
     local version=$(echo ${PARAM_JSON} | jq -r '.version');
 
+    # @descr: Função de instalação.
     __install() {
-        print.info "Iniciando a instalação do NodeJS na maquina..."; 
+        util.print.info "Iniciando a instalação do NodeJS na maquina..."; 
         source ~/.nvm/nvm.sh;
         source ~/.profile;
         source ~/.bashrc;
@@ -40,27 +52,45 @@ function ScriptNodeJS {
         npm -v;
     }
 
+    # @descr: Função de desinstalação.
     __uninstall() {
-        print.info "Iniciando a desinstalação do NodeJS na maquina..."; 
+        util.print.info "Iniciando a desinstalação do NodeJS na maquina..."; 
         
         nvm uninstall $version;
     }
 
+    # @descr: Função é chamada qndo a um erro de tipo de ação.
+    # @param: 
+    #    action | text: "..." | Action não encontrado.
     __actionError() {
-        print.error "Erro: 'action' passado:($ACTION) não coincide com [install, uninstall]!";
+        local actionErr=$(util.getParameterValue "(--action=|-a=)" "$@");
+        util.print.error "Erro: 'action' passado:(${actionErr}) não coincide com [install, uninstall]!";
+        return 1;
     } 
 
+    # @descr: Função principal "um construtor por exemplo".
     __initialize() {
         case ${ACTION} in
-            install) __install; ;;
-            uninstall) __uninstall; ;;
-            *) __actionError;
+            install) { 
+                __install; 
+            };;
+            uninstall) { 
+                __uninstall;
+            };;
+            *) {
+               __actionError "--action=${ACTION}"; 
+            };;
         esac
     }
 
+    # @descr: Chamada da função principal de inicialização do script.
     __initialize;
 }
 
-ScriptNodeJS "$@";
+# SCRIPT INITIALIZE...
+util.try; ( ScriptNodeJS "$@" ); util.catch || {
+    util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
+    util.throw $exception;
+}
 
 exit 0;
