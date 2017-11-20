@@ -80,8 +80,8 @@
             ]
         },
         {
-            "repository": "cloud-themes-apps-ubuntu", 
-            "repositoryInfo": "Instalar Temas e Aplicativos Comuns Para Ubuntu",
+            "repository": "themes-and-apps-cloud", 
+            "repositoryInfo": "Instalar Temas e Aplicativos Comuns",
             "repositoryPath": "https://raw.githubusercontent.com/alisonbuss/garden-of-eden/master/dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
