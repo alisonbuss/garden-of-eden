@@ -58,7 +58,7 @@ A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arq
                 } 
             ]
         },
-        ...outros repositórios...
+        ...outros..repositórios...
     ]
 }
 ```
