@@ -41,7 +41,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 
 A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo defini a distribuição linux a ser usada, local da geração de logs, definições de modularização dos repositórios de scripts e a ordem de execução dos scripts e seus parâmetros. Um exemplo do arquivo **"settings.json"**:
 
-```json
+```text
 {
     "distribution": "ubuntu",
     "pathLogGeneral": "./logs/",
@@ -385,7 +385,7 @@ garden-of-eden
 
 E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.json** para **..."repositoryPath": "./dist-sua-distribuição"...**, exemplo:
 
-```json
+```text
 {
     "distribution": "fedora",
     "pathLogGeneral": "...",
@@ -398,7 +398,7 @@ E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.jso
             "repositoryActive": ...,
             "scripts": [...]
         },
-        ...outros repositórios...
+        ...outros..repositórios...
     ]
 }
 ```
