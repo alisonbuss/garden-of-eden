@@ -39,7 +39,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 
 ## O funcionamento do Garden of Eden.
 
-A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo defini a distribuição linux a ser usada, local da geração de logs, definições de repositórios de scripts e a ordem de execução dos Shell Scripts e seus parâmetros. Um exemplo do arquivo **"settings.json"**:
+A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo defini a distribuição linux a ser usada, local da geração de logs, definições de modularização dos repositórios de scripts e a ordem de execução dos scripts e seus parâmetros. Um exemplo do arquivo **"settings.json"**:
 
 ```json
 {
@@ -75,7 +75,7 @@ Os parâmetros do **"scriptsRepositories": [{...}, ...]** do ultimo item citado 
 
 - "**repository**": define o nome do repositório de scripts.
 - "**repositoryInfo**" define o uma descrição do repositório de scripts.
-- "**repositoryPath**": define o diretorio **local** ou da **nuvem** base de onde vai ser chamados os shell scripts a serem executados.
+- "**repositoryPath**": define o diretorio **local** ou da **nuvem** base, de onde vai ser chamados os shell scripts a serem executados.
 - "**repositoryActive**": define se o repositório vai ser executado, (**true** ou **false**), se for **true** esse repositório será executado caso contrario ele não é executado.
 - "**scripts**": destina-se a uma lista de scripts em ordem para ser executados, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
 
@@ -194,9 +194,9 @@ $ unzip ~/Downloads/garden-of-eden-master.zip -d ~/Downloads/
 $ cd ~/Downloads/garden-of-eden-master
 $ ls -a
 ```
-Pronto agora você pode executar um dos dois Shell Scripts do "Garden of Eden" que são:
+Pronto agora você pode executar Shell Scripts do "Garden of Eden":
 
-- "start-divine-creation.sh" em modo de comandos.
+- **start-divine-creation.sh** em modo de comandos.
 
 ### Executando em modo de comandos:
 
@@ -220,7 +220,7 @@ $ sudo bash start-divine-creation.sh --help
 #### Listar todos os scripts a serem executados através do "settings.json", passando o parametro **--list**
 
 > **Nota:**
-> *Caso não seja passado o **--setting-file='...'** jundo com o parametro **--list** o Garden Of Eden ira setar o caminho padrão do './settings.json'.*
+> *Caso não seja passado o **--setting-file='...'** jundo com o parametro **--list** o Garden Of Eden ira setar o caminho padrão para './settings.json'.*
 
 Terminal:
 ```bash
@@ -242,7 +242,7 @@ $ sudo bash start-divine-creation.sh -l -s='./settings.json'
 #### Executando todos os scripts do "settings.json", passando o parametro **--rum**
 
 > **Nota:**
-> *Caso não seja passado o **--setting-file='...'** jundo com o parametro **--run** o Garden Of Eden ira setar o caminho padrão do './settings.json'.*
+> *Caso não seja passado o **--setting-file='...'** jundo com o parametro **--run** o Garden Of Eden ira setar o caminho padrão para './settings.json'.*
 
 Terminal:
 ```bash
@@ -274,7 +274,7 @@ garden-of-eden
   |--logs/........................'Pasta onde se encontra os logs gerados pelo Garden Of Eden, o local é definidos no "settings.json".'
      |--dist-ubuntu/..............'Pasta onde se encontra os logs gerados após a execução de cada scripts, o local é definidos no "settings.json".'   
   |--.gitignore...................'Ignorar a pasta de logs no git.'
-  |--import.sh....................'Shell Script que contem função de importação dos Shell Script do projeto.'
+  |--import.sh....................'Shell Script que contem função de importação dos Shell Scripts do projeto.'
   |--LICENSE......................'Licença Pública Geral - GPL-3.0.'
   |--README.md....................'Descrição e documentação do projeto Garden of Eden.'
   |--settings.json ...............'Arquivo principal do projeto onde é definido a modularização de repositórios shell scripts a serem executados.'
