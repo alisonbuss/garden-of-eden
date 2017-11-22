@@ -5,9 +5,9 @@
 #         provisionamento do ambiente básico de desenvolvimento. 
 # @example: 
 #    $ sudo chmod a+x start-divine-creation.sh
-#    $ sudo bash start-divine-creation.sh --help 
+#    $ bash start-divine-creation.sh --help 
 #  OR
-#    $ sudo bash start-divine-creation.sh --version
+#    $ bash start-divine-creation.sh --version
 #
 #  OR
 #    $ sudo bash start-divine-creation.sh --list
