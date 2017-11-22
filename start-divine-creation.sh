@@ -36,6 +36,7 @@ function StartDivineCreation {
     fi
     local pathLogGeneral=$(cat "${settingFile}" | jq -r ".pathLogGeneral");
     local pathLogScripts=$(cat "${settingFile}" | jq -r ".pathLogScripts");
+    local distribution=$(cat "${settingFile}" | jq -r ".distribution");
 
     # @descr: 
     __executeBash() {
@@ -150,17 +151,30 @@ function StartDivineCreation {
     }
 
     # @descr: 
+    __startNotifying() {
+        util.print.out '%b' "${GREEN}";
+        cat "./files/header.txt";
+        util.print.out '%b' "${COLOR_OFF}";
+        
+        util.print.info "Reading File: '${settingFile}'";
+        sleep 1s;
+
+        util.print.out '%b\n' "${ON_YELLOW}${B_RED}--> TIPO DO SISTEMA DA MAQUINA: ${COLOR_OFF}";
+        lsb_release -a;
+        util.print.out '\n%b\n' "${ON_YELLOW}${B_RED}--> DISTRIBUIÇÃO DA MAQUINA:    ${COLOR_OFF}";
+        lsb_release -i;
+        util.print.out '\n%b\n' "${ON_YELLOW}${B_RED}--> DISTRIBUIÇÃO DO ARQUIVO (${settingFile}): ${COLOR_OFF}";
+        util.print.out '%b\n\n' "Distributor ID:	${distribution}";
+    }
+
+    # @descr: 
     __showAllActiveScripts() {
         local settingFile="$1";
         local repositoriesSize=$(cat "${settingFile}" | jq ".scriptsRepositories | length"); 
         
-        util.print.out '%b' "${GREEN}";
-        cat "./files/header.txt";
-        util.print.out '%b' "${COLOR_OFF}";
+        __startNotifying;
 
-        util.print.info "Reading File: '${settingFile}'";
-        sleep 2s;
-        util.print.out '%b\n\n' "${ON_BLUE}--> SCRIPTS A SEREM EXECUTADOS: ${COLOR_OFF}";
+        util.print.out '%b\n\n' "${ON_BLUE}${B_WHITE}--> SCRIPTS A SEREM EXECUTADOS: ${COLOR_OFF}";
         
         local countScripts=0;
         for (( x=1; x<=$repositoriesSize; x++ )); do
@@ -201,15 +215,10 @@ function StartDivineCreation {
     # @descr: 
     __showAllScripts() {
         local repositoriesSize=$(cat "${settingFile}" | jq ".scriptsRepositories | length"); 
-        
-        util.print.out '%b' "${GREEN}";
-        cat "./files/header.txt";
-        util.print.out '%b' "${COLOR_OFF}";
-        
-        util.print.info "Reading File: '${settingFile}'";
-        sleep 2s;
-                                                 
-        util.print.out '%b\n\n' "${ON_BLUE}--> LISTAR TODOS OS SCRIPTS EM ORDEM DE EXECUÇÃO... ${COLOR_OFF}";
+
+        __startNotifying;
+
+        util.print.out '%b\n\n' "${ON_BLUE}${B_WHITE}--> LISTAR TODOS OS SCRIPTS EM ORDEM DE EXECUÇÃO... ${COLOR_OFF}";
 
         local countScripts=0;
         for (( x=1; x<=$repositoriesSize; x++ )); do
