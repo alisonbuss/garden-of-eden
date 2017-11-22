@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Instalação do Config Transpiler, ct, é o utilitário responsável por transformar 
 #         uma Configuração de Container Linux configurada pelo usuário em uma 

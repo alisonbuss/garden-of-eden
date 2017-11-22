@@ -126,7 +126,7 @@ function ScriptWatercolor {
     # @descr: Função principal "um construtor por exemplo".
     __initialize() {
         case ${ACTION} in
-            install) { 
+            apply) { 
                 __install; 
             };;
             *) {

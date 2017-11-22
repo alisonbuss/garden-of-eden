@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do GitKraken na maquina 
 # @fonts: https://support.gitkraken.com/how-to-install

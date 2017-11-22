@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Sua Descrição da Instalação na Maquina.
 # @fonts: Fontes de referências

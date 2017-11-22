@@ -2,7 +2,7 @@
 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação da linguagem programação Go na maquina.
-# @font: https://github.com/canha/golang-tools-install-script
+# @fonts: https://github.com/canha/golang-tools-install-script
 # @example:
 #       bash script-golang.sh --action='install' --param='{"version":"8"}'
 #   OR

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do Vagrant na maquina.  
 # @fonts: https://howtoprogram.xyz/2016/07/23/install-vagrant-ubuntu-16-04/

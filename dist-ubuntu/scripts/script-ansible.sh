@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do Ansible na maquina 
 # @fonts: http://blog.deiser.com/primeros-pasos-con-ansible/

@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do JDK na maquina.
 # @fonts: http://www.edivaldobrito.com.br/instalar-o-oracle-java-no-ubuntu/

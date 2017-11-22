@@ -16,7 +16,7 @@ import.ShellScriptTools "/linux/utility.sh";
 # @descr: Função principal do script-git.sh
 # @param: 
 #    action | text: (install, uninstall)
-#    paramJson | json: {"nameUser":"...","emailUser":"..."}
+#    param | json: {"nameUser":"...","emailUser":"..."}
 function ScriptGit {
 
     # @descr: Variavel que define a ação que o script ira realizar.

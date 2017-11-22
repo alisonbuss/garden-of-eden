@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do Netbeans na maquina.
 # @fonts: http://www.edivaldobrito.com.br/ultima-versao-do-netbeans-no-linux/

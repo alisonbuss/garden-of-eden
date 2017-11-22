@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Instalação do CFSSL na maquina 
 # @fonts: https://github.com/cloudflare/cfssl

@@ -76,5 +76,5 @@ util.try; ( ScriptVSCode "$@" ); util.catch || {
     util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
     util.throw $exception;
 }
-
+ 
 exit 0;

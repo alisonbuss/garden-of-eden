@@ -1,5 +1,5 @@
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do Node Version Manager (NVM) na maquina.
 #         Script bash simples para gerenciar várias versões do node.js ativo.
