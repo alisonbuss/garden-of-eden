@@ -94,7 +94,9 @@
             "repositoryPath": "https://raw.githubusercontent.com/alisonbuss/garden-of-eden/master/dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
-                { "script": "script-watercolor.sh", "action": "apply", "execute": false, "param": null } 
+                { "script": "script-watercolor.sh", "action": "apply", "execute": false, 
+                    "param": { "forLinux": "ubuntu-17.10" }
+                } 
             ]
         }
     ]
