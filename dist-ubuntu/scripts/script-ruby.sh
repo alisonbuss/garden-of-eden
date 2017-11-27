@@ -33,30 +33,22 @@ function ScriptRuby {
     # @descr: Função de instalação.
     __install() {
         util.print.info "Iniciando a instalação do Ruby na maquina..."; 
-        source ~/.nvm/nvm.sh;
-        source ~/.profile;
-        source ~/.bashrc;
+        
+        source /etc/profile.d/rvm.sh;
 
-        nvm install $version;
-        nvm use $version;
+        rvm install "ruby-${version}";
 
-        echo -n "Version Node.js: ";
-        node -v;
+        rvm --default use "ruby-${version}";
 
-        # @fonts: https://www.computerhope.com/unix/uchown.htm
-        #         http://manpages.ubuntu.com/manpages/trusty/man1/chown.1.html
-        # CUIDADO COM ESSE COMMANDO FILHO DA PUTA, DEU UM BUG DU INFERNU.
-        # chown -R $USER:$(id -gn $USER) /home/user/.config;
-
-	    echo -n "Version NPM: ";
-        npm -v;
+        echo -n "Version ruby: ";
+        ruby --version;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.info "Iniciando a desinstalação do Ruby na maquina..."; 
         
-        nvm uninstall $version;
+        rvm uninstall "ruby-${version}";
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

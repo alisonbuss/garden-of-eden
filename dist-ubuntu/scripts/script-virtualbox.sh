@@ -3,6 +3,7 @@
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do VirtualBox na maquina.    
 # @fonts: http://www.edivaldobrito.com.br/virtualbox-no-linux/
+#         http://www.edivaldobrito.com.br/sbinvboxconfig-nao-esta-funcionando/
 #         https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
 #         https://www.howtoinstall.co/pt/ubuntu/xenial/virtualbox?action=remove
 # @example:
@@ -34,6 +35,8 @@ function ScriptVirtualBox {
     __install() {
         util.print.info "Iniciando a instalação do VirtualBox na maquina..."; 
 
+        #apt-get install virtualbox-dkms
+
         wget "http://download.virtualbox.org/virtualbox/${version}/VirtualBox-${version}-119230-Linux_amd64.run" -O "./binaries/virtualbox.run";
         chmod -R 777 "./binaries/virtualbox.run";
 
@@ -49,10 +52,7 @@ function ScriptVirtualBox {
     __uninstall() {
         util.print.info "Iniciando a desinstalação do VirtualBox na maquina..."; 
         
-        #sudo sh /opt/VirtualBox/uninstall.sh
-
-        apt-get remove --auto-remove virtualbox;
-        apt-get purge --auto-remove virtualbox;
+        sh /opt/VirtualBox/uninstall.sh;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

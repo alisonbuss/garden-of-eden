@@ -5,6 +5,7 @@
 # @fonts: https://rvm.io/rvm/install
 #         https://github.com/rvm/ubuntu_rvm
 #         https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-16-04
+#         https://stackoverflow.com/questions/3558656/how-can-i-remove-rvm-ruby-version-manager-from-my-system
 # @example:
 #       bash script-rvm.sh --action='install' --param='{}'
 #   OR
@@ -27,27 +28,22 @@ function ScriptRVM {
     __install() {
         util.print.info "Iniciando a instalação do RVM na maquina..."; 
 
-        # pacotes de dependências que já estão no repositório de sua distribuição Debian Based
+        apt-add-repository -y ppa:rael-gc/rvm;
         apt-get update;
-        apt-get install build-essential libssl-dev;
+        apt-get install rvm;
 
-        wget -qO- "https://raw.githubusercontent.com/creationix/nvm/v$version/install.sh" | bash;
-        source ~/.nvm/nvm.sh;
-        source ~/.profile;
-        source ~/.bashrc;
-        
-        chmod -R 777 $HOME/.nvm;
+        source /etc/profile.d/rvm.sh;
 
-        echo -n "Version NVM: ";
-        nvm --version;
+        echo -n "Version rvm: ";
+        rvm version;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.info "Iniciando a desinstalação do RVM na maquina..."; 
 
-        rm -rf "$HOME/.nvm/";
-        rm -rf "$HOME/nvm/";
+        #https://stackoverflow.com/questions/3558656/how-can-i-remove-rvm-ruby-version-manager-from-my-system
+        rm -rf "$HOME/.rvm/";
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

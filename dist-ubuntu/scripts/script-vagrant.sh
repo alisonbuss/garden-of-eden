@@ -47,9 +47,7 @@ function ScriptVagrant {
     __uninstall() {
         util.print.info "Iniciando a desinstalação do Vagrant na maquina..."; 
         
-        #dpkg -r vagrant;
-
-        apt-get remove --auto-remove vagrant;
+        dpkg -r vagrant;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
