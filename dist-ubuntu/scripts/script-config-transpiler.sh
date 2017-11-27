@@ -6,6 +6,7 @@
 #         configuração Ignition.
 # @fonts: https://coreos.com/os/docs/latest/provisioning.html
 #         https://coreos.com/os/docs/1478.0.0/overview-of-ct.html
+#         https://www.youtube.com/watch?v=TJ6eweO2Rio
 # @example:
 #       bash script-config-transpiler.sh --action='install' --param='{"version":"0.5.0"}'   
 #   OR
