@@ -6,7 +6,7 @@
 #         http://danielfilho.github.io/2013/10/20/front-end-ops-vagrant/
 #         https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
 # @example:
-#       bash script-vagrant.sh --action='install' --param='{}'
+#       bash script-vagrant.sh --action='install' --param='{"version":"..."}'
 #   OR
 #       bash script-vagrant.sh --action='uninstall' --param='{}'    
 #-------------------------------------------------------------#
@@ -18,31 +18,37 @@ import.ShellScriptTools "/linux/utility.sh";
 # @descr: Função principal do script-vagrant.sh
 # @param: 
 #    action | text: (install, uninstall)
+#    param | json: '{"version":"..."}'
 function ScriptVagrant {
     
     # @descr: Variavel que define a ação que o script ira realizar.
     local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
 
+    # @descr: Variavel de parametros JSON.
+    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
+
+    # @descr: Variavel da versão de instalação.
+    local version=$(echo ${PARAM_JSON} | jq -r '.version');
+
     # @descr: Função de instalação.
     __install() {
         util.print.info "Iniciando a instalação do Vagrant na maquina..."; 
 
-        apt-get install vagrant;
+        wget "https://releases.hashicorp.com/vagrant/${version}/vagrant_${version}_x86_64.deb" -O "./binaries/vagrant.deb";
+        chmod -R 777 "./binaries/vagrant.deb";
 
-        # OU...
-        #wget "https://releases.hashicorp.com/vagrant/1.9.8/vagrant_1.9.8_x86_64.deb" -O ./binaries/vagrant.deb;
-        #chmod -R 777 ./binaries/vagrant.deb;
-
-        #dpkg -i ./binaries/vagrant.deb;
+        dpkg -i "./binaries/vagrant.deb";
 
         # Remove o download do Vagrant
-        #rm ./binaries/vagrant.deb;
+        rm "./binaries/vagrant.deb";
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.info "Iniciando a desinstalação do Vagrant na maquina..."; 
         
+        #dpkg -r vagrant;
+
         apt-get remove --auto-remove vagrant;
     }
 

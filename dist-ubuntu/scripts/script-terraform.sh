@@ -2,7 +2,7 @@
  
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do Terraform na maquina.
-# @fonts: ...
+# @fonts: https://mangolassi.it/topic/14459/installing-terraform-0-9-11-on-ubuntu-17-04
 # @example:
 #       bash script-terraform.sh --action='install' --param='{"version":"0.10.7"}'
 #   OR
@@ -32,12 +32,32 @@ function ScriptTerraform {
     __install() {
         util.print.info "Iniciando a instalação do Terraform na maquina..."; 
 
+        wget "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_linux_amd64.zip" -O "./binaries/terraform.zip";
+        chmod -R 777 "./binaries/terraform.zip";
+
+        unzip "./binaries/terraform.zip" -d "/usr/local/bin/";
+
+        terraform -v;
+
+        mkdir -p "${HOME}/.terraform";
+
+        chmod -R 777 "${HOME}/.terraform";
+        chmod -R 777 "${HOME}/.terraform.d";
+
+        # Remove o download do terraform
+        rm "./binaries/terraform.zip";
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.info "Iniciando a desinstalação Terraform na maquina..."; 
 
+        # Remove files on $HOME
+        rm -rf "${HOME}/.terraform";
+        rm -rf "${HOME}/.terraform.d"; 
+
+        # Remove files on BIN
+        rm -rf "/usr/local/bin/terraform"; 
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

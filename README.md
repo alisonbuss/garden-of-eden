@@ -13,8 +13,10 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Gera **chave SSH**
 - Instala **Git**
 - Instala **JDK**
-- Instala **NVM**
-- Instala **Node.js + NPM**
+- Instala **NVM (Node Version Manager)**
+- Instala **Node.js com NVM.**
+- Instala **RVM (Ruby Version Manager).**
+- Instala **Ruby com RVM.**
 - Instala **Go**
 - Instala **CFSSL**
 - Instala **Config Transpiler**

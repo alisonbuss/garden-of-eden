@@ -35,17 +35,25 @@
                 { "script": "script-nodejs.sh", "action": "install", "execute": false, 
                     "param": { "version": "8.4.0" } 
                 },
+                { "script": "script-rvm.sh",  "action": "install", "execute": false, "param": null },
+                { "script": "script-ruby.sh", "action": "install", "execute": false, 
+                    "param": { "version": "2.3.1" } 
+                },
                 { "script": "script-golang.sh", "action": "install", "execute": false, 
-                    "param": { "version": "1.9" } 
+                    "param": { "version": "1.9.2" } 
                 },
                 { "script": "script-terraform.sh", "action": "install", "execute": false, 
-                    "param": { "version": "0.10.7" }
+                    "param": { "version": "0.11.0" }
                 },
                 { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
                 { "script": "script-config-transpiler.sh", "action": "install", "execute": false, "param": null },
                 { "script": "script-ansible.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-virtualbox.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-vagrant.sh", "action": "install", "execute": false, "param": null },
+                { "script": "script-virtualbox.sh", "action": "install", "execute": false,  
+                    "param": { "version": "5.2.2" }
+                },
+                { "script": "script-vagrant.sh", "action": "install", "execute": false,  
+                    "param": { "version": "2.0.1" }
+                },
                 { "script": "script-vscode.sh", "action": "install", "execute": false, "param": null },
                 { "script": "script-gitkraken.sh", "action": "install", "execute": false, "param": null },
                 { "script": "script-staruml.sh", "action": "install", "execute": false, "param": null },
@@ -71,7 +79,8 @@
                                     "https://github.com/alisonbuss/coreos-kids-vagrant.git",
                                     "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
                                     "https://github.com/alisonbuss/cluster-coreos-terraform.git",
-                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git"
+                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git",
+                                    "https://github.com/alisonbuss/provider-vagrant-for-terraform.git"
                                 ]
                             }
                         ]

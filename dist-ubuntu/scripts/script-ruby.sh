@@ -1,25 +1,25 @@
 #!/bin/bash
- 
+
 #-----------------------|DOCUMENTATION|-----------------------#
-# @descr: Script de instalação e desinstalação do VirtualBox na maquina.    
-# @fonts: http://www.edivaldobrito.com.br/virtualbox-no-linux/
-#         https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
-#         https://www.howtoinstall.co/pt/ubuntu/xenial/virtualbox?action=remove
+# @descr: Script de instalação e desinstalação do Ruby na maquina.
+# @fonts: https://rvm.io/rvm/install
+#         https://github.com/rvm/ubuntu_rvm
+#         https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-16-04
 # @example:
-#       bash script-virtualbox.sh --action='install' --param='{"version":"..."}'
+#       bash script-ruby.sh --action='install' --param='{"version":"2.3.1"}'
 #   OR
-#       bash script-virtualbox.sh --action='uninstall' --param='{}'    
+#       bash script-ruby.sh --action='uninstall' --param='{"version":"2.3.1"}'    
 #-------------------------------------------------------------#
 
 source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
 
 import.ShellScriptTools "/linux/utility.sh";
 
-# @descr: Função principal do script-virtualbox.sh
+# @descr: Função principal do script-ruby.sh
 # @param: 
 #    action | text: (install, uninstall)
 #    param | json: '{"version":"..."}'
-function ScriptVirtualBox {
+function ScriptRuby {
     
     # @descr: Variavel que define a ação que o script ira realizar.
     local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
@@ -32,27 +32,31 @@ function ScriptVirtualBox {
 
     # @descr: Função de instalação.
     __install() {
-        util.print.info "Iniciando a instalação do VirtualBox na maquina..."; 
+        util.print.info "Iniciando a instalação do Ruby na maquina..."; 
+        source ~/.nvm/nvm.sh;
+        source ~/.profile;
+        source ~/.bashrc;
 
-        wget "http://download.virtualbox.org/virtualbox/${version}/VirtualBox-${version}-119230-Linux_amd64.run" -O "./binaries/virtualbox.run";
-        chmod -R 777 "./binaries/virtualbox.run";
+        nvm install $version;
+        nvm use $version;
 
-        chmod +x "./binaries/virtualbox.run";
+        echo -n "Version Node.js: ";
+        node -v;
 
-        ./binaries/virtualbox.run;
+        # @fonts: https://www.computerhope.com/unix/uchown.htm
+        #         http://manpages.ubuntu.com/manpages/trusty/man1/chown.1.html
+        # CUIDADO COM ESSE COMMANDO FILHO DA PUTA, DEU UM BUG DU INFERNU.
+        # chown -R $USER:$(id -gn $USER) /home/user/.config;
 
-        # Remove o download do VirtualBox
-        rm "./binaries/virtualbox.run";
+	    echo -n "Version NPM: ";
+        npm -v;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
-        util.print.info "Iniciando a desinstalação do VirtualBox na maquina..."; 
+        util.print.info "Iniciando a desinstalação do Ruby na maquina..."; 
         
-        #sudo sh /opt/VirtualBox/uninstall.sh
-
-        apt-get remove --auto-remove virtualbox;
-        apt-get purge --auto-remove virtualbox;
+        nvm uninstall $version;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
@@ -84,9 +88,9 @@ function ScriptVirtualBox {
 }
 
 # SCRIPT INITIALIZE...
-util.try; ( ScriptVirtualBox "$@" ); util.catch || {
+util.try; ( ScriptRuby "$@" ); util.catch || {
     util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
     util.throw $exception;
 }
-
+ 
 exit 0;

@@ -1,58 +1,53 @@
 #!/bin/bash
  
 #-----------------------|DOCUMENTATION|-----------------------#
-# @descr: Script de instalação e desinstalação do VirtualBox na maquina.    
-# @fonts: http://www.edivaldobrito.com.br/virtualbox-no-linux/
-#         https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
-#         https://www.howtoinstall.co/pt/ubuntu/xenial/virtualbox?action=remove
+# @descr: Script de instalação e desinstalação do RVM na maquina.
+# @fonts: https://rvm.io/rvm/install
+#         https://github.com/rvm/ubuntu_rvm
+#         https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rvm-on-ubuntu-16-04
 # @example:
-#       bash script-virtualbox.sh --action='install' --param='{"version":"..."}'
+#       bash script-rvm.sh --action='install' --param='{}'
 #   OR
-#       bash script-virtualbox.sh --action='uninstall' --param='{}'    
+#       bash script-rvm.sh --action='uninstall' --param='{}'    
 #-------------------------------------------------------------#
 
 source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
 
 import.ShellScriptTools "/linux/utility.sh";
 
-# @descr: Função principal do script-virtualbox.sh
+# @descr: Função principal do script-rvm.sh
 # @param: 
 #    action | text: (install, uninstall)
-#    param | json: '{"version":"..."}'
-function ScriptVirtualBox {
-    
+function ScriptRVM {
+
     # @descr: Variavel que define a ação que o script ira realizar.
     local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
 
-    # @descr: Variavel de parametros JSON.
-    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
-
-    # @descr: Variavel da versão de instalação.
-    local version=$(echo ${PARAM_JSON} | jq -r '.version');
-
     # @descr: Função de instalação.
     __install() {
-        util.print.info "Iniciando a instalação do VirtualBox na maquina..."; 
+        util.print.info "Iniciando a instalação do RVM na maquina..."; 
 
-        wget "http://download.virtualbox.org/virtualbox/${version}/VirtualBox-${version}-119230-Linux_amd64.run" -O "./binaries/virtualbox.run";
-        chmod -R 777 "./binaries/virtualbox.run";
+        # pacotes de dependências que já estão no repositório de sua distribuição Debian Based
+        apt-get update;
+        apt-get install build-essential libssl-dev;
 
-        chmod +x "./binaries/virtualbox.run";
+        wget -qO- "https://raw.githubusercontent.com/creationix/nvm/v$version/install.sh" | bash;
+        source ~/.nvm/nvm.sh;
+        source ~/.profile;
+        source ~/.bashrc;
+        
+        chmod -R 777 $HOME/.nvm;
 
-        ./binaries/virtualbox.run;
-
-        # Remove o download do VirtualBox
-        rm "./binaries/virtualbox.run";
+        echo -n "Version NVM: ";
+        nvm --version;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
-        util.print.info "Iniciando a desinstalação do VirtualBox na maquina..."; 
-        
-        #sudo sh /opt/VirtualBox/uninstall.sh
+        util.print.info "Iniciando a desinstalação do RVM na maquina..."; 
 
-        apt-get remove --auto-remove virtualbox;
-        apt-get purge --auto-remove virtualbox;
+        rm -rf "$HOME/.nvm/";
+        rm -rf "$HOME/nvm/";
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
@@ -84,7 +79,7 @@ function ScriptVirtualBox {
 }
 
 # SCRIPT INITIALIZE...
-util.try; ( ScriptVirtualBox "$@" ); util.catch || {
+util.try; ( ScriptRVM "$@" ); util.catch || {
     util.print.error "Erro: Ao executar o script '${0##*/}', Exception Code: ${exception}";
     util.throw $exception;
 }
