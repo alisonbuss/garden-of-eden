@@ -15,8 +15,8 @@
             ]
         },
         {
-            "repository": "local", 
-            "repositoryInfo": "Provisionar um ambiente básico de desenvolvimento",
+            "repository": "local-mount-disk-auto", 
+            "repositoryInfo": "Cria script de montagem de partições automatico na inicialização do sistema",
             "repositoryPath": "./dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
@@ -29,7 +29,15 @@
                             { "partition": "/dev/sda4", "linkPartition": "/mnt/my-documents", "typePartition": "ntfs" }
                         ]
                      } 
-                },
+                }
+            ]
+        },
+        {
+            "repository": "local", 
+            "repositoryInfo": "Provisionar um ambiente básico de desenvolvimento",
+            "repositoryPath": "./dist-ubuntu/scripts/",
+            "repositoryActive": false,
+            "scripts": [
                 { "script": "script-keyssh.sh", "action": "create", "execute": false, 
                     "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
                 },
