@@ -122,6 +122,14 @@ function ScriptWatercolor {
         add-apt-repository ppa:nicola-onorata/desktop;
         apt-get update;
         apt-get install vlc;
+
+        firefox "https://extensions.gnome.org/extension/19/user-themes/";
+        firefox "https://extensions.gnome.org/extension/1160/dash-to-panel/";
+        firefox "https://extensions.gnome.org/extension/307/dash-to-dock/";
+
+        #firefox "https://extensions.gnome.org/extension/1269/gnome-vagrant-indicator/";
+        #firefox "https://extensions.gnome.org/extension/1004/public-ip-address/";
+        #firefox "https://extensions.gnome.org/extension/48/trash/";
     }
 
     # @descr: Função de instalação geral.
