@@ -108,9 +108,9 @@ function ScriptWatercolor {
     # @descr: Função de instalação para Ubuntu 17.10.
     __installUbuntu1710() {
         #GNOME THEME 
-        sudo add-apt-repository ppa:system76/pop;
-        sudo apt update;
-        sudo apt install pop-theme;
+        add-apt-repository ppa:system76/pop;
+        apt update;
+        apt install pop-theme;
 
         #GNOME TWEAKS 
         apt-get install gnome-tweak-tool;
