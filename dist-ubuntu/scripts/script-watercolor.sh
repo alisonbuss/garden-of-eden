@@ -98,30 +98,30 @@ function ScriptWatercolor {
 
     # @descr: Função de instalação para Ubuntu 16.04.
     __installUbuntu1604() {
-        __install_vlc;
-        __install_playonlinux;
         __install_tools_desktop;
         __install_theme_arc;
         __config_change_wallpaper;
+        #__install_playonlinux;
+        #__install_vlc;
     }
 
     # @descr: Função de instalação para Ubuntu 17.10.
     __installUbuntu1710() {
+        #GNOME THEME 
+        sudo add-apt-repository ppa:system76/pop;
+        sudo apt update;
+        sudo apt install pop-theme;
+
+        #GNOME TWEAKS 
+        apt-get install gnome-tweak-tool;
+
+        #GNOME SHELL 
+        apt-get install chrome-gnome-shell;
+
         #APP VIDEO
         add-apt-repository ppa:nicola-onorata/desktop;
         apt-get update;
         apt-get install vlc;
-
-        #GNOME THEME 
-        sudo add-apt-repository ppa:system76/pop
-        sudo apt update
-        sudo apt install pop-theme
-
-        #GNOME TWEAKS 
-        apt-get install gnome-tweak-tool
-
-        #GNOME SHELL 
-        apt-get install chrome-gnome-shell
     }
 
     # @descr: Função de instalação geral.

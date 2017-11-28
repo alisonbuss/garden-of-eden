@@ -20,7 +20,7 @@
             "repositoryPath": "./dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
-                { "script": "script-mount-disk.sh", "action": "add", "execute": false, 
+                { "script": "script-mount-disk.sh", "action": "add", "execute": true, 
                     "param": { 
                         "autoInit": true, 
                         "initClient": true,
@@ -38,48 +38,48 @@
             "repositoryPath": "./dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
-                { "script": "script-keyssh.sh", "action": "create", "execute": false, 
+                { "script": "script-keyssh.sh", "action": "create", "execute": true, 
                     "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
                 },
-                { "script": "script-git.sh", "action": "install", "execute": false, 
+                { "script": "script-git.sh", "action": "install", "execute": true, 
                     "param": { "nameUser": "Lúcifer", "emailUser": "lucifer.dev@ghell.com" }
                 },
-                { "script": "script-jdk.sh", "action": "install", "execute": false, 
+                { "script": "script-jdk.sh", "action": "install", "execute": true, 
                     "param": { "version": "8" } 
                 },
-                { "script": "script-nvm.sh", "action": "install", "execute": false, 
+                { "script": "script-nvm.sh", "action": "install", "execute": true, 
                     "param": { "version": "0.33.4" } 
                 },
-                { "script": "script-nodejs.sh", "action": "install", "execute": false, 
+                { "script": "script-nodejs.sh", "action": "install", "execute": true, 
                     "param": { "version": "8.4.0" } 
                 },
-                { "script": "script-rvm.sh",  "action": "install", "execute": false, "param": null },
-                { "script": "script-ruby.sh", "action": "install", "execute": false, 
+                { "script": "script-rvm.sh",  "action": "install", "execute": true, "param": null },
+                { "script": "script-ruby.sh", "action": "install", "execute": true, 
                     "param": { "version": "2.3.1" } 
                 },
-                { "script": "script-golang.sh", "action": "install", "execute": false, 
+                { "script": "script-golang.sh", "action": "install", "execute": true, 
                     "param": { "version": "1.9.2" } 
                 },
-                { "script": "script-terraform.sh", "action": "install", "execute": false, 
+                { "script": "script-terraform.sh", "action": "install", "execute": true, 
                     "param": { "version": "0.11.0" }
                 },
-                { "script": "script-cfssl.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-config-transpiler.sh", "action": "install", "execute": false,
+                { "script": "script-cfssl.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-config-transpiler.sh", "action": "install", "execute": true,
                     "param": { "version": "0.5.0" }
                 },
-                { "script": "script-ansible.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-virtualbox.sh", "action": "install", "execute": false,  
+                { "script": "script-ansible.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-virtualbox.sh", "action": "install", "execute": true,  
                     "param": { "version": "5.2.2" }
                 },
-                { "script": "script-vagrant.sh", "action": "install", "execute": false,  
+                { "script": "script-vagrant.sh", "action": "install", "execute": true,  
                     "param": { "version": "2.0.1" }
                 },
-                { "script": "script-vscode.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-gitkraken.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-staruml.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-chrome.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-netbeans.sh", "action": "install", "execute": false, "param": null },
-                { "script": "script-repositories-git.sh", "action": "clone", "execute": false, 
+                { "script": "script-vscode.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-gitkraken.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-staruml.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-chrome.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null },
+                { "script": "script-repositories-git.sh", "action": "clone", "execute": true, 
                     "param": { 
                         "defaultRepositoryPath": "/mnt/sda2/git-repositories", 
                         "repositories": [
@@ -114,7 +114,7 @@
             "repositoryPath": "https://raw.githubusercontent.com/alisonbuss/garden-of-eden/master/dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
-                { "script": "script-watercolor.sh", "action": "apply", "execute": false, 
+                { "script": "script-watercolor.sh", "action": "apply", "execute": true, 
                     "param": { "forLinux": "ubuntu-17.10" }
                 } 
             ]
