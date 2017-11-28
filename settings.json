@@ -20,6 +20,16 @@
             "repositoryPath": "./dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
+                { "script": "script-mount-disk.sh", "action": "add", "execute": false, 
+                    "param": { 
+                        "autoInit": true, 
+                        "initClient": true,
+                        "partitions": [
+                            { "partition": "/dev/sda2", "linkPartition": "/mnt/sda2", "typePartition": "ntfs" },
+                            { "partition": "/dev/sda4", "linkPartition": "/mnt/my-documents", "typePartition": "ntfs" }
+                        ]
+                     } 
+                },
                 { "script": "script-keyssh.sh", "action": "create", "execute": false, 
                     "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
                 },
