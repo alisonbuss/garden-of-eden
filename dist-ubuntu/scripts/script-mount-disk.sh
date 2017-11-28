@@ -83,6 +83,7 @@ function ScriptMountDisk {
 
         touch "${pathScriptTemp}" 
         { 
+            echo 'gnome-terminal;';
             echo 'exit 0;';
         } >> "${pathScriptTemp}";
 
@@ -90,7 +91,7 @@ function ScriptMountDisk {
 
         cp "${pathScriptTemp}" "/etc/init.d/";
 
-        chmod +x "/etc/init.d/mount-disk-auto.sh";
+        chmod a+x "/etc/init.d/mount-disk-auto.sh";
 
         /etc/init.d/mount-disk-auto.sh;
 
