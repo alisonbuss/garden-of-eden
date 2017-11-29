@@ -6,8 +6,7 @@
 
 ### O projeto **Garden of Eden** foi refeito para suportar modularização de repositórios de shell scripts **"local/cloud"** para uma determinada distribuição Linux. 
 
-    Uma referência prática dessa modularização está no projeto "[My Garden of Eden Light](https://github.com/alisonbuss/my-garden-of-eden-light)" que é uma extensão resumida do próprio projeto "Garden of Eden".
-
+### Uma referência prática dessa modularização está no projeto "[My Garden of Eden Light](https://github.com/alisonbuss/my-garden-of-eden-light)" que é uma extensão resumida do próprio projeto "Garden of Eden".
 
 O **Garden of Eden** é um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis. 
 
