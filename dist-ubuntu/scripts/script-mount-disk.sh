@@ -76,7 +76,7 @@ function ScriptMountDisk {
                 echo '# Criando pasta de ponto de montagem, para tornar acessível uma partição.';
                 echo 'mkdir -p "'$linkPartition'";';
                 echo '# Montando a partição.';
-                echo 'mount -t "'$typePartition'" "'$partition'" "'$linkPartition'"';
+                echo 'mount -t "'$typePartition'" "'$partition'" "'$linkPartition'";';
                 echo '';
             } >> "${pathScriptTemp}";    
         done
@@ -96,6 +96,8 @@ function ScriptMountDisk {
         /etc/init.d/mount-disk-auto.sh;
 
         update-rc.d mount-disk-auto.sh defaults;
+
+        #https://www.vivaolinux.com.br/topico/Ubuntu-e-Kubuntu/Criar-atalhos-via-linha-e-comandos-de-programas-instalados
     }
 
     # @descr: Função de remoção do script de montagem automatica de partição.
