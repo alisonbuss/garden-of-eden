@@ -27,9 +27,12 @@ function ScriptChrome {
 
         wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O ./binaries/chrome.deb;
         chmod -R 777 ./binaries/chrome.deb;
+
         dpkg -i ./binaries/chrome.deb;
+	    apt-get -f install;
+
         # Remover o download do Chrome
-        rm ./binaries/chrome.deb;
+        #rm ./binaries/chrome.deb;
     }
 
     # @descr: Função de desinstalação.

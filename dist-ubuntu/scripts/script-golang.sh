@@ -69,15 +69,14 @@ function ScriptGoLang {
             source ~/.bashrc;
 
             mkdir -p $HOME/go/{src,pkg,bin};
-            echo -e "\nGo $version was installed.\nMake sure to relogin into your shell or run:";
-            echo -e "\n\tsource $HOME/.bashrc\n\nto update your environment variables.";
-            echo "Tip: Opening a new terminal window usually just works. :)";
-            rm -f ./binaries/go.tar.gz;
 
             chmod -R 777 $HOME/go;
             chmod -R 777 $HOME/.go;
 
             go version;
+
+            # Remover o download do GitKraken
+            #rm ./binaries/go.tar.gz;
         fi
     }
 

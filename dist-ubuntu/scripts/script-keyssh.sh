@@ -36,11 +36,11 @@ function ScriptKeySSH {
 
         # verifica se tem a pasta, caso não tenha é criada uma pasta.
         if [ ! -d "$pathKey" ] ; then
-            mkdir ${pathKey/nameKey};
-            chmod -R 777 ${pathKey/nameKey};
+            mkdir "${pathKey}/${nameKey}";
+            chmod -R 777 "${pathKey}/${nameKey}";
 
             # gera a chave SSH do usuario da maquina.
-            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
+            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"
         else
             util.print.warning "Aviso: Sua chave SSH já foi criada!";
         fi 
@@ -55,13 +55,13 @@ function ScriptKeySSH {
             rm -rf "$pathKey/*";
 
             # gera a chave SSH do usuario da maquina.
-            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
+            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"
         else
-            mkdir ${pathKey/nameKey};
-            chmod -R 777 ${pathKey/nameKey};
+            mkdir "${pathKey}/${nameKey}";
+            chmod -R 777 "${pathKey}/${nameKey}";
 
             # gera a chave SSH do usuario da maquina.
-            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "$pathKey/$nameKey"
+            ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"
         fi  
     } 
 

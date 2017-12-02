@@ -45,7 +45,7 @@ function ScriptTerraform {
         chmod -R 777 "${HOME}/.terraform.d";
 
         # Remove o download do terraform
-        rm "./binaries/terraform.zip";
+        #rm "./binaries/terraform.zip";
     }
 
     # @descr: Função de desinstalação.

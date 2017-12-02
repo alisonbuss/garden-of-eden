@@ -35,11 +35,14 @@ function ScriptStarUML {
         chmod -R 777 ./binaries/staruml.deb;
 
         dpkg -i ./binaries/libgcrypt11.deb;
+	    apt-get -f install;
+
         dpkg -i ./binaries/staruml.deb;
+	    apt-get -f install;
 
         # Remover os download do libgcrypt11 e StarUML
-        rm ./binaries/libgcrypt11.deb;
-        rm ./binaries/staruml.deb;
+        #rm ./binaries/libgcrypt11.deb;
+        #rm ./binaries/staruml.deb;
     }
 
     # @descr: Função de desinstalação.

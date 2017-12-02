@@ -38,7 +38,7 @@ function ScriptRuby {
 
         rvm install "ruby-${version}";
 
-        rvm --default use "ruby-${version}";
+	    rvm use "ruby-${version}" --default;
 
         echo -n "Version ruby: ";
         ruby --version;

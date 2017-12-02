@@ -38,9 +38,12 @@ function ScriptVagrant {
         chmod -R 777 "./binaries/vagrant.deb";
 
         dpkg -i "./binaries/vagrant.deb";
+        apt-get -f install;
+
+        vagrant version;
 
         # Remove o download do Vagrant
-        rm "./binaries/vagrant.deb";
+        #rm "./binaries/vagrant.deb";
     }
 
     # @descr: Função de desinstalação.

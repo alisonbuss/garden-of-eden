@@ -41,11 +41,14 @@ function ScriptConfigTranspiler {
         wget "${urlDownload}/v${version}/ct-v${version}-x86_64-unknown-linux-gnu" -O "./binaries/ct";
         chmod -R 777 "./binaries/ct";
 
-        mv "./binaries/ct" "/usr/local/bin"
+        cp "./binaries/ct" "/usr/local/bin";
 
         util.print.out '%s' "Version ConfigTranspiler: ";
         ct --version;
         util.print.out '%s\n' "";
+
+        # Remover o download do ConfigTranspiler
+        #rm ./binaries/ct;
     }
 
     # @descr: Função de desinstalação.

@@ -31,9 +31,10 @@ function ScriptNetbeans {
 
         chmod +x ./binaries/netbeans.sh;
         ./binaries/netbeans.sh;
+        apt-get -f install;
 
         # Remove o download do Netbeans
-        rm ./binaries/netbeans.sh;
+        #rm ./binaries/netbeans.sh;
     }
 
     # @descr: Função de desinstalação.

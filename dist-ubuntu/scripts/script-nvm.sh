@@ -37,8 +37,8 @@ function ScriptNVM {
         util.print.info "Iniciando a instalação do NVM na maquina..."; 
 
         # pacotes de dependências que já estão no repositório de sua distribuição Debian Based
-        apt-get update;
-        apt-get install build-essential libssl-dev;
+	    # https://github.com/creationix/nvm#important-notes
+        #apt-get install build-essential libssl-dev;
 
         wget -qO- "https://raw.githubusercontent.com/creationix/nvm/v$version/install.sh" | bash;
         source ~/.nvm/nvm.sh;

@@ -30,9 +30,10 @@ function ScriptVSCode {
         chmod -R 777 ./binaries/vscode.deb;
 
         dpkg -i ./binaries/vscode.deb;
+	    apt-get -f install;
 
         # Remove o download do VS Code
-        rm ./binaries/vscode.deb;
+        #rm ./binaries/vscode.deb;
     }
 
     # @descr: Função de desinstalação.

@@ -27,7 +27,6 @@ function ScriptAnsible {
     __install() {
         util.print.info "Iniciando a instalação do Ansible na maquina..."; 
 
-        apt-get install software-properties-common;
         apt-add-repository ppa:ansible/ansible;
         apt-get update;
 

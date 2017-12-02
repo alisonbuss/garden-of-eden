@@ -15,24 +15,6 @@
             ]
         },
         {
-            "repository": "local-mount-disk-auto", 
-            "repositoryInfo": "Cria script de montagem de partições automatico na inicialização do sistema",
-            "repositoryPath": "./dist-ubuntu/scripts/",
-            "repositoryActive": false,
-            "scripts": [
-                { "script": "script-mount-disk.sh", "action": "add", "execute": true, 
-                    "param": { 
-                        "autoInit": true, 
-                        "initClient": true,
-                        "partitions": [
-                            { "partition": "/dev/sda2", "linkPartition": "/mnt/sda2", "typePartition": "ntfs" },
-                            { "partition": "/dev/sda4", "linkPartition": "/mnt/my-documents", "typePartition": "ntfs" }
-                        ]
-                     } 
-                }
-            ]
-        },
-        {
             "repository": "local", 
             "repositoryInfo": "Provisionar um ambiente básico de desenvolvimento",
             "repositoryPath": "./dist-ubuntu/scripts/",
@@ -42,7 +24,7 @@
                     "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
                 },
                 { "script": "script-git.sh", "action": "install", "execute": true, 
-                    "param": { "nameUser": "Lúcifer", "emailUser": "lucifer.dev@ghell.com" }
+                    "param": { "nameUser": "lucifer", "emailUser": "lucifer.dev@ghell.com" }
                 },
                 { "script": "script-jdk.sh", "action": "install", "execute": true, 
                     "param": { "version": "8" } 
@@ -69,7 +51,7 @@
                 },
                 { "script": "script-ansible.sh", "action": "install", "execute": true, "param": null },
                 { "script": "script-virtualbox.sh", "action": "install", "execute": true,  
-                    "param": { "version": "5.2.2" }
+                    "param": { "version": "5.1.30", "tagVersion": "5.1.30-118389" }
                 },
                 { "script": "script-vagrant.sh", "action": "install", "execute": true,  
                     "param": { "version": "2.0.1" }
@@ -78,45 +60,7 @@
                 { "script": "script-gitkraken.sh", "action": "install", "execute": true, "param": null },
                 { "script": "script-staruml.sh", "action": "install", "execute": true, "param": null },
                 { "script": "script-chrome.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-repositories-git.sh", "action": "clone", "execute": true, 
-                    "param": { 
-                        "defaultRepositoryPath": "/mnt/sda2/git-repositories", 
-                        "repositories": [
-                            {
-                                "repositoryPath": "/work",
-                                "clonesAddress": []
-                            }, {
-                                "repositoryPath": "/private",
-                                "clonesAddress": []
-                            }, {
-                                "repositoryPath": "/public",
-                                "clonesAddress": [
-                                    "https://github.com/alisonbuss/aurora.git",
-                                    "https://github.com/alisonbuss/Formulation.git",
-                                    "https://github.com/alisonbuss/garden-of-eden.git",
-                                    "https://github.com/alisonbuss/shell-script-tools.git",
-                                    "https://github.com/alisonbuss/coreos-kids-vagrant.git",
-                                    "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
-                                    "https://github.com/alisonbuss/cluster-coreos-terraform.git",
-                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git",
-                                    "https://github.com/alisonbuss/provider-vagrant-for-terraform.git"
-                                ]
-                            }
-                        ]
-                    } 
-                }
-            ]
-        },
-        {
-            "repository": "themes-and-apps-cloud", 
-            "repositoryInfo": "Instalar Temas e Aplicativos Comuns",
-            "repositoryPath": "https://raw.githubusercontent.com/alisonbuss/garden-of-eden/master/dist-ubuntu/scripts/",
-            "repositoryActive": false,
-            "scripts": [
-                { "script": "script-watercolor.sh", "action": "apply", "execute": true, 
-                    "param": { "forLinux": "ubuntu-17.10" }
-                } 
+                { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null }
             ]
         }
     ]
