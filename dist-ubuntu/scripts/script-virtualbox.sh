@@ -49,11 +49,14 @@ function ScriptVirtualBox {
     __install() {
         util.print.info "Iniciando a instalação do VirtualBox na maquina..."; 
 
-        wget "http://download.virtualbox.org/virtualbox/${version}/VirtualBox-${tagVersion}-Linux_amd64.run" -O "./binaries/virtualbox.run";
+        local nameVirtualBox="VirtualBox-${tagVersion}-Linux_amd64.run";
+        local nameExtensionPack="Oracle_VM_VirtualBox_Extension_Pack-${tagVersion}.vbox-extpack";
+
+        wget "http://download.virtualbox.org/virtualbox/${version}/${nameVirtualBox}" -O "./binaries/virtualbox.run";
         chmod -R 777 "./binaries/virtualbox.run";
 
-        wget "http://download.virtualbox.org/virtualbox/${version}/Oracle_VM_VirtualBox_Extension_Pack-${tagVersion}.vbox-extpack" -O "./binaries/virtualboxExtensionPack.vbox-extpack";
-        chmod -R 777 "./binaries/virtualboxExtensionPack.vbox-extpack";
+        wget "http://download.virtualbox.org/virtualbox/${version}/${nameExtensionPack}" -O "./binaries/${nameExtensionPack}";
+        chmod -R 777 "./binaries/${nameExtensionPack}";
 
         # Instalar algumas dependências
         apt-get -y install gcc make linux-headers-$(uname -r) dkms;
@@ -65,7 +68,7 @@ function ScriptVirtualBox {
         apt-get -f install;
 
         # Instalar a extensão do VirtualBox 
-        VBoxManage extpack install "./binaries/virtualboxExtensionPack.vbox-extpack";
+        VBoxManage extpack install "./binaries/${nameExtensionPack}";
 
         echo -n "Version VirtualBox: ";
         VBoxManage -v;
@@ -76,7 +79,7 @@ function ScriptVirtualBox {
         #rm "./binaries/virtualbox.run";
 
         # Remove o download do virtualboxExtensionPack
-        #rm "./binaries/virtualboxExtensionPack.vbox-extpack";
+        #rm "./binaries/${nameExtensionPack}";
     }
 
     # @descr: Função de desinstalação.
