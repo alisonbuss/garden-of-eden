@@ -32,7 +32,7 @@ function ScriptAnsible {
 
         apt-get install ansible;
 
-        chmod -R 777 $HOME/.ansible;
+        chmod -R 755 $HOME/.ansible;
 
         util.print.out '%s' "Version Ansible: ";
         ansible --version;

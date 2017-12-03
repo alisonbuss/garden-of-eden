@@ -130,6 +130,7 @@ function StartDivineCreation {
 
             if [ "${repositoryActive}" == "true" ]; then
                 mkdir -p "${pathLogScripts}${repository}";
+                chmod -R 755 "${pathLogScripts}${repository}";
                 for (( y=1; y<=$scriptSize; y++ )); do
                     local scriptIndex=$(($y-1));
                     local execute=$(cat "${settingFile}" | jq ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].execute");
@@ -317,7 +318,7 @@ function StartDivineCreation {
     
     # @descr: 
     mkdir -p "$pathLogGeneral";
-    chmod -R 777 "$pathLogGeneral";
+    chmod -R 755 "$pathLogGeneral";
     __initialize "$@" | tee -a "${pathLogGeneral}${0##*/}.log";   
 } 
 

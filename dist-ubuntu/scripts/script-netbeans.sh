@@ -27,7 +27,7 @@ function ScriptNetbeans {
         util.print.info "Iniciando a instalação do Netbeans na maquina...";
 
         wget "http://download.netbeans.org/netbeans/8.2/final/bundles/netbeans-8.2-linux.sh" -O ./binaries/netbeans.sh;
-        chmod -R 777 ./binaries/netbeans.sh;
+        chmod -R 644 ./binaries/netbeans.sh;
 
         chmod +x ./binaries/netbeans.sh;
         ./binaries/netbeans.sh;

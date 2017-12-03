@@ -45,7 +45,7 @@ function ScriptNVM {
         source ~/.profile;
         source ~/.bashrc;
         
-        chmod -R 777 $HOME/.nvm;
+        chmod -R 755 $HOME/.nvm;
 
         echo -n "Version NVM: ";
         nvm --version;

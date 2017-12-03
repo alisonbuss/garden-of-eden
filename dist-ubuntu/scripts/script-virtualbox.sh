@@ -53,10 +53,10 @@ function ScriptVirtualBox {
         local nameExtensionPack="Oracle_VM_VirtualBox_Extension_Pack-${tagVersion}.vbox-extpack";
 
         wget "http://download.virtualbox.org/virtualbox/${version}/${nameVirtualBox}" -O "./binaries/virtualbox.run";
-        chmod -R 777 "./binaries/virtualbox.run";
+        chmod -R 644 "./binaries/virtualbox.run";
 
         wget "http://download.virtualbox.org/virtualbox/${version}/${nameExtensionPack}" -O "./binaries/${nameExtensionPack}";
-        chmod -R 777 "./binaries/${nameExtensionPack}";
+        chmod -R 644 "./binaries/${nameExtensionPack}";
 
         # Instalar algumas dependências
         apt-get -y install gcc make linux-headers-$(uname -r) dkms;

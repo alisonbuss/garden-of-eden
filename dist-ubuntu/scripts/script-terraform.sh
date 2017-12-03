@@ -33,7 +33,7 @@ function ScriptTerraform {
         util.print.info "Iniciando a instalação do Terraform na maquina..."; 
 
         wget "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_linux_amd64.zip" -O "./binaries/terraform.zip";
-        chmod -R 777 "./binaries/terraform.zip";
+        chmod -R 644 "./binaries/terraform.zip";
 
         unzip "./binaries/terraform.zip" -d "/usr/local/bin/";
 
@@ -41,8 +41,8 @@ function ScriptTerraform {
 
         mkdir -p "${HOME}/.terraform";
 
-        chmod -R 777 "${HOME}/.terraform";
-        chmod -R 777 "${HOME}/.terraform.d";
+        chmod -R 755 "${HOME}/.terraform";
+        chmod -R 755 "${HOME}/.terraform.d";
 
         # Remove o download do terraform
         #rm "./binaries/terraform.zip";

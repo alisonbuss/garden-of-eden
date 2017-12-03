@@ -26,7 +26,7 @@ function ScriptGitKraken {
         util.print.info "Iniciando a instalação do GitKraken na maquina..."; 
 
         wget "https://release.gitkraken.com/linux/gitkraken-amd64.deb" -O ./binaries/gitkraken.deb;
-        chmod -R 777 ./binaries/gitkraken.deb;
+        chmod -R 644 ./binaries/gitkraken.deb;
 
         dpkg -i ./binaries/gitkraken.deb;
 	    apt-get -f install;
