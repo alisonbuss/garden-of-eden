@@ -39,7 +39,7 @@ function ScriptConfigTranspiler {
         local urlDownload="https://github.com/coreos/container-linux-config-transpiler/releases/download";    
 
         wget "${urlDownload}/v${version}/ct-v${version}-x86_64-unknown-linux-gnu" -O "./binaries/ct";
-        chmod -R 644 "./binaries/ct";
+        chmod -R 777 "./binaries/ct";
 
         cp "./binaries/ct" "/usr/local/bin";
 

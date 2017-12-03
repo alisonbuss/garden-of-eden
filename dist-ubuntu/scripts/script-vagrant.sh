@@ -35,12 +35,12 @@ function ScriptVagrant {
         util.print.info "Iniciando a instalação do Vagrant na maquina..."; 
 
         wget "https://releases.hashicorp.com/vagrant/${version}/vagrant_${version}_x86_64.deb" -O "./binaries/vagrant.deb";
-        chmod -R 644 "./binaries/vagrant.deb";
+        chmod -R 777 "./binaries/vagrant.deb";
 
         dpkg -i "./binaries/vagrant.deb";
         apt-get -f install;
 
-        chmod -R 755 $HOME/.vagrant.d;
+        chmod -R 777 $HOME/.vagrant.d;
 
         vagrant version;
 

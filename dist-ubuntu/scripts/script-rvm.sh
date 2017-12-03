@@ -38,6 +38,8 @@ function ScriptRVM {
 
         source /etc/profile.d/rvm.sh;
 
+        chmod -R 777 $HOME/.rvm;
+
         echo -n "Version rvm: ";
         rvm version;
     }

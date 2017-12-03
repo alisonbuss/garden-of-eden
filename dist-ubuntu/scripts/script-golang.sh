@@ -40,7 +40,7 @@ function ScriptGoLang {
             util.print.info "Downloading $DFILE...";
 
             wget "https://storage.googleapis.com/golang/$DFILE" -O ./binaries/go.tar.gz;
-            chmod -R 644 ./binaries/go.tar.gz;
+            chmod -R 777 ./binaries/go.tar.gz;
 
             util.print.info "Extracting GoLang...";
 
@@ -70,8 +70,8 @@ function ScriptGoLang {
 
             mkdir -p $HOME/go/{src,pkg,bin};
 
-            chmod -R 755 $HOME/go;
-            chmod -R 755 $HOME/.go;
+            chmod -R 777 $HOME/go;
+            chmod -R 777 $HOME/.go;
 
             go version;
 

@@ -27,7 +27,7 @@ function ScriptVSCode {
         util.print.info "Iniciando a instalação do VS Code na maquina..."; 
 
         wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O ./binaries/vscode.deb;
-        chmod -R 644 ./binaries/vscode.deb;
+        chmod -R 777 ./binaries/vscode.deb;
 
         dpkg -i ./binaries/vscode.deb;
 	    apt-get -f install;

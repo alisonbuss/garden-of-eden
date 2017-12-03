@@ -26,7 +26,7 @@ function ScriptChrome {
         util.print.info "Iniciando a instalação do Chrome na maquina..."; 
 
         wget "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -O ./binaries/chrome.deb;
-        chmod -R 644 ./binaries/chrome.deb;
+        chmod -R 777 ./binaries/chrome.deb;
 
         dpkg -i ./binaries/chrome.deb;
 	    apt-get -f install;

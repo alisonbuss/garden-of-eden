@@ -29,10 +29,10 @@ function ScriptStarUML {
         util.print.info "Iniciando a instalação do StarUML na maquina..."; 
 
         wget "http://ubuntu.cs.utah.edu/ubuntu/pool/main/libg/libgcrypt11/libgcrypt11_1.5.3-2ubuntu4.5_amd64.deb" -O ./binaries/libgcrypt11.deb;
-        chmod -R 644 ./binaries/libgcrypt11.deb;
+        chmod -R 777 ./binaries/libgcrypt11.deb;
 
         wget "http://staruml.io/download/release/v2.8.0/StarUML-v2.8.0-64-bit.deb" -O ./binaries/staruml.deb;
-        chmod -R 644 ./binaries/staruml.deb;
+        chmod -R 777 ./binaries/staruml.deb;
 
         dpkg -i ./binaries/libgcrypt11.deb;
 	    apt-get -f install;

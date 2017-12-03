@@ -26,6 +26,8 @@ function ScriptCFSSL {
         source ~/.profile;
         source ~/.bashrc;
 
+        util.print.out '%b\n' "${YELLOW}Iniciando download e a instalação... ${COLOR_OFF}"; 
+
         go get -u github.com/cloudflare/cfssl/cmd/cfssl;
 
         util.print.out '%s' "Version CFSSL: ";
