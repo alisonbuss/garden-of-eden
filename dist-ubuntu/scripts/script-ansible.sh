@@ -33,10 +33,10 @@ function ScriptAnsible {
         apt-get install ansible;
         apt-get -f install;
 
-        chmod -R 777 $HOME/.ansible;
-
         util.print.out '%s' "Version Ansible: ";
         ansible --version;
+
+        chmod -R 777 $HOME/.ansible;
     }
 
     # @descr: Função de desinstalação.
