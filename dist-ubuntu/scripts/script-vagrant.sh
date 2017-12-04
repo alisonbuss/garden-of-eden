@@ -40,9 +40,9 @@ function ScriptVagrant {
         dpkg -i "./binaries/vagrant.deb";
         apt-get -f install;
 
-        chmod -R 777 $HOME/.vagrant.d;
-
         vagrant version;
+
+        chmod -R 777 $HOME/.vagrant.d;
 
         # Remove o download do Vagrant
         #rm "./binaries/vagrant.deb";
