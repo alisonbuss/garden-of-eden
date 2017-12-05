@@ -39,7 +39,7 @@ function ScriptNetbeans {
         chmod +x ./binaries/netbeans.sh;
 
         # @fonts: https://www.cyberciti.biz/open-source/command-line-hacks/linux-run-command-as-different-user/
-        runuser -l $runAsUser -c './binaries/netbeans.sh;';
+        runuser $runAsUser -s './binaries/netbeans.sh';
         
         apt-get -f install;
 
