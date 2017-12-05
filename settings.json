@@ -60,7 +60,9 @@
                 { "script": "script-gitkraken.sh", "action": "install", "execute": true, "param": null },
                 { "script": "script-staruml.sh", "action": "install", "execute": true, "param": null },
                 { "script": "script-chrome.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-netbeans.sh", "action": "install", "execute": true, "param": null }
+                { "script": "script-netbeans.sh", "action": "install", "execute": true, 
+                    "param": { "runAsUser": "user" } 
+                }
             ]
         }
     ]

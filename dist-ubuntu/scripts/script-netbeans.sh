@@ -5,7 +5,7 @@
 # @fonts: http://www.edivaldobrito.com.br/ultima-versao-do-netbeans-no-linux/
 #         http://ubuntuhandbook.org/index.php/2016/10/netbeans-8-2-released-how-to-install-it-in-ubuntu-16-04/
 # @example:
-#       bash script-netbeans.sh --action='install' --param='{}'
+#       bash script-netbeans.sh --action='install' --param='{"forTheUser":"otherSystemUser"}'
 #   OR
 #       bash script-netbeans.sh --action='uninstall' --param='{}'    
 #-------------------------------------------------------------#
@@ -17,10 +17,17 @@ import.ShellScriptTools "/linux/utility.sh";
 # @descr: Função principal do script-netbeans.sh
 # @param: 
 #    action | text: (install, uninstall)
+#    param | json: '{"forTheUser":"..."}'
 function ScriptNetbeans {
     
     # @descr: Variavel que define a ação que o script ira realizar.
     local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
+
+    # @descr: Variavel de parametros JSON.
+    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
+
+    # @descr: Variavel da versão de instalação.
+    local runAsUser=$(echo ${PARAM_JSON} | jq -r '.runAsUser');
 
     # @descr: Função de instalação.
     __install() {
@@ -30,7 +37,10 @@ function ScriptNetbeans {
         chmod -R 777 ./binaries/netbeans.sh;
 
         chmod +x ./binaries/netbeans.sh;
-        ./binaries/netbeans.sh;
+
+        # @fonts: https://www.cyberciti.biz/open-source/command-line-hacks/linux-run-command-as-different-user/
+        runuser -l $runAsUser -c './binaries/netbeans.sh;';
+        
         apt-get -f install;
 
         # Remove o download do Netbeans
