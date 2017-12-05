@@ -42,7 +42,7 @@ function ScriptKeySSH {
             # gera a chave SSH do usuario da maquina.
             ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"
         else
-            util.print.warning "Aviso: Sua chave SSH já foi criada!";
+            util.print.warning "Aviso: Ha uma chave SSH já criada nesse diretorio! (${pathKey})";
         fi 
     } 
 

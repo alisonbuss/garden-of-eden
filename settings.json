@@ -20,7 +20,7 @@
             "repositoryPath": "./dist-ubuntu/scripts/",
             "repositoryActive": false,
             "scripts": [
-                { "script": "script-keyssh.sh", "action": "create", "execute": true, 
+                { "script": "script-keyssh.sh", "action": "recreate", "execute": true, 
                     "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
                 },
                 { "script": "script-git.sh", "action": "install", "execute": true, 
