@@ -140,6 +140,7 @@ function StartDivineCreation {
                         local param=$(cat "${settingFile}" | jq -c ".scriptsRepositories[${repositoryIndex}].scripts[${scriptIndex}].param");
 
                         __runScript "${repositoryPath}" "${script}" "${action}" "${param}" | tee -a "${pathLogScripts}${repository}/${script}.log";
+                        chmod -R 777 "${pathLogScripts}${repository}/${script}.log";
                     fi
                 done
             fi
