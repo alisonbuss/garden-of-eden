@@ -3,6 +3,7 @@
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação do VirtualBox na maquina.    
 # @fonts: https://websiteforstudents.com/installing-virtualbox-5-2-ubuntu-17-04-17-10/
+#         https://askubuntu.com/questions/762136/cannot-reinstall-virtualbox-on-ubuntu-16-04
 #	  http://www.edivaldobrito.com.br/virtualbox-no-linux/
 #         http://www.edivaldobrito.com.br/sbinvboxconfig-nao-esta-funcionando/
 #         https://www.olindata.com/en/blog/2014/07/installing-vagrant-and-virtual-box-ubuntu-1404-lts
