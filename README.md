@@ -25,6 +25,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala **Terraform**
 - Instala **Ansible**
 - Instala **VirtualBox**
+- Instala **Packer**
 - Instala **Vagrant**
 - Instala **VS Code**
 - Instala **GitKraken**
@@ -34,7 +35,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 
 > **Nota:**
 >
-> **1)** *Este projeto foi **TESTADO no Ubuntu 16.04 LTS (Xenial Xerus)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada do "NET Combo Bosta".*
+> **1)** *Este projeto foi TESTADO no **Ubuntu 16.04 LTS (Xenial Xerus)** e **Ubuntu 17.10 (Artful Aardvark)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada do "NET Combo Bosta".*
 >
 > **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão, será bem vinda.* 
 >
