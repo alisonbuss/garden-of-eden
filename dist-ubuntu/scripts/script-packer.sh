@@ -5,7 +5,7 @@
 # @fonts: https://www.packer.io/
 #         https://www.packer.io/docs/install/index.html
 # @example:
-#       bash script-packer.sh --action='install' --param='{"version":"..."}'
+#       bash script-packer.sh --action='install' --param='{"version":".1.1.3"}'
 #   OR
 #       bash script-packer.sh --action='uninstall' --param='{}'    
 #-------------------------------------------------------------#
@@ -33,13 +33,32 @@ function ScriptPacker {
     __install() {
         util.print.info "Iniciando a instalação do Packer na maquina..."; 
 
-  
+        wget "https://releases.hashicorp.com/packer/${version}/packer_${version}_linux_amd64.zip" -O "./binaries/packer.zip";
+        chmod -R 777 "./binaries/packer.zip";
+
+        unzip "./binaries/packer.zip" -d "/usr/local/bin/";
+
+        packer -v;
+
+        mkdir -p "${HOME}/.packer";
+
+        chmod -R 777 "${HOME}/.packer";
+        chmod -R 777 "${HOME}/.packer.d";
+
+        # Remove o download do packer
+        #rm "./binaries/packer.zip";
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.info "Iniciando a desinstalação do Packer na maquina..."; 
         
+        # Remove files on $HOME
+        rm -rf "${HOME}/.packer";
+        rm -rf "${HOME}/.packer.d"; 
+
+        # Remove files on BIN
+        rm -rf "/usr/local/bin/packer"; 
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
