@@ -38,7 +38,9 @@ function ScriptPacker {
 
         unzip "./binaries/packer.zip" -d "/usr/local/bin/";
 
-        packer -v;
+        echo "";
+        echo -n "Version Packer: "; packer -v;
+        echo "";
 
         mkdir -p "${HOME}/.packer";
 
