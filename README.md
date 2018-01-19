@@ -20,7 +20,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala **RVM (Ruby Version Manager).**
 - Instala **Ruby com RVM.**
 - Instala **Go**
-- Instala **CFSSL**
+- Instala **CFSSL + cfssljson**
 - Instala **Config Transpiler**
 - Instala **Terraform**
 - Instala **Ansible**

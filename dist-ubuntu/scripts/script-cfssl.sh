@@ -3,6 +3,8 @@
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Instalação do CFSSL na maquina 
 # @fonts: https://github.com/cloudflare/cfssl
+#         http://www.pimwiddershoven.nl/entry/install-cfssl-and-cfssljson-cloudflare-kpi-toolkit  
+#         https://coreos.com/os/docs/latest/generate-self-signed-certificates.html
 # @example:
 #       bash script-cfssl.sh --action='install' --param='{}'   
 #-------------------------------------------------------------#
@@ -23,12 +25,19 @@ function ScriptCFSSL {
     __install() {
         util.print.info "Iniciando a instalação do CFSSL na maquina..."; 
 
-        source ~/.profile;
-        source ~/.bashrc;
+        #source ~/.profile;
+        #source ~/.bashrc;
 
-        util.print.out '%b\n' "${YELLOW}Iniciando download e a instalação... ${COLOR_OFF}"; 
+        #util.print.out '%b\n' "${YELLOW}Iniciando download e a instalação... ${COLOR_OFF}"; 
 
-        go get -u github.com/cloudflare/cfssl/cmd/cfssl;
+        #go get -u github.com/cloudflare/cfssl/cmd/cfssl;
+
+        #util.print.out '%s' "Version CFSSL: ";
+        #cfssl version;
+
+        curl "https://pkg.cfssl.org/R1.2/cfssl_linux-amd64" -o "/usr/local/bin/cfssl";
+        curl "https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64" -o "/usr/local/bin/cfssljson";
+        chmod +x "/usr/local/bin/cfssl" "/usr/local/bin/cfssljson";
 
         util.print.out '%s' "Version CFSSL: ";
         cfssl version;
