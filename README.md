@@ -16,7 +16,7 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala **Git**
 - Instala **JDK**
 - Instala **NVM (Node Version Manager)**
-- Instala **Node.js com NVM.**
+- Instala **Node.js com NPM.**
 - Instala **RVM (Ruby Version Manager).**
 - Instala **Ruby com RVM.**
 - Instala **Go**
