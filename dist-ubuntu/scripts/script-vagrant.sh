@@ -16,7 +16,7 @@ source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shel
 import.ShellScriptTools "/linux/utility.sh";
 
 # @descr: Função principal do script-vagrant.sh
-# @param: 
+# @param:
 #    action | text: (install, uninstall)
 #    param | json: '{"version":"..."}'
 function ScriptVagrant {
