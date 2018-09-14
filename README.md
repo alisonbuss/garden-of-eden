@@ -406,7 +406,9 @@ E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.jso
 * mhavila, Márcio d'Ávila. ***Scripts Shell sob Controle*** 
   Acessado: *19 de Setembro de 2017.*
   Disponível: *[http://www.mhavila.com.br/topicos/unix/shscript.html](http://www.mhavila.com.br/topicos/unix/shscript.html)*.
-
+* blog pantuza, Gustavo Pantuza. ***COMO FUNCIONA O MAKEFILE*** 
+  Acessado: *13 de Setembro de 2018.*
+  Disponível: *[https://blog.pantuza.com/tutoriais/como-funciona-o-makefile/](https://blog.pantuza.com/tutoriais/como-funciona-o-makefile/)*.
 
 ## Tradução | Translation
 - [Inglês | English](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=en&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhjF8wXBywEnSgThP4hIo1rEuBQcIw)
