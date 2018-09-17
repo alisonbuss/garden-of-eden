@@ -12,6 +12,13 @@ O **Garden of Eden** é um projeto Shell Script para provisionamento de um ambie
 
 O **Garden of Eden** provisiona os seguentes programas:
 
+
+- Desinstalar **LibreOffice**
+- Instala **WPS Office**
+- Instala **PSensor/LM-Sensors**
+    - https://wpitchoune.net/psensor/
+    - https://www.edivaldobrito.com.br/monitorar-a-temperatura-do-pc/
+
 - Gera **chave SSH**
 - Instala **Git**
 - Instala **JDK**
@@ -20,8 +27,6 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala **RVM (Ruby Version Manager).**
 - Instala **Ruby com RVM.**
 - Instala **Go**
-- Instala **CFSSL + cfssljson**
-- Instala **Config Transpiler**
 - Instala **Terraform**
 - Instala **Ansible**
 - Instala **VirtualBox**
