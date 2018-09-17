@@ -18,6 +18,9 @@ O **Garden of Eden** provisiona os seguentes programas:
 - Instala **PSensor/LM-Sensors**
     - https://wpitchoune.net/psensor/
     - https://www.edivaldobrito.com.br/monitorar-a-temperatura-do-pc/
+    - sudo apt-get install psensor
+    - OU: sudo apt-get install lm-sensors && sudo sensors-detect && sensors 
+    
 
 - Gera **chave SSH**
 - Instala **Git**
