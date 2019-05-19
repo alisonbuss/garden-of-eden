@@ -314,6 +314,7 @@ Descrição das pastas e arquivos do projeto:
 │   │       ├── script-multimedia.sh
 │   │       ├── script-psensor.sh
 │   │       ├── script-repositories-git.sh
+│   │       ├── script-tools.sh
 │   │       └── script-themes.sh
 │   └── tools
 │       └── utility.sh
