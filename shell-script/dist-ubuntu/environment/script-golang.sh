@@ -3,6 +3,7 @@
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Script de instalação e desinstalação da linguagem programação Go na maquina.
 # @fonts: https://github.com/canha/golang-tools-install-script
+#         https://snapcraft.io/go
 # @example:
 #       bash script-golang.sh --action='install' --param='{"version":"8"}'
 #   OR
@@ -31,6 +32,12 @@ function ScriptGoLang {
             util.print.warning "Aviso: GoLang já está instalanda na maquina!";
         else
             util.print.out '%s\n' "Downloading go${version}.linux-amd64.tar.gz...";
+
+            # https://snapcraft.io/go
+            # snap install --classic --channel=1.12/stable go
+            # go version
+
+            # OR...
 
             wget "https://storage.googleapis.com/golang/go${version}.linux-amd64.tar.gz" -O ./binaries/go.tar.gz;
             chmod -R 777 ./binaries/go.tar.gz;
