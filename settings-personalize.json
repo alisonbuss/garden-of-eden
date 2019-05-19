@@ -1,0 +1,89 @@
+{
+    "settings": [
+        {
+            "module": "example",
+            "description": "Executar um exemplo de como usar um script no padrão do (Garden Of Eden)",
+            "active": true,
+            "logsPath": "./logs/dist-ubuntu/personalize",
+            "scriptsPath": "./shell-script/dist-ubuntu/personalize",
+            "scripts": [
+                { "script": "script-example.sh", "action": "print-version", "execute": true,
+                    "param": { "version": "3.6.66" }
+                }
+            ]
+        },
+        {
+            "module": "personalize",
+            "description": "Provisionar ambiente personalizado com temas e recursos pessoais",
+            "active": false,
+            "logsPath": "./logs/dist-ubuntu/personalize",
+            "scriptsPath": "./shell-script/dist-ubuntu/personalize",
+            "scripts": [
+                { "script": "script-cfssl.sh", "action": "install", "execute": false,
+                    "param": null
+                },
+                { "script": "script-psensor.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-gnomebaker.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-multimedia.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-repositories-git", "action": "clone", "execute": true,
+                    "param": {
+                        "rootPath": "/mnt/sda2/git-repositories",
+                        "repositories": [
+                            {
+                                "repositoryPath": "/work",
+                                "clonesAddress": []
+                            }, {
+                                "repositoryPath": "/private",
+                                "clonesAddress": []
+                            }, {
+                                "repositoryPath": "/public",
+                                "clonesAddress": [
+                                    "https://github.com/alisonbuss/garden-of-eden.git",
+                                    "https://github.com/alisonbuss/centos-packer.git",
+                                    "https://github.com/alisonbuss/ubuntu-packer.git",
+                                    "https://github.com/alisonbuss/coreos-packer.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-kubernetes-ansible.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-kubernetes-vagrant.git",
+                                    "https://github.com/alisonbuss/ubuntu-vagrant.git",
+                                    "https://github.com/alisonbuss/centos-vagrant.git",
+                                    "https://github.com/alisonbuss/coreos-kids-vagrant.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-basic-vagrant.git",
+                                    "https://github.com/alisonbuss/multiple-nodes-vagrant.git",
+                                    "https://github.com/alisonbuss/project-initial-ansible.git",
+                                    "https://github.com/alisonbuss/ansible-environment.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-terraform.git",
+                                    "https://github.com/alisonbuss/terraform-provider-vagrant.git",
+                                    "https://github.com/alisonbuss/provider-vagrant-for-terraform.git",
+                                    "https://github.com/alisonbuss/kharon.git",
+                                    "https://github.com/alisonbuss/my-posts.git",
+                                    "https://github.com/alisonbuss/crud-angular6.git",
+                                    "https://github.com/alisonbuss/publish-articles-angular.git",
+                                    "https://github.com/alisonbuss/shell-script-tools.git",
+                                    "https://github.com/alisonbuss/kubernetes-the-hard-way.git",
+                                    "https://github.com/alisonbuss/alisonbuss.github.io.git",
+                                    "https://github.com/alisonbuss/my-licenses.git",
+                                    "https://github.com/alisonbuss/Formulation.git",
+                                    "https://github.com/alisonbuss/QuestionsAnswers-AndroidApp.git",
+                                    "https://github.com/alisonbuss/new-garden-of-eden.git",
+                                    "https://github.com/alisonbuss/cluster-kubernetes-ansible-vagrant.git",
+                                    "https://github.com/alisonbuss/cluster-coreos-ansible-vagrant.git",
+                                    "https://github.com/alisonbuss/modules-for-packer.git",
+                                    "https://github.com/alisonbuss/my-garden-of-eden-light.git"
+                                ]
+                            }
+                        ]
+                    }
+                },
+                { "script": "script-themes.sh", "action": "install", "execute": true,
+                    "param": { "username": "You-User" }
+                }
+            ]
+        }
+    ]
+}

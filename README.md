@@ -1,174 +1,154 @@
 
 <h1 align="center" >
-  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/logo-garden-of-eden.png" width="166px" alt="logo"/> 
+  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/shell-script/logo-garden-of-eden.png" width="166px" alt="logo"/> 
   <br/>Garden of Eden
 </h1>
 
-### O projeto **Garden of Eden** foi refeito para suportar modularização de repositórios de shell scripts **"local/cloud"** para uma determinada distribuição Linux. 
-
-### Uma referência prática dessa modularização está no projeto "[My Garden of Eden Light](https://github.com/alisonbuss/my-garden-of-eden-light)" que é uma extensão resumida do próprio projeto "Garden of Eden".
-
 O **Garden of Eden** é um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis. 
 
-O **Garden of Eden** provisiona os seguentes programas:
+O **Garden of Eden** provisiona os seguentes recursos:
 
-
-- Desinstalar **LibreOffice**
-- Instala **WPS Office**
-- Instala **PSensor/LM-Sensors**
-    - https://wpitchoune.net/psensor/
-    - https://www.edivaldobrito.com.br/monitorar-a-temperatura-do-pc/
-    - sudo apt-get install psensor
-    - OU: sudo apt-get install lm-sensors && sudo sensors-detect && sensors 
-    
-
-- Gera **chave SSH**
-- Instala **Git**
-- Instala **JDK**
-- Instala **NVM (Node Version Manager)**
-- Instala **Node.js com NPM.**
-- Instala **RVM (Ruby Version Manager).**
-- Instala **Ruby com RVM.**
-- Instala **Go**
-- Instala **Terraform**
-- Instala **Ansible**
-- Instala **VirtualBox**
-- Instala **Packer**
-- Instala **Vagrant**
-- Instala **VS Code**
-- Instala **GitKraken**
-- Instala **StarUML**
-- Instala **Chrome**
-- Instala **NetBeans**
+- Gerar **chave SSH**
+- Instala o **Git**
+- Instala o **JDK**
+- Instala o **pyenv (Python Version Manager)**
+- Instala o **NVM (Node Version Manager)**
+- Instala o **RVM (Ruby Version Manager)**
+- Instala o **Node.js usando NVM**
+- Instala o **Ruby usando RVM**
+- Instala o **Go**
+- Instala o **Docker**
+- Instala o **Docker Compose**
+- Instala o **Terraform**
+- Instala o **Ansible**
+- Instala o **VirtualBox**
+- Instala o **Packer**
+- Instala o **Vagrant**
+- Instala o **VS Code**
+- Instala o **GitKraken**
+- Instala o **StarUML**
+- Instala o **Chrome**
+- Instala o **NetBeans**
 
 > **Nota:**
 >
-> **1)** *Este projeto foi TESTADO no **Ubuntu 16.04 LTS (Xenial Xerus)** e **Ubuntu 17.10 (Artful Aardvark)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada do "NET Combo Bosta".*
+> **1)** *Este projeto foi TESTADO no **Ubuntu 17.10 (Artful Aardvark)**, **Ubuntu 18.10 (Cosmic Cuttlefish)** e **Ubuntu 19.04 (Disco Dingo)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada da "NET...".*
 >
-> **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimentos, não sou um profissional linux e Shell Script, qualquer opinião, sugestão, será bem vinda.* 
+> **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimento prático, não sou um profissional linux, qualquer opinião, sugestão, será bem vinda.* 
 >
 > **3)** *A maior parte do conhecimento obtido para se desenvolver esse projeto foi a traveis do canal do YouTube "[Bóson Treinamentos - Shell Scripting - Programação no Linux](https://www.youtube.com/playlist?list=PLucm8g_ezqNrYgjXC8_CgbvHbvI7dDfhs)", fico inteiramente grato por todas as informações obtida por esse canal.* 
 >  
 
 ## O funcionamento do Garden of Eden.
 
-A estrutura base do projeto consiste em um arquivo **"settings.json"**, esse arquivo defini a distribuição linux a ser usada, local da geração de logs, definições de modularização dos repositórios de scripts e a ordem de execução dos scripts e seus parâmetros. Um exemplo do arquivo **"settings.json"**:
+A estrutura base do projeto consiste em um arquivo **"settings-*.json"**, esse arquivo json defini os modulos de scripts shell a ser executados, a distribuição linux a ser usada, e entre outras definições. Um exemplo do arquivo **"settings-you-file.json"**:
 
-```text
+```json
 {
-    "distribution": "ubuntu",
-    "pathLogGeneral": "./logs/",
-    "pathLogScripts": "./logs/dist-ubuntu/",
-    "scriptsRepositories": [
+    "settings": [
         {
-            "repository": "local-example", 
-            "repositoryInfo": "Exemplo de como usar um script no padrão do (Garden Of Eden)",
-            "repositoryPath": "./dist-ubuntu/scripts/",
-            "repositoryActive": true,
+            "module": "example",
+            "description": "Executar um exemplo de como usar um script no padrão do (Garden Of Eden)",
+            "active": true,
+            "logsPath": "./logs/dist-ubuntu/personalize",
+            "scriptsPath": "./shell-script/dist-ubuntu/personalize",
             "scripts": [
-                { "script": "script-example.sh", "action": "install", "execute": true, 
-                    "param": { "version": "3.6.66" } 
-                } 
+                { "script": "script-example.sh", "action": "print-version", "execute": true,
+                    "param": { "version": "3.6.66" }
+                }
+                ...mais scripts...
             ]
         },
-        ...outros..repositórios...
+        ...outros modulos de scripts...
     ]
 }
 ```
 
-No arquivo **"settings.json"** consiste de 4 parâmetros básicos (**distribution**, **pathLogGeneral**, **pathLogScripts**, **scriptsRepositories**) 
-como mostra o exemplo acima: 
+Logo abaixo o arquivo json a ser usado como padrão do ambiente de desenvolvimento do **Garden of Eden**
 
-- "**distribution**": destina-se ao tipo de distribuição linux, nesse projeto se usa o Ubuntu.
-- "**pathLogGeneral**": destina-se ao diretório onde vai ser gerado o log geral do Garden of Eden.
-- "**pathLogScripts**": destina-se ao diretório onde vai ser gerado os logs dos repositórios de scripts.
-- "**scriptsRepositories**": destina-se a modularização dos repositórios de scripts em ordem a ser executados, esse modulo contem 5 parâmetros padrões que são (**repository, repositoryInfo, repositoryPath, repositoryActive, scripts**).
+> **Nota:**
+>
+> ***Lembre-se de alterar os valores correspondente aos parâmetros dos scripts, para a sua realidade.***
 
-Os parâmetros do **"scriptsRepositories": [{...}, ...]** do ultimo item citado acima, consiste em:
-
-- "**repository**": define o nome do repositório de scripts.
-- "**repositoryInfo**" define o uma descrição do repositório de scripts.
-- "**repositoryPath**": define o diretorio **local** ou da **nuvem** base, de onde vai ser chamados os shell scripts a serem executados.
-- "**repositoryActive**": define se o repositório vai ser executado, (**true** ou **false**), se for **true** esse repositório será executado caso contrario ele não é executado.
-- "**scripts**": destina-se a uma lista de scripts em ordem para ser executados, essa lista contem 4 parâmetros padrões que são (**script, action, execute, param**).
-
-Os parâmetros do **"scripts": [{...}, ...]** do ultimo item citado acima, consiste em:
-
-- "**script**": define o nome do Shell Script a ser executado.
-- "**action**" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
-- "**execute**": define se o script vai ser executado, (**true** ou **false**), se for **true** esse script será executado caso contrario ele não é executado.
-- "**param**": define um json de (**chave** e **valor**), esse json será repassado para o Shell Script especificado para ser consumido na execução.
-
-### Como ficaria o arquivo "settings.json" do Garden of Eden:
+Arquivo principal do ambiente padrão: **settings-environment.json**
 
 ```json
 {
-    "distribution": "ubuntu",
-    "pathLogGeneral": "./logs/",
-    "pathLogScripts": "./logs/dist-ubuntu/",
-    "scriptsRepositories": [
+    "settings": [
         {
-            "repository": "local-example", 
-            "repositoryInfo": "Exemplo de como usar um script no padrão do (Garden Of Eden)",
-            "repositoryPath": "./dist-ubuntu/scripts/",
-            "repositoryActive": true,
+            "module": "environment-default",
+            "description": "Provisionar ambiente básico de desenvolvimento do (Garden Of Eden)",
+            "active": true,
+            "logsPath": "./logs/dist-ubuntu/environment",
+            "scriptsPath": "./shell-script/dist-ubuntu/environment",
             "scripts": [
-                { "script": "script-example.sh", "action": "install", "execute": true, 
-                    "param": { "version": "3.6.66" } 
-                } 
-            ]
-        },
-        {
-            "repository": "local", 
-            "repositoryInfo": "Provisionar um ambiente básico de desenvolvimento",
-            "repositoryPath": "./dist-ubuntu/scripts/",
-            "repositoryActive": false,
-            "scripts": [
-                { "script": "script-keyssh.sh", "action": "recreate", "execute": true, 
-                    "param": { "comment": "Que reinaste o anjo caído!", "passwordKey": "luxferre", "pathKey": "/home/user/.ssh", "nameKey": "id_rsa" } 
+                { "script": "script-keyssh.sh", "action": "recreate", "execute": true,
+                    "param": {
+                        "comment": "Que reinaste o anjo caído!",
+                        "nameKey": "id_rsa",
+                        "pathKey": "/home/user/.ssh",
+                        "passwordKey": "luxferre"
+                    }
                 },
-                { "script": "script-git.sh", "action": "install", "execute": true, 
-                    "param": { "nameUser": "lucifer", "emailUser": "lucifer.dev@ghell.com" }
+                { "script": "script-git.sh", "action": "install", "execute": true,
+                    "param": { "name": "lucifer", "email": "lucifer.dev@ghell.com" }
                 },
-                { "script": "script-jdk.sh", "action": "install", "execute": true, 
-                    "param": { "version": "8" } 
+                { "script": "script-jdk.sh", "action": "install", "execute": true,
+                    "param": { "version": "11" }
                 },
-                { "script": "script-nvm.sh", "action": "install", "execute": true, 
-                    "param": { "version": "0.33.4" } 
+                { "script": "script-pyenv.sh", "action": "install", "execute": true,
+                    "param": null
                 },
-                { "script": "script-nodejs.sh", "action": "install", "execute": true, 
-                    "param": { "version": "8.4.0" } 
+                { "script": "script-nvm.sh", "action": "install", "execute": true,
+                    "param": { "version": "0.34.0" }
                 },
-                { "script": "script-rvm.sh",  "action": "install", "execute": true, "param": null },
-                { "script": "script-ruby.sh", "action": "install", "execute": true, 
-                    "param": { "version": "2.3.1" } 
+                { "script": "script-nodejs.sh", "action": "install-by-nvm", "execute": true,
+                    "param": { "version": "10.15.3" }
                 },
-                { "script": "script-golang.sh", "action": "install", "execute": true, 
-                    "param": { "version": "1.9.2" } 
+                { "script": "script-rvm.sh",  "action": "install", "execute": true,
+                    "param": null
                 },
-                { "script": "script-terraform.sh", "action": "install", "execute": true, 
-                    "param": { "version": "0.11.0" }
+                { "script": "script-ruby.sh", "action": "install-by-rvm", "execute": true,
+                    "param": { "version": "2.6.3" }
                 },
-                { "script": "script-cfssl.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-config-transpiler.sh", "action": "install", "execute": true,
-                    "param": { "version": "0.5.0" }
+                { "script": "script-golang.sh", "action": "install", "execute": true,
+                    "param": { "version": "1.12.4" }
                 },
-                { "script": "script-ansible.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-virtualbox.sh", "action": "install", "execute": true,  
-                    "param": { "version": "5.1.30", "tagVersion": "5.1.30-118389" }
+                { "script": "script-docker.sh", "action": "install", "execute": true,
+                    "param": { "username": "You-User", "version": "18.06.3~ce~3-0~ubuntu" }
                 },
-                { "script": "script-packer.sh", "action": "install", "execute": true,  
-                    "param": { "version": "1.1.3" }
+                { "script": "script-docker-compose.sh", "action": "install", "execute": true,
+                    "param": { "version": "1.24.0" }
                 },
-                { "script": "script-vagrant.sh", "action": "install", "execute": true,  
-                    "param": { "version": "2.0.1" }
+                { "script": "script-terraform.sh", "action": "install", "execute": true,
+                    "param": { "version": "0.11.13" }
                 },
-                { "script": "script-vscode.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-gitkraken.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-staruml.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-chrome.sh", "action": "install", "execute": true, "param": null },
-                { "script": "script-netbeans.sh", "action": "install", "execute": true, 
-                    "param": { "runAsUser": "user" } 
+                { "script": "script-ansible.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-virtualbox.sh", "action": "install", "execute": true,
+                    "param": { "version": "6.0.0", "tagVersion": "6.0.0-127566" }
+                },
+                { "script": "script-packer.sh", "action": "install", "execute": true,
+                    "param": { "version": "1.4.0" }
+                },
+                { "script": "script-vagrant.sh", "action": "install", "execute": true,
+                    "param": { "version": "2.2.4" }
+                },
+                { "script": "script-vscode.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-gitkraken.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-staruml.sh", "action": "install", "execute": true,
+                    "param": { "version": "3.1.0" }
+                },
+                { "script": "script-chrome.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-netbeans.sh", "action": "install", "execute": true,
+                    "param": null
                 }
             ]
         }
@@ -176,7 +156,27 @@ Os parâmetros do **"scripts": [{...}, ...]** do ultimo item citado acima, consi
 }
 ```
 
+### Descrição dos parâmetros do arquivo padrão do projeto.
+
+No arquivo padrão do Garden of Eden **"settings-environment.json"** consiste de 6 parâmetros básicos (**module**, **description**, **active**, **logsPath**, **scriptsPath**, **scripts**) como mostra o exemplo acima:
+
+- "**module**": define a nome/tipo do modulo a ser executado.
+- "**description**": define a descrição do modulo.
+- "**active**": define se o modulo vai ser executado, (**true** ou **false**), se for **true** esse modulo será executado.
+- "**logsPath**": destina-se ao diretório onde vai ser gerado os logs do modulo.
+- "**scriptsPath**": destina-se ao diretório base, de onde vai ser chamados os shell scripts a serem executados.
+- "**scripts**": define uma lista de scripts para ser executados em ordem, cada item dessa lista contem 4 parâmetros padrão, que são(**script, action, execute, param**).
+
+Os parâmetros do **"scripts": [{...}, ...]** do ultimo item citado acima, consiste em:
+
+- "**script**": define o nome do Shell Script a ser executado.
+- "**action**" define o tipo da ação que queira executar no Shell Script, essa ação é de acordo com Shell Script especificado.
+- "**execute**": define se o script vai ser executado, (**true** ou **false**), se for **true** esse script será executado caso contrario ele não é executado.
+- "**param**": define um json de (**chave** e **valor**), esse json será repassado para o Shell Script especifico para ser consumido na execução.
+
 ## Executando o Garden of Eden. 
+
+### Primeiro passo, baixar o projeto de um repositório do GitHub via CLI(Linux Command Line):
 
 Abra terminal no seu linux e execute os comandos abaixo: 
 
@@ -187,11 +187,12 @@ $ unzip ~/Downloads/garden-of-eden-master.zip -d ~/Downloads/
 $ cd ~/Downloads/garden-of-eden-master
 $ ls -a
 ```
-Pronto agora você pode executar Shell Scripts do "Garden of Eden":
+Pronto agora você pode executar o "Garden of Eden":
 
-- **start-divine-creation.sh** em modo de comandos.
+Através do arquivo:
+- **start-divine-creation.sh** em modo CLI.
 
-### Executando em modo de comandos:
+### Executando em modo de CLI:
 
 > **Nota:**
 > *Antes de executar o **Garden of Eden**, certifique-se de ter ajustado os parâmetros do arquivo **settings.json** para sua realidade.*
@@ -203,17 +204,17 @@ Terminal:
 $ sudo chmod a+x start-divine-creation.sh
 ```
 
-#### Visualizar a documentação, passando o parametro **--help|-help|-h|help**.
+#### Visualizar a documentação, passando o parâmetro **--help|-help|-h|help**.
 
 Terminal:
 ```bash
 $ sudo bash start-divine-creation.sh --help
 ```
 
-#### Listar todos os scripts a serem executados através do "settings.json", passando o parametro **--list**
+#### Listar todos os scripts a serem executados através do "settings.json", passando o parâmetro **--list**
 
 > **Nota:**
-> *Caso não seja passado o **--setting-file='...'** jundo com o parametro **--list** o Garden Of Eden ira setar o caminho padrão para './settings.json'.*
+> *Caso não seja passado o **--setting-file='...'** jundo com o parâmetro **--list** o Garden Of Eden ira setar o caminho padrão para './settings-environment.json'.*
 
 Terminal:
 ```bash
@@ -225,17 +226,17 @@ $ sudo bash start-divine-creation.sh -l
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'*:
 ```bash
-$ sudo bash start-divine-creation.sh --list --setting-file='./settings.json'
+$ sudo bash start-divine-creation.sh --setting-file='./settings-environment.json' --list
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'* reduzido:
 ```bash
-$ sudo bash start-divine-creation.sh -l -s='./settings.json'
+$ sudo bash start-divine-creation.sh -s='./settings-environment.json' -l
 ```
 
-#### Executando todos os scripts do "settings.json", passando o parametro **--rum**
+#### Executando todos os scripts do "settings.json", passando o parâmetro **--rum**
 
 > **Nota:**
-> *Caso não seja passado o **--setting-file='...'** jundo com o parametro **--run** o Garden Of Eden ira setar o caminho padrão para './settings.json'.*
+> *Caso não seja passado o **--setting-file='...'** jundo com o parâmetro **--run** o Garden Of Eden ira setar o caminho padrão para './settings.json'.*
 
 Terminal:
 ```bash
@@ -247,11 +248,28 @@ $ sudo bash start-divine-creation.sh -r
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'*:
 ```bash
-$ sudo bash start-divine-creation.sh --run --setting-file='./settings.json'
+$ sudo bash start-divine-creation.sh --setting-file='./settings-environment.json' --run
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'* reduzido:
 ```bash
-$ sudo bash start-divine-creation.sh -r -s='./settings.json'
+$ sudo bash start-divine-creation.sh -s='./settings-environment.json' -r
+```
+
+### Executando em modo de CLI com Makefile:
+
+Terminal:
+```bash
+$ make help
+# OU
+$ make version
+
+# OU
+$ make list-environment
+$ sudo make run-environment
+
+# OU
+$ make list-personalize
+$ sudo make run-personalize
 ```
 
 ## A estrutura do projeto Garden of Eden. 
@@ -259,42 +277,79 @@ $ sudo bash start-divine-creation.sh -r -s='./settings.json'
 Descrição das pastas e arquivos do projeto:
 
 ```
-garden-of-eden
-  |--binaries/....................'Pasta onda se salva os downloads dos binários temporários feito pelos scripts.'
-  |--dist-ubuntu/.................'Pasta de uma determinada distribuição linux, onde se encontra os scripts de execução.'
-     |--scripts/..................'Pasta onde se encontra os scripts de execução.'
-  |--files/.......................'Pasta de apoio, onde se encontra os arquivos variados, como logo, wallpaper etc.'
-  |--logs/........................'Pasta onde se encontra os logs gerados pelo Garden Of Eden, o local é definidos no "settings.json".'
-     |--dist-ubuntu/..............'Pasta onde se encontra os logs gerados após a execução de cada scripts, o local é definidos no "settings.json".'   
-  |--.gitignore...................'Ignorar a pasta de logs no git.'
-  |--import.sh....................'Shell Script que contem função de importação dos Shell Scripts do projeto.'
-  |--LICENSE......................'Licença Pública Geral - GPL-3.0.'
-  |--README.md....................'Descrição e documentação do projeto Garden of Eden.'
-  |--settings.json ...............'Arquivo principal do projeto onde é definido a modularização de repositórios shell scripts a serem executados.'
-  |--start-divine-creation.sh.....'Shell Script de inicialização do projeto em modo de comandos.'
+.
+├── binaries.................................'Pasta dos binários e downloads dos scripts executados.'
+│   └── jq-linux64-v1.6
+├── logs.....................................'Pasta onde se encontra os logs gerados pelo Garden Of Eden.'
+│   └── start-divine-creation.sh.log
+├── shell-script.............................'Pasta dos scripts a ser executados de uma determinada distribuição linux.'
+│   ├── dist-ubuntu
+│   │   ├── environment
+│   │   │   ├── script-ansible.sh
+│   │   │   ├── script-chrome.sh
+│   │   │   ├── script-docker-compose.sh
+│   │   │   ├── script-docker.sh
+│   │   │   ├── script-gitkraken.sh
+│   │   │   ├── script-git.sh
+│   │   │   ├── script-golang.sh
+│   │   │   ├── script-jdk.sh
+│   │   │   ├── script-keyssh.sh
+│   │   │   ├── script-netbeans.sh
+│   │   │   ├── script-nodejs.sh
+│   │   │   ├── script-nvm.sh
+│   │   │   ├── script-packer.sh
+│   │   │   ├── script-pyenv.sh
+│   │   │   ├── script-ruby.sh
+│   │   │   ├── script-rvm.sh
+│   │   │   ├── script-staruml.sh
+│   │   │   ├── script-terraform.sh
+│   │   │   ├── script-vagrant.sh
+│   │   │   ├── script-virtualbox.sh
+│   │   │   └── script-vscode.sh
+│   │   └── personalize
+│   │       ├── script-brasero.sh
+│   │       ├── script-cfssl.sh
+│   │       ├── script-example.sh
+│   │       ├── script-gnomebaker.sh
+│   │       ├── script-multimedia.sh
+│   │       ├── script-psensor.sh
+│   │       ├── script-repositories-git.sh
+│   │       └── script-themes.sh
+│   └── tools
+│       └── utility.sh
+├── support-files............................'Pasta de apoio, onde se encontra os arquivos variados, como logo, wallpaper etc.'
+│   ├── logo-garden-of-eden.png
+│   ├── files
+│   │   ├── end-bender.gif
+│   │   └── header.txt
+│   └── wallpapers
+│       ├── wallpaper01.jpg
+│       └── ...
+├── LICENSE..................................'Licença - MIT.'
+├── Makefile.................................'Arquivo para reduzir/facilitar a forma de execução do projeto Garden of Eden via CLI.'
+├── README.md................................'Descrição e documentação do projeto Garden of Eden.'
+├── settings-environment.json................'Arquivo principal do projeto onde é definido a modularização dos scripts shell a serem executados.'
+├── settings-personalize.json................'Arquivo secundário, para um ambiente alternativo a ser executado, baseado no modelo padrão do Garden of Eden.'
+└── start-divine-creation.sh.................'Shell Script de inicialização do projeto em modo de CLI.'
 ```
 
 Caso tu queiras criar um script de instalação de um programa do seu interesse, no próprio projeto tem um script de exemplo que você pode usar como base inicial, exemplo abaixo:
 
-Diretório: dist-ubuntu/scripts/script-example.sh
+Diretório: ./shell-script/dist-ubuntu/personalize/script-example.sh
 
 Arquivo:
 
 ```bash
 #!/bin/bash
-
+ 
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Sua Descrição da Instalação na Maquina.
 # @fonts: Fontes de referências
 # @example:
-#       bash script-example.sh --action='install' --param='{"version":"3.6.66"}'
-#   OR
-#       bash script-example.sh --action='uninstall' --param='{"version":"6.6.63"}'    
+#
+#   bash script-example.sh --action='print-version' --param='{"version":"3.6.66"}'
+#
 #-------------------------------------------------------------#
-
-source <(wget --no-cache -qO- "https://raw.githubusercontent.com/alisonbuss/shell-script-tools/master/import.sh"); 
-
-import.ShellScriptTools "/linux/utility.sh";
 
 # @descr: Descrição da Função.
 # @fonts: Fontes de referências
@@ -303,31 +358,23 @@ import.ShellScriptTools "/linux/utility.sh";
 #    param | json: '{"version":"..."}'
 function ScriptExample {
     
-    # @descr: Descrição da Variavel.
+    # @descr: Variavel que define a ação que o script ira realizar.
     local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
-    # @descr: Descrição da Variavel.
+    # @descr: Variavel de parametros JSON.
     local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
+
     # @descr: Descrição da Variavel.
-    local version=$(echo "${PARAM_JSON}" | jq -r '.version');
+    local version=$(echo "${PARAM_JSON}" | $RUN_JQ -r '.version');
 
     # @descr: Descrição da Função.
     # @fonts: Fontes de referências
     # @param: Parametros (--aa='aaa', --bb='bbb')
-    __install() {
-        util.print.info "Iniciando a instalação do Example na maquina..."; 
-        util.print.out '%s\n\n' "  --> Version: ${version}"; 
+    __print_version() {
+        util.print.out '%s\n' "Iniciando o Teste do Example na maquina..."; 
+        util.print.out '%s\n' "--> Print Version: ${version}"; 
     }
 
-    # @descr: Descrição da Função.
-    # @fonts: Fontes de referências
-    # @param: Parametros (--aa='aaa', --bb='bbb')
-    __uninstall() { 
-        util.print.info "Iniciando a desinstalação do Example na maquina..."; 
-        util.print.out '%s\n\n' "  --> Version: ${version}"; 
-    }
-
-    # @descr: Descrição da Função.
-    # @fonts: Fontes de referências
+    # @descr: Função é chamada qndo a um erro de tipo de ação.
     # @param: 
     #    action | text: "..." | Action não encontrado.
     __actionError() {
@@ -336,16 +383,11 @@ function ScriptExample {
         return 1;
     } 
 
-    # @descr: Descrição da Função.
-    # @fonts: Fontes de referências
-    # @param: Parametros (--aa='aaa', --bb='bbb')
+    # @descr: Função principal "um construtor por exemplo".
     __initialize() {
         case ${ACTION} in
-            install) { 
-                __install; 
-            };;
-            uninstall) { 
-                __uninstall;
+            print-version) { 
+                __print_version; 
             };;
             *) {
                __actionError "--action=${ACTION}"; 
@@ -353,7 +395,7 @@ function ScriptExample {
         esac
     }
 
-    # @descr: Descrição da Chamada da Função.
+    # @descr: Chamada da função principal de inicialização do script.
     __initialize "$@";
 }
 
@@ -366,32 +408,37 @@ util.try; ( ScriptExample "$@" ); util.catch || {
 exit 0;
 ```
 
-Caso tu queiras mudar de distribuição linux, exemplo *"dist-fedora"*, basta copiar a pasta "**dist-ubuntu**" e renomear para "**dist-sua-distribuição**" e agora é ajustar os scripts do diretório "**dist-sua-distribuição/scripts/**", para que possa rodar os scripts de acordo com sua distribuição que você escolheu, exemplo:
+Caso tu queiras mudar de distribuição linux, exemplo *"dist-fedora"*, basta copiar a pasta "**dist-ubuntu**" e renomear para "**dist-sua-distribuição**" e agora é ajustar os scripts do diretório "**dist-sua-distribuição/**", para que assim possa rodar os scripts de acordo com a distribuição Linux escolhida.
 
-```
-garden-of-eden
-  |--dist-ubuntu/
-     |--scripts/...
-  |--dist-fedora/
-     |--scripts/...
-```  
-
-E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.json** para **..."repositoryPath": "./dist-sua-distribuição"...**, exemplo:
+Exemplo:
 
 ```text
+.
+└── shell-script
+    └── dist-ubuntu
+
+Para:
+
+.
+└── shell-script
+    └── dist-fedora
+```  
+
+E agora é só mudar o parâmetro "**scriptsPath**" do arquivo **settings-environment.json** ou **settings-personalize.json** para **..."scriptsPath": "./dist-sua-distribuição"...**, exemplo:
+
+```json
 {
-    "distribution": "fedora",
-    "pathLogGeneral": "...",
-    "pathLogScripts": "./logs/dist-fedora/",
-    "scriptsRepositories": [
+    "settings": [
         {
-            "repository": "...", 
-            "repositoryInfo": "...",
-            "repositoryPath": "./dist-fedora/scripts/",
-            "repositoryActive": ...,
-            "scripts": [...]
-        },
-        ...outros..repositórios...
+            "module": "environment-default",
+            "description": "Provisionar ambiente básico de desenvolvimento do (Garden Of Eden)",
+            "active": true,
+            "logsPath": "./logs/dist-fedora/environment",
+            "scriptsPath": "./shell-script/dist-fedora/environment",
+            "scripts": [
+                ...mais scripts...
+            ]
+        }
     ]
 }
 ```
@@ -399,7 +446,7 @@ E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.jso
 ***Pronto!! Agora você tem um ambiente de desenvolvimento básico para duas distribuições linux, du karalho né?? rsrsrsrs...***
 
 <p align="center">
-    <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/files/end-bender.gif" width="287px"/>
+    <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/shell-script/files/end-bender.gif" width="287px"/>
 </p>
 
 
@@ -414,9 +461,16 @@ E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.jso
 * mhavila, Márcio d'Ávila. ***Scripts Shell sob Controle*** 
   Acessado: *19 de Setembro de 2017.*
   Disponível: *[http://www.mhavila.com.br/topicos/unix/shscript.html](http://www.mhavila.com.br/topicos/unix/shscript.html)*.
-* blog pantuza, Gustavo Pantuza. ***COMO FUNCIONA O MAKEFILE*** 
+* Blog pantuza, Gustavo Pantuza. ***COMO FUNCIONA O MAKEFILE*** 
   Acessado: *13 de Setembro de 2018.*
   Disponível: *[https://blog.pantuza.com/tutoriais/como-funciona-o-makefile/](https://blog.pantuza.com/tutoriais/como-funciona-o-makefile/)*.
+* Blog Linux Journal, Mitch Frazier. ***Pattern Matching In Bash*** 
+  Acessado: *13 de Maio de 2019.*
+  Disponível: *[https://www.linuxjournal.com/content/pattern-matching-bash/](https://www.linuxjournal.com/content/pattern-matching-bash/)*.
+* Blog dev.to, Niko Heikkila. ***Don't Use Bash for Scripting (All the Time)*** 
+  Acessado: *13 de Maio de 2019.*
+  Disponível: *[https://dev.to/nikoheikkila/don-t-use-bash-for-scripting-all-the-time-2kci/](https://dev.to/nikoheikkila/don-t-use-bash-for-scripting-all-the-time-2kci/)*.
+
 
 ## Tradução | Translation
 - [Inglês | English](https://translate.googleusercontent.com/translate_c?act=url&depth=1&hl=pt-BR&ie=UTF8&prev=_t&rurl=translate.google.com.br&sl=pt-BR&sp=nmt4&tl=en&u=https://github.com/alisonbuss/garden-of-eden&usg=ALkJrhjF8wXBywEnSgThP4hIo1rEuBQcIw)
@@ -428,5 +482,5 @@ E agora é só mudar o parâmetro "**repositoryPath**" do arquivo **settings.jso
 
 ## Licença
 
-- [GPL-3.0: GNU General Public License v3.0](https://github.com/alisonbuss/garden-of-eden/blob/master/LICENSE)
-
+[<img width="190" src="https://raw.githubusercontent.com/alisonbuss/my-licenses/master/files/logo-open-source-550x200px.png">](https://opensource.org/licenses)
+[<img width="166" src="https://raw.githubusercontent.com/alisonbuss/my-licenses/master/files/icon-license-mit-500px.png">](https://github.com/alisonbuss/garden-of-eden/blob/master/LICENSE)
