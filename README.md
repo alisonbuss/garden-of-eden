@@ -1,6 +1,6 @@
 
 <h1 align="center" >
-  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/shell-script/logo-garden-of-eden.png" width="166px" alt="logo"/> 
+  <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/support-files/logo-garden-of-eden.png" width="166px" alt="logo"/> 
   <br/>Garden of Eden
 </h1>
 
@@ -446,7 +446,7 @@ E agora é só mudar o parâmetro "**scriptsPath**" do arquivo **settings-enviro
 ***Pronto!! Agora você tem um ambiente de desenvolvimento básico para duas distribuições linux, du karalho né?? rsrsrsrs...***
 
 <p align="center">
-    <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/shell-script/files/end-bender.gif" width="287px"/>
+    <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/support-files/files/end-bender.gif" width="287px"/>
 </p>
 
 
