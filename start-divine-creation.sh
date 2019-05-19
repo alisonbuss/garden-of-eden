@@ -67,7 +67,8 @@ function StartDivineCreation {
         local isValidPath=$(util.validateFilePath "${script}");
 
         if [ "${isValidPath}" == "true" ]; then
-            sleep 1s; #util.executeBash "${script}" "--action=${action}" "--param=${param}";
+            sleep 1s; 
+            util.executeBash "${script}" "--action=${action}" "--param=${param}";
             return $?;
         else 
             util.print.out '%b\n' "${RED}--> Error: Arquivo ou diretório não encontrado! ${B_RED}'${script}' ${COLOR_OFF}";
