@@ -4,7 +4,7 @@
   <br/>Garden of Eden
 </h1>
 
-O **Garden of Eden** é um projeto Shell Script para provisionamento de um ambiente básico de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis. 
+O **Garden of Eden** é um projeto Shell Script para provisionamento básico de um ambiente de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis. 
 
 O **Garden of Eden** provisiona os seguentes recursos:
 
