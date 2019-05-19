@@ -19,6 +19,9 @@
             "logsPath": "./logs/dist-ubuntu/personalize",
             "scriptsPath": "./shell-script/dist-ubuntu/personalize",
             "scripts": [
+                { "script": "script-tools.sh", "action": "install", "execute": true,
+                    "param": null
+                },
                 { "script": "script-cfssl.sh", "action": "install", "execute": false,
                     "param": null
                 },
