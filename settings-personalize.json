@@ -41,10 +41,26 @@
                             {
                                 "repositoryPath": "/work",
                                 "clonesAddress": []
-                            }, {
+                            }
+                        ]
+                    }
+                },
+                { "script": "script-repositories-git", "action": "clone", "execute": true,
+                    "param": {
+                        "rootPath": "/mnt/sda2/git-repositories",
+                        "repositories": [
+                            {
                                 "repositoryPath": "/private",
                                 "clonesAddress": []
-                            }, {
+                            }
+                        ]
+                    }
+                },
+                { "script": "script-repositories-git", "action": "clone", "execute": true,
+                    "param": {
+                        "rootPath": "/mnt/sda2/git-repositories",
+                        "repositories": [
+                            {
                                 "repositoryPath": "/public",
                                 "clonesAddress": [
                                     "https://github.com/alisonbuss/garden-of-eden.git",
