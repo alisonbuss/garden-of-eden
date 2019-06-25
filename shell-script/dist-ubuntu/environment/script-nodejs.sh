@@ -25,13 +25,16 @@ function ScriptNodeJS {
     # @descr: Variavel da versão de instalação.
     local version=$(echo ${PARAM_JSON} | $RUN_JQ -r '.version');
 
+    # @descr: Descrição da Variavel.
+    local username=$(echo "${PARAM_JSON}" | $RUN_JQ -r '.username');
+
     # @descr: Função de instalação.
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do NodeJS na maquina..."; 
 
-        source ~/.nvm/nvm.sh;
-        source ~/.profile;
-        source ~/.bashrc;
+        source $HOME/.nvm/nvm.sh;
+        source $HOME/.profile;
+        source $HOME/.bashrc;
 
         nvm install $version;
         nvm use $version;
@@ -39,13 +42,14 @@ function ScriptNodeJS {
         util.print.out '%s' "Version Node.js: ";
         node -v;
 
+        util.print.out '%s' "Version NPM: ";
+        npm -v;
+
         # @fonts: https://www.computerhope.com/unix/uchown.htm
         #         http://manpages.ubuntu.com/manpages/trusty/man1/chown.1.html
         # CUIDADO COM ESSE COMMANDO FILHO DA PUTA, DEU UM BUG DU INFERNU.
         # chown -R $USER:$(id -gn $USER) /home/user/.config;
-
-	    util.print.out '%s' "Version NPM: ";
-        npm -v;
+        chown -R $username:$(id -gn $username) $HOME/.config;
     }
 
     # @descr: Função de desinstalação.

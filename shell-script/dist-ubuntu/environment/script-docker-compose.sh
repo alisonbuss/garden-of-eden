@@ -25,9 +25,11 @@ function ScriptDockerCompose {
     # @descr: Função de instalação.
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Docker Compose na maquina..."; 
-        
+
         # Download the current stable release of Docker Compose:
-        curl -L "https://github.com/docker/compose/releases/download/${version}/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose;
+        wget "https://github.com/docker/compose/releases/download/${version}/docker-compose-Linux-x86_64" -O ./binaries/docker-compose;
+        chmod -R 777 ./binaries/docker-compose;
+        cp ./binaries/docker-compose /usr/local/bin/docker-compose;
 
         # Apply executable permissions to the binary:
         chmod +x /usr/local/bin/docker-compose;

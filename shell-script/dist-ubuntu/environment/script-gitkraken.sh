@@ -25,7 +25,7 @@ function ScriptGitKraken {
         chmod -R 777 ./binaries/gitkraken.deb;
 
         dpkg -i ./binaries/gitkraken.deb;
-	    apt-get -f install;
+	    apt-get install -f;
 
         # Remover o download do GitKraken
         #rm ./binaries/gitkraken.deb;

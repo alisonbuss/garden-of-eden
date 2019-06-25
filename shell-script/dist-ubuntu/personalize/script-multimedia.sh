@@ -19,10 +19,10 @@ function ScriptMultimedia {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação de Multimedia na maquina..."; 
 
-        apt-get install vlc; 
-        apt-get -f install;
+        apt-get install -y vlc;
+        apt-get install -f;
         
-        apt-get install ubuntu-restricted-extras;
+        apt-get install -y ubuntu-restricted-extras;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

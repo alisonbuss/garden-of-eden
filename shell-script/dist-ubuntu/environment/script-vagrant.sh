@@ -33,10 +33,10 @@ function ScriptVagrant {
         chmod -R 777 "./binaries/vagrant.deb";
 
         dpkg -i "./binaries/vagrant.deb";
-        apt-get -f install;
+        #apt-get install -f;
 
-        mkdir -p "${HOME}/.vagrant.d";
-        chmod -R 777 "${HOME}/.vagrant.d";
+        mkdir -p "$HOME/.vagrant.d";
+        chmod -R 777 "$HOME/.vagrant.d";
 
         vagrant version;
 

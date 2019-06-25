@@ -25,17 +25,17 @@ function ScriptRVM {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do RVM na maquina..."; 
 
-        apt-add-repository -y ppa:rael-gc/rvm;
+        add-apt-repository -y ppa:rael-gc/rvm;
         apt-get update;
-        apt-get install rvm;
-        apt-get -f install;
 
+        apt-get install -y rvm;
+        #apt-get install -f;
+        
         source /etc/profile.d/rvm.sh;
 
         chmod -R 777 $HOME/.rvm;
 
-        echo -n "Version rvm: ";
-        rvm version;
+        #echo -n "Version rvm: " && rvm version;
     }
 
     # @descr: Função de desinstalação.

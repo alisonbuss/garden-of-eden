@@ -32,11 +32,9 @@ function ScriptRuby {
         source /etc/profile.d/rvm.sh;
 
         rvm install "ruby-${version}";
-
 	    rvm use "ruby-${version}" --default;
 
-        echo -n "Version ruby: ";
-        ruby --version;
+        echo -n "Version ruby: " && ruby --version;
     }
 
     # @descr: Função de desinstalação.

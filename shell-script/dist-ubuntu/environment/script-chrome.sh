@@ -25,7 +25,7 @@ function ScriptChrome {
         chmod -R 777 ./binaries/chrome.deb;
 
         dpkg -i ./binaries/chrome.deb;
-	    apt-get -f install;
+	    #apt-get install -f;
 
         # Remover o download do Chrome
         #rm ./binaries/chrome.deb;

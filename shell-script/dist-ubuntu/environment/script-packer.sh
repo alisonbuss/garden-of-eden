@@ -36,10 +36,10 @@ function ScriptPacker {
         util.print.out '\n%s' "Version Packer: "; 
         packer -v;
 
-        mkdir -p "${HOME}/.packer";
+        mkdir -p "$HOME/.packer";
 
-        chmod -R 777 "${HOME}/.packer";
-        chmod -R 777 "${HOME}/.packer.d";
+        chmod -R 777 "$HOME/.packer";
+        chmod -R 777 "$HOME/.packer.d";
 
         # Remove o download do packer
         #rm "./binaries/packer.zip";
@@ -50,8 +50,8 @@ function ScriptPacker {
         util.print.out '%s\n' "Iniciando a desinstalação do Packer na maquina..."; 
         
         # Remove files on $HOME
-        rm -rf "${HOME}/.packer";
-        rm -rf "${HOME}/.packer.d"; 
+        rm -rf "$HOME/.packer";
+        rm -rf "$HOME/.packer.d"; 
 
         # Remove files on BIN
         rm -rf "/usr/local/bin/packer"; 

@@ -28,8 +28,9 @@ function ScriptExample {
     # @fonts: Fontes de referências
     # @param: Parametros (--aa='aaa', --bb='bbb')
     __print_version() {
-        util.print.out '%s\n' "Iniciando o Teste do Example na maquina..."; 
-        util.print.out '%s\n' "--> Print Version: ${version}"; 
+        util.print.out '%s\n' "Iniciando o Teste do Example na maquina...";
+        util.print.out '%s\n' "--> Print Version: ${version}";
+
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

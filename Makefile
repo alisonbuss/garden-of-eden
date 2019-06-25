@@ -8,9 +8,9 @@
 #       $ make  run-environment
 #
 #   OR
-#       $ make list-customization
+#       $ make list-personalize
 #   OR
-#       $ make  run-customization
+#       $ make  run-personalize
 #
 #   OR
 #       $ make help
@@ -22,7 +22,7 @@
 RUN_DIVINE_CREATION  ?= ./start-divine-creation.sh
 
 SETTINGS_ENV_FILE    ?= ./settings-environment.json
-SETTINGS_CUSTOM_FILE ?= ./settings-customization.json
+SETTINGS_CUSTOM_FILE ?= ./settings-personalize.json
 
 
 # Environment
@@ -32,11 +32,11 @@ list-environment:
 run-environment:
 	@bash $(RUN_DIVINE_CREATION) --setting-file='$(SETTINGS_ENV_FILE)' --run;
 
-# Customization
-list-customization:
+# Personalize
+list-personalize:
 	@bash $(RUN_DIVINE_CREATION) --setting-file='$(SETTINGS_CUSTOM_FILE)' --list;
 
-run-customization:
+run-personalize:
 	@bash $(RUN_DIVINE_CREATION) --setting-file='$(SETTINGS_CUSTOM_FILE)' --run;
 
 # Informative

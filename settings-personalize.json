@@ -3,7 +3,7 @@
         {
             "module": "example",
             "description": "Executar um exemplo de como usar um script no padrão do (Garden Of Eden)",
-            "active": true,
+            "active": false,
             "logsPath": "./logs/dist-ubuntu/personalize",
             "scriptsPath": "./shell-script/dist-ubuntu/personalize",
             "scripts": [
@@ -15,7 +15,7 @@
         {
             "module": "personalize",
             "description": "Provisionar ambiente personalizado com temas e recursos pessoais",
-            "active": false,
+            "active": true,
             "logsPath": "./logs/dist-ubuntu/personalize",
             "scriptsPath": "./shell-script/dist-ubuntu/personalize",
             "scripts": [
@@ -28,13 +28,16 @@
                 { "script": "script-psensor.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-gnomebaker.sh", "action": "install", "execute": true,
+                { "script": "script-brasero.sh", "action": "install", "execute": true,
                     "param": null
                 },
                 { "script": "script-multimedia.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-repositories-git", "action": "clone", "execute": true,
+                { "script": "script-themes.sh", "action": "install", "execute": true,
+                    "param": { "username": "dev" }
+                },
+                { "script": "script-repositories-git", "action": "clone", "execute": false,
                     "param": {
                         "rootPath": "/mnt/sda2/git-repositories",
                         "repositories": [
@@ -45,7 +48,7 @@
                         ]
                     }
                 },
-                { "script": "script-repositories-git", "action": "clone", "execute": true,
+                { "script": "script-repositories-git", "action": "clone", "execute": false,
                     "param": {
                         "rootPath": "/mnt/sda2/git-repositories",
                         "repositories": [
@@ -56,7 +59,7 @@
                         ]
                     }
                 },
-                { "script": "script-repositories-git", "action": "clone", "execute": true,
+                { "script": "script-repositories-git", "action": "clone", "execute": false,
                     "param": {
                         "rootPath": "/mnt/sda2/git-repositories",
                         "repositories": [
@@ -98,9 +101,6 @@
                             }
                         ]
                     }
-                },
-                { "script": "script-themes.sh", "action": "install", "execute": true,
-                    "param": { "username": "You-User" }
                 }
             ]
         }

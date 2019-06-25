@@ -23,11 +23,11 @@ function ScriptAnsible {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Ansible na maquina..."; 
 
-        apt-add-repository ppa:ansible/ansible;
+        add-apt-repository -y ppa:ansible/ansible;
         apt-get update;
 
-        apt-get install ansible;
-        apt-get -f install;
+        apt-get install -y ansible;
+        #apt-get install -f;
 
         util.print.out '%s' "Version Ansible: ";
         ansible --version;

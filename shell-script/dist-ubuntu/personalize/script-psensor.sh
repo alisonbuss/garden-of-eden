@@ -21,8 +21,8 @@ function ScriptPsensor {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Psensor na maquina..."; 
 
-        apt-get install lm-sensors hddtemp;
-        apt-get install psensor;
+        apt-get install -y lm-sensors hddtemp;
+        apt-get install -y psensor;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

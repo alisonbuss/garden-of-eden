@@ -33,34 +33,29 @@ function ScriptThemes {
         util.print.out '%s\n' "Iniciando a instalação do Themes na maquina..."; 
 
         # GNOME THEME
-        add-apt-repository ppa:system76/pop;
+        add-apt-repository -y ppa:system76/pop;
         apt-get update;
-        apt-get install pop-theme;
-        apt-get install pop-icon-theme;
+        
+        apt-get install -y pop-theme;
+        apt-get install -y pop-icon-theme;
 
-        # CHANGE THEME 
-        mkdir -p $HOME/Imagens/Wallpapers;
-        chmod -R 777 $HOME/Imagens/Wallpapers;
-        cp -R ./support-files/wallpapers/* $HOME/Imagens/Wallpapers;
-        local wallpaper="$HOME/Imagens/Wallpapers/wallpaper33.png";
-
-        runuser ${username} --command=$(gsettings set org.gnome.desktop.interface gtk-theme "Pop-dark");
-        runuser ${username} --command=$(gsettings set org.gnome.desktop.interface icon-theme "Pop");
-        runuser ${username} --command=$(gsettings set org.gnome.desktop.interface cursor-theme "Pop");
-        runuser ${username} --command=$(gsettings set org.gnome.desktop.background picture-uri "file://${wallpaper}");
-
-        # GNOME TWEAKS 
-        apt-get install gnome-tweak-tool;
+         # GNOME TWEAKS 
+        apt-get install -y gnome-tweak-tool;
 
         # GNOME SHELL 
-        apt-get install chrome-gnome-shell;
+        apt-get install -y chrome-gnome-shell;
 
-        # PLUGINS
-        local plu01="https://extensions.gnome.org/extension/19/user-themes/";
-        local plu02="https://extensions.gnome.org/extension/1160/dash-to-panel/";
-        local plu03="https://extensions.gnome.org/extension/307/dash-to-dock/";
+        # CHANGE THEME 
+        su ${username} --shell="/bin/bash" \
+                       --command="gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark'";
+        su ${username} --shell="/bin/bash" \
+                       --command="gsettings set org.gnome.desktop.interface icon-theme 'Pop'";
+        su ${username} --shell="/bin/bash" \
+                       --command="gsettings set org.gnome.desktop.interface cursor-theme 'Pop'";
 
-        runuser ${username} --command=$(firefox "${plu01}" "${plu02}" "${plu03}");
+        util.print.out '%s\n' "Instale esses plugins no firefox..."; 
+        util.print.out '%s\n' "  --> https://extensions.gnome.org/extension/19/user-themes/"; 
+        util.print.out '%s\n' "  --> https://extensions.gnome.org/extension/1160/dash-to-panel/"; 
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

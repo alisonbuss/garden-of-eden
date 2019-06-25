@@ -32,12 +32,12 @@ function ScriptTerraform {
 
         unzip "./binaries/terraform.zip" -d "/usr/local/bin/";
 
+        mkdir -p "$HOME/.terraform";
+
+        chmod -R 777 "$HOME/.terraform";
+        chmod -R 777 "$HOME/.terraform.d";
+
         terraform -v;
-
-        mkdir -p "${HOME}/.terraform";
-
-        chmod -R 777 "${HOME}/.terraform";
-        chmod -R 777 "${HOME}/.terraform.d";
 
         # Remove o download do terraform
         #rm "./binaries/terraform.zip";
@@ -48,8 +48,8 @@ function ScriptTerraform {
         util.print.out '%s\n' "Iniciando a desinstalação Terraform na maquina..."; 
 
         # Remove files on $HOME
-        rm -rf "${HOME}/.terraform";
-        rm -rf "${HOME}/.terraform.d"; 
+        rm -rf "$HOME/.terraform";
+        rm -rf "$HOME/.terraform.d"; 
 
         # Remove files on BIN
         rm -rf "/usr/local/bin/terraform"; 

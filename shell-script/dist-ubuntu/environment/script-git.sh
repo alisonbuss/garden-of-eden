@@ -27,7 +27,7 @@ function ScriptGit {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Git na maquina..."; 
 
-        apt-get install git;
+        apt-get install -y git;
         git config --global user.name "$nameUser";
         git config --global user.email $emailUser;
 

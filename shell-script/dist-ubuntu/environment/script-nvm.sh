@@ -33,17 +33,17 @@ function ScriptNVM {
 
         # pacotes de dependências que já estão no repositório de sua distribuição Debian Based
 	    # https://github.com/creationix/nvm#important-notes
-        #apt-get install build-essential libssl-dev;
+        #apt-get install -y build-essential libssl-dev;
 
         wget -qO- "https://raw.githubusercontent.com/creationix/nvm/v${version}/install.sh" | bash;
-        source ~/.nvm/nvm.sh;
-        source ~/.profile;
-        source ~/.bashrc;
-        
+   
+        source $HOME/.nvm/nvm.sh;
+        source $HOME/.profile;
+        source $HOME/.bashrc;
+             
         chmod -R 777 $HOME/.nvm;
 
-        echo -n "Version NVM: ";
-        nvm --version;
+        #echo -n "Version NVM: " && nvm --version;
     }
 
     # @descr: Função de desinstalação.

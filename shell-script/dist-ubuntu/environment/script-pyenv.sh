@@ -28,38 +28,35 @@ function ScriptPyenv {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do pyenv na maquina..."; 
 
-        apt-get install -y build-essential \
-                           libssl-dev \
-                           zlib1g-dev \
-                           libbz2-dev \
-                           libreadline-dev \
-                           libsqlite3-dev \
+        apt-get install -y curl \
                            llvm \
+                           tk-dev \
+                           libbz2-dev \
+                           liblzma-dev \
+                           libsqlite3-dev \
                            libncurses5-dev \
                            libncursesw5-dev \
-                           xz-utils \
-                           tk-dev \
-                           libffi-dev \
-                           liblzma-dev \
                            python-dev \
                            python3-dev \
                            python-openssl \
-                           python-pip
-                           aria2;
+                           python-pip;
+        
+        #apt-get install -f;
 
         curl -L "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
+        chmod -R 777 $HOME/.pyenv;
 
-        touch "$HOME/.bashrc"
+        touch $HOME/.bashrc
         {
             echo '# PyEnv';
             echo 'export PYENV_ROOT="$HOME/.pyenv"';
-            echo 'export PATH="$PYENV_ROOT/bin:$PATH"';
+            echo 'export PATH="$PATH:$PYENV_ROOT/bin"';
             echo 'eval "$(pyenv init -)"';
-            echo 'eval "$(pyenv virtualenv-init -)"'
+            echo 'eval "$(pyenv virtualenv-init -)"';
+        } >> $HOME/.bashrc;
+        source $HOME/.bashrc;
 
-        } >> "$HOME/.bashrc"; source ~/.bashrc;
-
-        pyenv --version;
+        #pyenv --version;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

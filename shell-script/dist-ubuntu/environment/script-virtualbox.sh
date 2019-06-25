@@ -27,7 +27,7 @@
 #   http://download.virtualbox.org/virtualbox/6.0.0/VirtualBox-6.0.0-127566-Linux_amd64.run
 #   http://download.virtualbox.org/virtualbox/6.0.0/Oracle_VM_VirtualBox_Extension_Pack-6.0.0-127566.vbox-extpack 
 #
-#   Após o análise, se extrai o tagVersion -> 5.2.2-119230
+#   Após o análise, se extrai o tagVersion -> 5.2.2-119230 OR 5.2.30-130521
 #
 #   Exemplo: {"version":"5.2.2","tagVersion":"5.2.2-119230"}
 #
@@ -53,20 +53,20 @@ function ScriptVirtualBox {
         local nameVirtualBox="VirtualBox-${tagVersion}-Linux_amd64.run";
         local nameExtensionPack="Oracle_VM_VirtualBox_Extension_Pack-${tagVersion}.vbox-extpack";
 
-        wget "http://download.virtualbox.org/virtualbox/${version}/${nameVirtualBox}" -O "./binaries/virtualbox.run";
+        wget "https://download.virtualbox.org/virtualbox/${version}/${nameVirtualBox}" -O "./binaries/virtualbox.run";
         chmod -R 777 "./binaries/virtualbox.run";
 
-        wget "http://download.virtualbox.org/virtualbox/${version}/${nameExtensionPack}" -O "./binaries/${nameExtensionPack}";
+        wget "https://download.virtualbox.org/virtualbox/${version}/${nameExtensionPack}" -O "./binaries/${nameExtensionPack}";
         chmod -R 777 "./binaries/${nameExtensionPack}";
 
         # Instalar algumas dependências
-        apt-get -y install gcc make linux-headers-$(uname -r) dkms;
-        apt-get -f install;
+        apt-get install -y gcc make linux-headers-$(uname -r) dkms;
+        apt-get install -f;
 
         # Instalar o VirtualBox e suas dependências 
         chmod +x "./binaries/virtualbox.run";
         ./binaries/virtualbox.run;
-        apt-get -f install;
+        apt-get install -f;
 
         # Instalar a extensão do VirtualBox 
         VBoxManage extpack install "./binaries/${nameExtensionPack}";
