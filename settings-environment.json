@@ -7,7 +7,7 @@
             "logsPath": "./logs/dist-ubuntu/environment",
             "scriptsPath": "./shell-script/dist-ubuntu/environment",
             "scripts": [
-                { "script": "script-keyssh.sh", "action": "recreate", "execute": false,
+                { "script": "script-keyssh.sh", "action": "recreate", "execute": true,
                     "param": {
                         "comment": "Que reinaste o anjo caído!",
                         "nameKey": "id_rsa",
@@ -15,64 +15,64 @@
                         "passwordKey": ""
                     }
                 },
-                { "script": "script-git.sh", "action": "install", "execute": false,
+                { "script": "script-git.sh", "action": "install", "execute": true,
                     "param": { "name": "alisonbuss", "email": "alisonbuss.dev@gmail.com" }
                 },
-                { "script": "script-jdk.sh", "action": "install", "execute": false,
+                { "script": "script-jdk.sh", "action": "install", "execute": true,
                     "param": { "version": "11" }
                 },
-                { "script": "script-pyenv.sh", "action": "install", "execute": false,
+                { "script": "script-pyenv.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-nvm.sh", "action": "install", "execute": false,
+                { "script": "script-nvm.sh", "action": "install", "execute": true,
                     "param": { "version": "0.34.0" }
                 },
-                { "script": "script-nodejs.sh", "action": "install-by-nvm", "execute": false,
+                { "script": "script-nodejs.sh", "action": "install-by-nvm", "execute": true,
                     "param": { "version": "10.15.3", "username": "dev" }
                 },
-                { "script": "script-rvm.sh",  "action": "install", "execute": false,
+                { "script": "script-rvm.sh",  "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-ruby.sh", "action": "install-by-rvm", "execute": false,
+                { "script": "script-ruby.sh", "action": "install-by-rvm", "execute": true,
                     "param": { "version": "2.6.3" }
                 },
-                { "script": "script-golang.sh", "action": "install", "execute": false,
+                { "script": "script-golang.sh", "action": "install", "execute": true,
                     "param": { "version": "1.12.4" }
                 },
-                { "script": "script-docker.sh", "action": "install", "execute": false,
+                { "script": "script-docker.sh", "action": "install", "execute": true,
                     "param": { "version": "18.09.6" , "username": "dev" }
                 },
-                { "script": "script-docker-compose.sh", "action": "install", "execute": false,
+                { "script": "script-docker-compose.sh", "action": "install", "execute": true,
                     "param": { "version": "1.24.0" }
                 },
-                { "script": "script-terraform.sh", "action": "install", "execute": false,
+                { "script": "script-terraform.sh", "action": "install", "execute": true,
                     "param": { "version": "0.11.13" }
                 },
-                { "script": "script-ansible.sh", "action": "install", "execute": false,
+                { "script": "script-ansible.sh", "action": "install", "execute": true,
                     "param": null
                 },
                 { "script": "script-virtualbox.sh", "action": "install", "execute": true,
                     "param": { "version": "6.0.8", "tagVersion": "6.0.8-130520" }
                 },
-                { "script": "script-packer.sh", "action": "install", "execute": false,
+                { "script": "script-packer.sh", "action": "install", "execute": true,
                     "param": { "version": "1.4.0" }
                 },
-                { "script": "script-vagrant.sh", "action": "install", "execute": false,
+                { "script": "script-vagrant.sh", "action": "install", "execute": true,
                     "param": { "version": "2.2.4" }
                 },
-                { "script": "script-vscode.sh", "action": "install", "execute": false,
+                { "script": "script-vscode.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-gitkraken.sh", "action": "install", "execute": false,
+                { "script": "script-gitkraken.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-staruml.sh", "action": "install", "execute": false,
+                { "script": "script-staruml.sh", "action": "install", "execute": true,
                     "param": { "version": "3.1.0" }
                 },
-                { "script": "script-chrome.sh", "action": "install", "execute": false,
+                { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-netbeans.sh", "action": "install", "execute": false,
+                { "script": "script-netbeans.sh", "action": "install", "execute": true,
                     "param": null
                 }
             ]

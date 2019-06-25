@@ -28,13 +28,23 @@ function ScriptStarUML {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do StarUML na maquina..."; 
 
-        wget "http://staruml.io/download/releases/StarUML-${version}-x86_64.AppImage" -O ./binaries/staruml.AppImage;
-        chmod 777 ./binaries/staruml.AppImage;
+        wget "http://staruml.io/download/releases/StarUML-${version}-x86_64.AppImage" -O /usr/local/bin/staruml.AppImage;
 
-        cp ./binaries/staruml.AppImage /usr/local/bin/;
+        wget "http://staruml.io/image/staruml_logo.png" -O $HOME/.local/share/icons/staruml_logo.png;
+        chmod 777 $HOME/.local/share/icons/staruml_logo.png;
 
-        # Remover os download StarUML
-        #rm /binaries/staruml.AppImage;
+        touch $HOME/.local/share/applications/staruml.desktop
+        {
+            echo '[Desktop Entry]';
+            echo 'Type=Application';
+            echo 'Name=StarUML';
+            echo 'Comment=A sophisticated software modeler';
+            echo 'Icon='$HOME'/.local/share/icons/staruml_logo.png';
+            echo 'Exec="/usr/local/bin/staruml.AppImage" %U';
+            echo 'Terminal=false';
+            echo 'Categories=Development;';
+        } > $HOME/.local/share/applications/staruml.desktop;
+        chmod 777 $HOME/.local/share/applications/staruml.desktop;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
