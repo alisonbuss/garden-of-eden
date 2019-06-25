@@ -4,7 +4,7 @@
 # @descr: Script de inicialização do (Garden of Eden) para 
 #         provisionamento do ambiente básico de desenvolvimento. 
 #-------------------------------------------------------------#
-
+ 
 readonly DOCUMENTATION="
 Documentação:
 
