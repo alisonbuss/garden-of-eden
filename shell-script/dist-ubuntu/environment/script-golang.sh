@@ -34,49 +34,37 @@ function ScriptGoLang {
             util.print.out '%s\n' "Downloading go${version}.linux-amd64.tar.gz...";
 
             # https://snapcraft.io/go
-            # snap install --classic --channel=1.12/stable go
+            # sudo snap install --classic --channel=1.12/stable go
             # go version
 
             # OR...
 
             wget "https://storage.googleapis.com/golang/go${version}.linux-amd64.tar.gz" -O ./binaries/go.tar.gz;
-            chmod -R 777 ./binaries/go.tar.gz;
 
             util.print.out '%s\n' "Extracting GoLang...";
-
-            tar -C "$HOME" -xzf ./binaries/go.tar.gz;
-            mv "$HOME/go" "$HOME/.go";
+            tar -C $HOME -xzf ./binaries/go.tar.gz;
+            mv $HOME/go $HOME/.go;
 
             # Setando variáveis de ambiente.
-            touch "$HOME/.profile"
+            touch $HOME/.profile
             {
                 echo '# GoLang';
                 echo 'export GOROOT=$HOME/.go';
                 echo 'export PATH=$PATH:$GOROOT/bin';
                 echo 'export GOPATH=$HOME/go';
                 echo 'export PATH=$PATH:$GOPATH/bin';
-            } >> "$HOME/.profile";
-            source ~/.profile;
+            } >> $HOME/.profile && source $HOME/.profile;
 
-            touch "$HOME/.bashrc"
+            touch $HOME/.bashrc
             {
                 echo '# GoLang';
                 echo 'export GOROOT=$HOME/.go';
                 echo 'export PATH=$PATH:$GOROOT/bin';
                 echo 'export GOPATH=$HOME/go';
                 echo 'export PATH=$PATH:$GOPATH/bin';
-            } >> "$HOME/.bashrc";
-            source ~/.bashrc;
-
-            mkdir -p $HOME/go/{src,pkg,bin};
-
-            chmod -R 777 $HOME/go;
-            chmod -R 777 $HOME/.go;
+            } >> $HOME/.bashrc && source ~/.bashrc;
 
             go version;
-
-            # Remover o download do GitKraken
-            #rm ./binaries/go.tar.gz;
         fi
     }
 
@@ -84,13 +72,20 @@ function ScriptGoLang {
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do GoLang na maquina..."; 
         
-        rm -rf "$HOME/.go/";
-        rm -rf "$HOME/go/";
-        sed -i '/# GoLang/d' "$HOME/.bashrc";
-        sed -i '/export GOROOT/d' "$HOME/.bashrc";
-        sed -i '/:$GOROOT/d' "$HOME/.bashrc";
-        sed -i '/export GOPATH/d' "$HOME/.bashrc";
-        sed -i '/:$GOPATH/d' "$HOME/.bashrc";
+        rm -rf $HOME/.go;
+        rm -rf $HOME/go;
+
+        sed -i '/# GoLang/d' $HOME/.profile;
+        sed -i '/export GOROOT/d' $HOME/.profile;
+        sed -i '/:$GOROOT/d' $HOME/.profile;
+        sed -i '/export GOPATH/d' $HOME/.profile;
+        sed -i '/:$GOPATH/d' $HOME/.profile;
+
+        sed -i '/# GoLang/d' $HOME/.bashrc;
+        sed -i '/export GOROOT/d' $HOME/.bashrc;
+        sed -i '/:$GOROOT/d' $HOME/.bashrc;
+        sed -i '/export GOPATH/d' $HOME/.bashrc;
+        sed -i '/:$GOPATH/d' $HOME/.bashrc;
 
         util.print.out '%s\n' "Go removed."
     }

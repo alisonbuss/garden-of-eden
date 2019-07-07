@@ -32,7 +32,7 @@ function ScriptKeySSH {
         # verifica se tem a pasta, caso não tenha é criada uma pasta.
         if [ ! -d "$pathKey" ] ; then
             mkdir -p "${pathKey}";
-            chmod -R 777 "${pathKey}";
+            sudo chmod -R 760 "${pathKey}";
 
             # gera a chave SSH do usuario da maquina.
             ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"
@@ -53,7 +53,7 @@ function ScriptKeySSH {
             ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"
         else
             mkdir -p "${pathKey}";
-            chmod -R 777 "${pathKey}";
+            sudo chmod -R 760 "${pathKey}";
 
             # gera a chave SSH do usuario da maquina.
             ssh-keygen -t rsa -b 4096 -C "$comment" -P "$passwordKey" -f "${pathKey}/${nameKey}"

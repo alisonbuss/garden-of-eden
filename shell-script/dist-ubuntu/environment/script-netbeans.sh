@@ -22,7 +22,7 @@ function ScriptNetbeans {
     __install_snap() {
         util.print.out '%s\n' "Iniciando a instalação do Netbeans na maquina...";
 
-        snap install netbeans --classic;
+        sudo snap install netbeans --classic;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

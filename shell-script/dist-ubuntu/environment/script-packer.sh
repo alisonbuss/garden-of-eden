@@ -29,20 +29,14 @@ function ScriptPacker {
         util.print.out '%s\n' "Iniciando a instalação do Packer na maquina..."; 
 
         wget "https://releases.hashicorp.com/packer/${version}/packer_${version}_linux_amd64.zip" -O "./binaries/packer.zip";
-        chmod -R 777 "./binaries/packer.zip";
 
-        unzip "./binaries/packer.zip" -d "/usr/local/bin/";
+        util.print.out '%s\n' "Extracting Packer...";
+        sudo unzip -o "./binaries/packer.zip" -d "/usr/local/bin/";
+
+        mkdir -p $HOME/.packer;
 
         util.print.out '\n%s' "Version Packer: "; 
         packer -v;
-
-        mkdir -p "$HOME/.packer";
-
-        chmod -R 777 "$HOME/.packer";
-        chmod -R 777 "$HOME/.packer.d";
-
-        # Remove o download do packer
-        #rm "./binaries/packer.zip";
     }
 
     # @descr: Função de desinstalação.
@@ -50,11 +44,11 @@ function ScriptPacker {
         util.print.out '%s\n' "Iniciando a desinstalação do Packer na maquina..."; 
         
         # Remove files on $HOME
-        rm -rf "$HOME/.packer";
-        rm -rf "$HOME/.packer.d"; 
+        rm -rf $HOME/.packer;
+        rm -rf $HOME/.packer.d; 
 
         # Remove files on BIN
-        rm -rf "/usr/local/bin/packer"; 
+        sudo rm -rf /usr/local/bin/packer; 
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

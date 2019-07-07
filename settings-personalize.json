@@ -35,11 +35,11 @@
                     "param": null
                 },
                 { "script": "script-themes.sh", "action": "install", "execute": true,
-                    "param": { "username": "dev" }
+                    "param": null
                 },
-                { "script": "script-repositories-git", "action": "clone", "execute": false,
+                { "script": "script-repositories-git.sh", "action": "clone", "execute": true,
                     "param": {
-                        "rootPath": "/mnt/sda2/git-repositories",
+                        "rootPath": "/mnt/sda3/git-repositories",
                         "repositories": [
                             {
                                 "repositoryPath": "/work",
@@ -48,9 +48,9 @@
                         ]
                     }
                 },
-                { "script": "script-repositories-git", "action": "clone", "execute": false,
+                { "script": "script-repositories-git.sh", "action": "clone", "execute": true,
                     "param": {
-                        "rootPath": "/mnt/sda2/git-repositories",
+                        "rootPath": "/mnt/sda3/git-repositories",
                         "repositories": [
                             {
                                 "repositoryPath": "/private",
@@ -59,9 +59,9 @@
                         ]
                     }
                 },
-                { "script": "script-repositories-git", "action": "clone", "execute": false,
+                { "script": "script-repositories-git.sh", "action": "clone", "execute": false,
                     "param": {
-                        "rootPath": "/mnt/sda2/git-repositories",
+                        "rootPath": "/mnt/sda3/git-repositories",
                         "repositories": [
                             {
                                 "repositoryPath": "/public",

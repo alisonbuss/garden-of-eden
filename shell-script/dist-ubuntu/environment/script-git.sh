@@ -27,7 +27,8 @@ function ScriptGit {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Git na maquina..."; 
 
-        apt-get install -y git;
+        sudo apt-get install -y git;
+
         git config --global user.name "$nameUser";
         git config --global user.email $emailUser;
 
@@ -48,8 +49,8 @@ function ScriptGit {
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do Git na maquina..."; 
         
-        apt-get remove --auto-remove git;
-        apt-get purge --auto-remove git;
+        sudo apt-get remove --auto-remove git;
+        sudo apt-get purge --auto-remove git;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

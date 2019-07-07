@@ -22,21 +22,17 @@ function ScriptGitKraken {
         util.print.out '%s\n' "Iniciando a instalação do GitKraken na maquina..."; 
 
         wget "https://release.gitkraken.com/linux/gitkraken-amd64.deb" -O ./binaries/gitkraken.deb;
-        chmod -R 777 ./binaries/gitkraken.deb;
 
-        dpkg -i ./binaries/gitkraken.deb;
-	    apt-get install -f;
-
-        # Remover o download do GitKraken
-        #rm ./binaries/gitkraken.deb;
+        sudo dpkg -i ./binaries/gitkraken.deb;
+	    sudo apt-get install -f;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do GitKraken na maquina..."; 
         
-        apt-get remove --auto-remove gitkraken;
-        apt-get purge --auto-remove gitkraken;
+        sudo apt-get remove --auto-remove gitkraken;
+        sudo apt-get purge --auto-remove gitkraken;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

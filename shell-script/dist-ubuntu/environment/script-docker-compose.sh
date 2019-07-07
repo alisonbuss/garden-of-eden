@@ -28,11 +28,10 @@ function ScriptDockerCompose {
 
         # Download the current stable release of Docker Compose:
         wget "https://github.com/docker/compose/releases/download/${version}/docker-compose-Linux-x86_64" -O ./binaries/docker-compose;
-        chmod -R 777 ./binaries/docker-compose;
-        cp ./binaries/docker-compose /usr/local/bin/docker-compose;
+        sudo cp ./binaries/docker-compose /usr/local/bin/docker-compose;
 
         # Apply executable permissions to the binary:
-        chmod +x /usr/local/bin/docker-compose;
+        sudo chmod +x /usr/local/bin/docker-compose;
 
         # BUG: 
         # Run shell -> $ docker-compose version

@@ -28,19 +28,13 @@ function ScriptTerraform {
         util.print.out '%s\n' "Iniciando a instalação do Terraform na maquina..."; 
 
         wget "https://releases.hashicorp.com/terraform/${version}/terraform_${version}_linux_amd64.zip" -O "./binaries/terraform.zip";
-        chmod -R 777 "./binaries/terraform.zip";
 
-        unzip "./binaries/terraform.zip" -d "/usr/local/bin/";
+        util.print.out '%s\n' "Extracting Terraform...";
+        sudo unzip -o "./binaries/terraform.zip" -d "/usr/local/bin/";
 
         mkdir -p "$HOME/.terraform";
 
-        chmod -R 777 "$HOME/.terraform";
-        chmod -R 777 "$HOME/.terraform.d";
-
         terraform -v;
-
-        # Remove o download do terraform
-        #rm "./binaries/terraform.zip";
     }
 
     # @descr: Função de desinstalação.
@@ -48,11 +42,11 @@ function ScriptTerraform {
         util.print.out '%s\n' "Iniciando a desinstalação Terraform na maquina..."; 
 
         # Remove files on $HOME
-        rm -rf "$HOME/.terraform";
-        rm -rf "$HOME/.terraform.d"; 
+        rm -rf $HOME/.terraform;
+        rm -rf $HOME/.terraform.d; 
 
         # Remove files on BIN
-        rm -rf "/usr/local/bin/terraform"; 
+        sudo rm -rf /usr/local/bin/terraform; 
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

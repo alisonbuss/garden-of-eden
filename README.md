@@ -13,17 +13,17 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Instala o **JDK**
 - Instala o **pyenv (Python Version Manager)**
 - Instala o **NVM (Node Version Manager)**
-- Instala o **RVM (Ruby Version Manager)**
 - Instala o **Node.js usando NVM**
+- Instala o **RVM (Ruby Version Manager)**
 - Instala o **Ruby usando RVM**
 - Instala o **Go**
+- Instala o **Ansible**
 - Instala o **Docker**
 - Instala o **Docker Compose**
-- Instala o **Terraform**
-- Instala o **Ansible**
 - Instala o **VirtualBox**
-- Instala o **Packer**
 - Instala o **Vagrant**
+- Instala o **Packer**
+- Instala o **Terraform**
 - Instala o **VS Code**
 - Instala o **GitKraken**
 - Instala o **StarUML**
@@ -86,15 +86,15 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
                     "param": {
                         "comment": "Que reinaste o anjo caído!",
                         "nameKey": "id_rsa",
-                        "pathKey": "/home/user/.ssh",
-                        "passwordKey": "luxferre"
+                        "pathKey": "/home/SeuUsuario/.ssh",
+                        "passwordKey": ""
                     }
                 },
                 { "script": "script-git.sh", "action": "install", "execute": true,
-                    "param": { "name": "lucifer", "email": "lucifer.dev@ghell.com" }
+                    "param": { "name": "SeuUsuario", "email": "SeuUsuario@mail.com" }
                 },
                 { "script": "script-jdk.sh", "action": "install", "execute": true,
-                    "param": { "version": "11" }
+                    "param": { "version": "12" }
                 },
                 { "script": "script-pyenv.sh", "action": "install", "execute": true,
                     "param": null
@@ -109,31 +109,31 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
                     "param": null
                 },
                 { "script": "script-ruby.sh", "action": "install-by-rvm", "execute": true,
-                    "param": { "version": "2.6.3" }
+                    "param": { "version": "2.5.5" }
                 },
                 { "script": "script-golang.sh", "action": "install", "execute": true,
                     "param": { "version": "1.12.4" }
                 },
+                { "script": "script-ansible.sh", "action": "install", "execute": true,
+                    "param": null
+                },
                 { "script": "script-docker.sh", "action": "install", "execute": true,
-                    "param": { "username": "You-User", "version": "18.06.3~ce~3-0~ubuntu" }
+                    "param": { "version": "18.09.6" }
                 },
                 { "script": "script-docker-compose.sh", "action": "install", "execute": true,
                     "param": { "version": "1.24.0" }
                 },
-                { "script": "script-terraform.sh", "action": "install", "execute": true,
-                    "param": { "version": "0.11.13" }
-                },
-                { "script": "script-ansible.sh", "action": "install", "execute": true,
-                    "param": null
-                },
                 { "script": "script-virtualbox.sh", "action": "install", "execute": true,
-                    "param": { "version": "6.0.0", "tagVersion": "6.0.0-127566" }
+                    "param": { "version": "6.0.8", "tagVersion": "6.0.8-130520" }
+                },
+                { "script": "script-vagrant.sh", "action": "install", "execute": true,
+                    "param": { "version": "2.2.5" }
                 },
                 { "script": "script-packer.sh", "action": "install", "execute": true,
                     "param": { "version": "1.4.0" }
                 },
-                { "script": "script-vagrant.sh", "action": "install", "execute": true,
-                    "param": { "version": "2.2.4" }
+                { "script": "script-terraform.sh", "action": "install", "execute": true,
+                    "param": { "version": "0.12.3" }
                 },
                 { "script": "script-vscode.sh", "action": "install", "execute": true,
                     "param": null
@@ -197,18 +197,12 @@ Através do arquivo:
 > **Nota:**
 > *Antes de executar o **Garden of Eden**, certifique-se de ter ajustado os parâmetros do arquivo **settings.json** para sua realidade.*
 
-Você tem que dar permissão root ao script.
-
-Terminal:
-```bash
-$ sudo chmod a+x start-divine-creation.sh
-```
 
 #### Visualizar a documentação, passando o parâmetro **--help|-help|-h|help**.
 
 Terminal:
 ```bash
-$ sudo bash start-divine-creation.sh --help
+$ bash start-divine-creation.sh --help
 ```
 
 #### Listar todos os scripts a serem executados através do "settings.json", passando o parâmetro **--list**
@@ -218,19 +212,19 @@ $ sudo bash start-divine-creation.sh --help
 
 Terminal:
 ```bash
-$ sudo bash start-divine-creation.sh --list
+$ bash start-divine-creation.sh --list
 ```
 Ou:
 ```bash
-$ sudo bash start-divine-creation.sh -l
+$ bash start-divine-creation.sh -l
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'*:
 ```bash
-$ sudo bash start-divine-creation.sh --setting-file='./settings-environment.json' --list
+$ bash start-divine-creation.sh --setting-file='./settings-environment.json' --list
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'* reduzido:
 ```bash
-$ sudo bash start-divine-creation.sh -s='./settings-environment.json' -l
+$ bash start-divine-creation.sh -s='./settings-environment.json' -l
 ```
 
 #### Executando todos os scripts do "settings.json", passando o parâmetro **--rum**
@@ -240,19 +234,19 @@ $ sudo bash start-divine-creation.sh -s='./settings-environment.json' -l
 
 Terminal:
 ```bash
-$ sudo bash start-divine-creation.sh --run
+$ bash start-divine-creation.sh --run
 ```
 Ou:
 ```bash
-$ sudo bash start-divine-creation.sh -r
+$ bash start-divine-creation.sh -r
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'*:
 ```bash
-$ sudo bash start-divine-creation.sh --setting-file='./settings-environment.json' --run
+$ bash start-divine-creation.sh --setting-file='./settings-environment.json' --run
 ```
 Ou, setando o caminho padrão: *--setting-file='./settings.json'* reduzido:
 ```bash
-$ sudo bash start-divine-creation.sh -s='./settings-environment.json' -r
+$ bash start-divine-creation.sh -s='./settings-environment.json' -r
 ```
 
 ### Executando em modo de CLI com Makefile:
@@ -265,11 +259,11 @@ $ make version
 
 # OU
 $ make list-environment
-$ sudo make run-environment
+$ make run-environment
 
 # OU
 $ make list-personalize
-$ sudo make run-personalize
+$ make run-personalize
 ```
 
 ## A estrutura do projeto Garden of Eden. 
@@ -318,8 +312,12 @@ Descrição das pastas e arquivos do projeto:
 │   │       └── script-themes.sh
 │   └── tools
 │       └── utility.sh
-├── support-files............................'Pasta de apoio, onde se encontra os arquivos variados, como logo, wallpaper etc.'
+├── support-files............................'Pasta de apoio, onde se encontra os arquivos variados, como configurações, logo, wallpaper etc.'
 │   ├── logo-garden-of-eden.png
+│   ├── docker-configs
+│   │   ├── containerd.service
+│   │   ├── docker.service
+│   │   └── docker.socket
 │   ├── files
 │   │   ├── end-bender.gif
 │   │   └── header.txt
@@ -329,6 +327,7 @@ Descrição das pastas e arquivos do projeto:
 ├── LICENSE..................................'Licença - MIT.'
 ├── Makefile.................................'Arquivo para reduzir/facilitar a forma de execução do projeto Garden of Eden via CLI.'
 ├── README.md................................'Descrição e documentação do projeto Garden of Eden.'
+├── README-MY.md.............................'Descrição do meu ambiente personalizado/adicional do Garden of Eden.'
 ├── settings-environment.json................'Arquivo principal do projeto onde é definido a modularização dos scripts shell a serem executados.'
 ├── settings-personalize.json................'Arquivo secundário, para um ambiente alternativo a ser executado, baseado no modelo padrão do Garden of Eden.'
 └── start-divine-creation.sh.................'Shell Script de inicialização do projeto em modo de CLI.'

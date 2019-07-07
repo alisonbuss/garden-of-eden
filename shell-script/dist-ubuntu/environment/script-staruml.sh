@@ -28,11 +28,13 @@ function ScriptStarUML {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do StarUML na maquina..."; 
 
-        wget "http://staruml.io/download/releases/StarUML-${version}-x86_64.AppImage" -O /usr/local/bin/staruml.AppImage;
+        sudo wget "http://staruml.io/download/releases/StarUML-${version}-x86_64.AppImage" -O /usr/local/bin/staruml.AppImage;
+        sudo chmod +x /usr/local/bin/staruml.AppImage;
 
+        mkdir -p $HOME/.local/share/icons;
         wget "http://staruml.io/image/staruml_logo.png" -O $HOME/.local/share/icons/staruml_logo.png;
-        chmod 777 $HOME/.local/share/icons/staruml_logo.png;
-
+   
+        mkdir -p $HOME/.local/share/applications;
         touch $HOME/.local/share/applications/staruml.desktop
         {
             echo '[Desktop Entry]';
@@ -44,7 +46,6 @@ function ScriptStarUML {
             echo 'Terminal=false';
             echo 'Categories=Development;';
         } > $HOME/.local/share/applications/staruml.desktop;
-        chmod 777 $HOME/.local/share/applications/staruml.desktop;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

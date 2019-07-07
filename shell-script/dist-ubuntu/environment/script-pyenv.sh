@@ -28,35 +28,40 @@ function ScriptPyenv {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do pyenv na maquina..."; 
 
-        apt-get install -y curl \
-                           llvm \
-                           tk-dev \
-                           libbz2-dev \
-                           liblzma-dev \
-                           libsqlite3-dev \
-                           libncurses5-dev \
-                           libncursesw5-dev \
-                           python-dev \
-                           python3-dev \
-                           python-openssl \
-                           python-pip;
-        
-        #apt-get install -f;
+        sudo apt-get install -y curl \
+                                llvm \
+                                tk-dev \
+                                libbz2-dev \
+                                liblzma-dev \
+                                libsqlite3-dev \
+                                libncurses5-dev \
+                                libncursesw5-dev \
+                                python-dev \
+                                python3-dev \
+                                python-openssl \
+                                python-pip;
 
-        curl -L "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash
-        chmod -R 777 $HOME/.pyenv;
+        curl -L "https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer" | bash;
+
+        touch $HOME/.profile
+        {
+            echo '# PyEnv';
+            echo 'export PYENV_ROOT="$HOME/.pyenv"';
+            echo 'export PATH="$PYENV_ROOT/bin:$PATH"';
+            echo 'eval "$(pyenv init -)"';
+            echo 'eval "$(pyenv virtualenv-init -)"';
+        } >> $HOME/.profile && source $HOME/.profile;
 
         touch $HOME/.bashrc
         {
             echo '# PyEnv';
             echo 'export PYENV_ROOT="$HOME/.pyenv"';
-            echo 'export PATH="$PATH:$PYENV_ROOT/bin"';
+            echo 'export PATH="$PYENV_ROOT/bin:$PATH"';
             echo 'eval "$(pyenv init -)"';
             echo 'eval "$(pyenv virtualenv-init -)"';
-        } >> $HOME/.bashrc;
-        source $HOME/.bashrc;
+        } >> $HOME/.bashrc && source $HOME/.bashrc;
 
-        #pyenv --version;
+        pyenv --version;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

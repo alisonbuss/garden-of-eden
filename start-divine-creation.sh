@@ -50,7 +50,8 @@ Documentação:
 
 source ./shell-script/tools/utility.sh;
 
-export readonly RUN_JQ="./binaries/jq-linux64-v1.6 ";
+export readonly LOCAL_DIR="$PWD";
+export readonly RUN_JQ="./binaries/jq-linux64-v1.6";
 
 function StartDivineCreation {
 
@@ -121,6 +122,9 @@ function StartDivineCreation {
 
         local startTime=$(date +'%H:%M:%S');
         local startDate=$(date -u -d "${startTime}" +"%s")
+
+        util.print.out '%s\n' "Atualizar informações dos pacotes para instalação...";
+        sudo apt-get update;
 
         local modulesSize=$(cat "${settingFile}" | $RUN_JQ ".settings | length"); 
         for (( x=1; x<=$modulesSize; x++ )); do

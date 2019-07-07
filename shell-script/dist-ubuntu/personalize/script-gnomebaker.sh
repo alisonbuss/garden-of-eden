@@ -19,10 +19,10 @@ function ScriptGnomeBaker {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do GnomeBaker na maquina..."; 
 
-        add-apt-repository -y ppa:gnomebaker/stable;
-        apt-get update;
+        sudo add-apt-repository -y ppa:gnomebaker/stable;
+        sudo apt-get update;
 
-        apt-get install -y gnomebaker;
+        sudo apt-get install -y gnomebaker;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

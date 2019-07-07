@@ -23,24 +23,21 @@ function ScriptAnsible {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Ansible na maquina..."; 
 
-        add-apt-repository -y ppa:ansible/ansible;
-        apt-get update;
+        sudo add-apt-repository -y ppa:ansible/ansible;
+        sudo apt-get update;
 
-        apt-get install -y ansible;
-        #apt-get install -f;
+        sudo apt-get install -y ansible;
 
         util.print.out '%s' "Version Ansible: ";
         ansible --version;
-
-        chmod -R 777 $HOME/.ansible;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do Ansible na maquina..."; 
         
-        apt-get remove --auto-remove ansible;
-        apt-get purge --auto-remove ansible;
+        sudo apt-get remove --auto-remove ansible;
+        sudo apt-get purge --auto-remove ansible;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

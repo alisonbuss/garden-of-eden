@@ -22,7 +22,7 @@ function ScriptBrasero {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Brasero na maquina..."; 
 
-        apt-get install -y brasero;
+        sudo apt-get install -y brasero;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

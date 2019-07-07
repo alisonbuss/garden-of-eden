@@ -39,14 +39,16 @@ function ScriptJDK {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do JDK na maquina...";
 
-        apt-get purge openjdk*;
+        sudo apt-get purge openjdk*;
 
-        #add-apt-repository -y ppa:webupd8team/java;
-        add-apt-repository -y ppa:linuxuprising/java;
-        apt-get update;
+        #sudo add-apt-repository -y ppa:webupd8team/java;
+        sudo add-apt-repository -y ppa:linuxuprising/java;
+        sudo apt-get update;
 
-        apt-get install -y "oracle-java$version-installer";
-        apt-get install -y "oracle-java$version-set-default";
+        sudo apt search "oracle-java$version";
+
+        sudo apt-get install -y "oracle-java$version-installer";
+        sudo apt-get install -y "oracle-java$version-set-default";
 
         java -version;
     }
@@ -60,20 +62,19 @@ function ScriptJDK {
     # __install() {
     #     util.print.out '%s\n' "Iniciando a instalação do JDK na maquina...";
 
-    #     apt-get purge openjdk*;
+    #     sudo apt-get purge openjdk*;
 
     #     # wget --no-cookies \
     #     #      --no-check-certificate \
     #     #      --header "Cookie: oraclelicense=accept-securebackup-cookie" \
     #     #      "https://download.oracle.com/otn/java/jdk/11.0.3+12/37f5e150db5247ab9333b11c1dddcd30/jdk-11.0.3_linux-x64_bin.tar.gz" \
     #     #      -O "./binaries/jdk-11.0.3_linux-x64_bin.tar.gz";
-    #     # chmod -R 777 ./binaries/jdk-11.0.3_linux-x64_bin.tar.gz;
 
-    #     mkdir -p /usr/lib/jvm;
-    #     tar -xzf $binaryPath -C /usr/lib/jvm;
+    #     sudo mkdir -p /usr/lib/jvm;
+    #     sudo tar -xzf $binaryPath -C /usr/lib/jvm;
 
     #     # Configurando a variável de ambiente do JAVA_HOME e JRE_HOME.
-    #     touch /etc/environment
+    #     sudo touch /etc/environment
     #     {     
     #         echo 'PATH="$PATH:/usr/lib/jvm/jdk-'$version'/bin"';
     #         echo 'JAVA_HOME="/usr/lib/jvm/jdk-'$version'"';
@@ -81,17 +82,17 @@ function ScriptJDK {
     #     } >> "/etc/environment";
 
     #     # Recarregar o arquivo de variável de ambiente.
-    #     source /etc/environment;
+    #     sudo source /etc/environment;
 
     #     # As variáveis de ambiente do Java.
     #     util.print.out '%s\n' "Variavel JAVA_HOME: " $JAVA_HOME;
     #     util.print.out '%s\n' "Variavel  JRE_HOME: " $JRE_HOME;
         
-    #     update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-$version/bin/java" 0;
-    #     update-alternatives --set java "/usr/lib/jvm/jdk-$version/bin/java";
+    #     sudo update-alternatives --install "/usr/bin/java" "java" "/usr/lib/jvm/jdk-$version/bin/java" 0;
+    #     sudo update-alternatives --set java "/usr/lib/jvm/jdk-$version/bin/java";
 
-    #     update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk-$version/bin/javac" 0;
-    #     update-alternatives --set javac "/usr/lib/jvm/jdk-$version/bin/javac";
+    #     sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/lib/jvm/jdk-$version/bin/javac" 0;
+    #     sudo update-alternatives --set javac "/usr/lib/jvm/jdk-$version/bin/javac";
 
     #     java -version;
     # }
@@ -100,8 +101,8 @@ function ScriptJDK {
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do JDK na maquina..."; 
         
-        apt-get --auto-remove remove "oracle-java$version-installer";
-        apt-get --auto-remove purge "oracle-java$version-installer";
+        sudo apt-get --auto-remove remove "oracle-java$version-installer";
+        sudo apt-get --auto-remove purge "oracle-java$version-installer";
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

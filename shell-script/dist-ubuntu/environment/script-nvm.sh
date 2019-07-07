@@ -31,27 +31,28 @@ function ScriptNVM {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do NVM na maquina..."; 
 
-        # pacotes de dependências que já estão no repositório de sua distribuição Debian Based
-	    # https://github.com/creationix/nvm#important-notes
-        #apt-get install -y build-essential libssl-dev;
-
         wget -qO- "https://raw.githubusercontent.com/creationix/nvm/v${version}/install.sh" | bash;
-   
-        source $HOME/.nvm/nvm.sh;
+
+        # Setando variáveis de ambiente.
+        touch $HOME/.profile
+        {
+            echo '# NVM';
+            echo 'export NVM_DIR="$HOME/.nvm"';
+            echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm';
+            echo '[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion';
+        } >> $HOME/.profile;
+
         source $HOME/.profile;
         source $HOME/.bashrc;
-             
-        chmod -R 777 $HOME/.nvm;
 
-        #echo -n "Version NVM: " && nvm --version;
+        echo -n "Version NVM: " && nvm --version;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do NVM na maquina..."; 
 
-        rm -rf "$HOME/.nvm/";
-        rm -rf "$HOME/nvm/";
+        rm -rf $HOME/.nvm;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

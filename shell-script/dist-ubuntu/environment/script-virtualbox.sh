@@ -54,19 +54,16 @@ function ScriptVirtualBox {
         local nameExtensionPack="Oracle_VM_VirtualBox_Extension_Pack-${tagVersion}.vbox-extpack";
 
         wget "https://download.virtualbox.org/virtualbox/${version}/${nameVirtualBox}" -O "./binaries/virtualbox.run";
-        chmod -R 777 "./binaries/virtualbox.run";
-
         wget "https://download.virtualbox.org/virtualbox/${version}/${nameExtensionPack}" -O "./binaries/${nameExtensionPack}";
-        chmod -R 777 "./binaries/${nameExtensionPack}";
 
         # Instalar algumas dependências
-        apt-get install -y gcc make linux-headers-$(uname -r) dkms;
-        apt-get install -f;
+        sudo apt-get install -y gcc make linux-headers-$(uname -r) dkms;
+        sudo apt-get install -f;
 
         # Instalar o VirtualBox e suas dependências 
-        chmod +x "./binaries/virtualbox.run";
-        ./binaries/virtualbox.run;
-        apt-get install -f;
+        sudo chmod +x ./binaries/virtualbox.run;
+        sudo ./binaries/virtualbox.run;
+        sudo apt-get install -f;
 
         # Instalar a extensão do VirtualBox 
         VBoxManage extpack install "./binaries/${nameExtensionPack}";
@@ -75,19 +72,13 @@ function ScriptVirtualBox {
         VBoxManage -v;
         echo "";
         VBoxManage list extpacks;
-
-        # Remove o download do VirtualBox
-        #rm "./binaries/virtualbox.run";
-
-        # Remove o download do virtualboxExtensionPack
-        #rm "./binaries/${nameExtensionPack}";
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do VirtualBox na maquina..."; 
         
-        sh /opt/VirtualBox/uninstall.sh;
+        sudo sh /opt/VirtualBox/uninstall.sh;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

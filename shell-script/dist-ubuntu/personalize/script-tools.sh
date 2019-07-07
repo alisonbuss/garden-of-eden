@@ -19,7 +19,7 @@ function ScriptTools {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação das Ferramentas na maquina..."; 
 
-        apt-get install -y tree;
+        sudo apt-get install -y tree;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

@@ -11,15 +11,15 @@
                     "param": {
                         "comment": "Que reinaste o anjo caído!",
                         "nameKey": "id_rsa",
-                        "pathKey": "/home/dev/.ssh",
+                        "pathKey": "/home/SeuUsuario/.ssh",
                         "passwordKey": ""
                     }
                 },
                 { "script": "script-git.sh", "action": "install", "execute": true,
-                    "param": { "name": "alisonbuss", "email": "alisonbuss.dev@gmail.com" }
+                    "param": { "name": "SeuUsuario", "email": "SeuUsuario@mail.com" }
                 },
                 { "script": "script-jdk.sh", "action": "install", "execute": true,
-                    "param": { "version": "11" }
+                    "param": { "version": "12" }
                 },
                 { "script": "script-pyenv.sh", "action": "install", "execute": true,
                     "param": null
@@ -28,37 +28,37 @@
                     "param": { "version": "0.34.0" }
                 },
                 { "script": "script-nodejs.sh", "action": "install-by-nvm", "execute": true,
-                    "param": { "version": "10.15.3", "username": "dev" }
+                    "param": { "version": "10.15.3" }
                 },
                 { "script": "script-rvm.sh",  "action": "install", "execute": true,
                     "param": null
                 },
                 { "script": "script-ruby.sh", "action": "install-by-rvm", "execute": true,
-                    "param": { "version": "2.6.3" }
+                    "param": { "version": "2.5.5" }
                 },
                 { "script": "script-golang.sh", "action": "install", "execute": true,
                     "param": { "version": "1.12.4" }
                 },
+                { "script": "script-ansible.sh", "action": "install", "execute": true,
+                    "param": null
+                },
                 { "script": "script-docker.sh", "action": "install", "execute": true,
-                    "param": { "version": "18.09.6" , "username": "dev" }
+                    "param": { "version": "18.09.6" }
                 },
                 { "script": "script-docker-compose.sh", "action": "install", "execute": true,
                     "param": { "version": "1.24.0" }
                 },
-                { "script": "script-terraform.sh", "action": "install", "execute": true,
-                    "param": { "version": "0.11.13" }
-                },
-                { "script": "script-ansible.sh", "action": "install", "execute": true,
-                    "param": null
-                },
                 { "script": "script-virtualbox.sh", "action": "install", "execute": true,
                     "param": { "version": "6.0.8", "tagVersion": "6.0.8-130520" }
+                },
+                { "script": "script-vagrant.sh", "action": "install", "execute": true,
+                    "param": { "version": "2.2.5" }
                 },
                 { "script": "script-packer.sh", "action": "install", "execute": true,
                     "param": { "version": "1.4.0" }
                 },
-                { "script": "script-vagrant.sh", "action": "install", "execute": true,
-                    "param": { "version": "2.2.4" }
+                { "script": "script-terraform.sh", "action": "install", "execute": true,
+                    "param": { "version": "0.12.3" }
                 },
                 { "script": "script-vscode.sh", "action": "install", "execute": true,
                     "param": null

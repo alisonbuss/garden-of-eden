@@ -30,25 +30,19 @@ function ScriptVagrant {
         util.print.out '%s\n' "Iniciando a instalação do Vagrant na maquina..."; 
 
         wget "https://releases.hashicorp.com/vagrant/${version}/vagrant_${version}_x86_64.deb" -O "./binaries/vagrant.deb";
-        chmod -R 777 "./binaries/vagrant.deb";
 
-        dpkg -i "./binaries/vagrant.deb";
-        #apt-get install -f;
+        sudo dpkg -i "./binaries/vagrant.deb";
 
-        mkdir -p "$HOME/.vagrant.d";
-        chmod -R 777 "$HOME/.vagrant.d";
+        mkdir -p $HOME/.vagrant.d;
 
         vagrant version;
-
-        # Remove o download do Vagrant
-        #rm "./binaries/vagrant.deb";
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do Vagrant na maquina..."; 
         
-        dpkg -r vagrant;
+        sudo dpkg -r vagrant;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

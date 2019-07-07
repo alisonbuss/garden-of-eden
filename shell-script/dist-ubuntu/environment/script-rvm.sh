@@ -25,17 +25,30 @@ function ScriptRVM {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do RVM na maquina..."; 
 
-        add-apt-repository -y ppa:rael-gc/rvm;
-        apt-get update;
+        sudo add-apt-repository -y ppa:rael-gc/rvm;
+        sudo apt-get update;
 
-        apt-get install -y rvm;
-        #apt-get install -f;
+        sudo apt-get install -y curl gnupg2
+        sudo apt-get install -y rvm;
         
         source /etc/profile.d/rvm.sh;
 
-        chmod -R 777 $HOME/.rvm;
+        echo -n "Version rvm: " && rvm version;
+    }
 
-        #echo -n "Version rvm: " && rvm version;
+    # @descr: Função de instalação.
+    __install_bash() {
+        util.print.out '%s\n' "Iniciando a instalação do RVM na maquina..."; 
+
+        sudo apt-get install -y curl gnupg2;
+        
+        sudo gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB;
+
+        curl -sSL https://get.rvm.io | sudo bash -s stable;
+
+        source /etc/profile.d/rvm.sh;
+
+        echo -n "Version rvm: " && rvm version;
     }
 
     # @descr: Função de desinstalação.
@@ -43,7 +56,7 @@ function ScriptRVM {
         util.print.out '%s\n' "Iniciando a desinstalação do RVM na maquina..."; 
 
         #https://stackoverflow.com/questions/3558656/how-can-i-remove-rvm-ruby-version-manager-from-my-system
-        rm -rf "$HOME/.rvm/";
+        rm -rf $HOME/.rvm;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

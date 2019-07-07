@@ -40,17 +40,16 @@ function ScriptRepositoriesGit {
                 local cloneIndex=$(($y-1));
                 local repositoryGit=$(echo "${PARAM_JSON}" | $RUN_JQ -r ".repositories[${repositoryIndex}].clonesAddress[${cloneIndex}]"); 
 
+                util.print.out '%b\n' "${B_BLUE}--> Cloning Directory GIT: ${YELLOW}'${rootRepositoryPath}${repositoryPath}' ${COLOR_OFF}";
+                util.print.out '%b\n' "${repositoryGit}";
+
                 cd "${rootRepositoryPath}${repositoryPath}";
 
-                util.print.out '%b\n' "${B_BLUE}--> Cloning Directory GIT: ${YELLOW}'${PWD}' ${COLOR_OFF}";
-
-                git clone "${repositoryGit}";
+                git clone "${repositoryGit}" && cd "$LOCAL_DIR";
 
                 util.print.out '%b\n' "${COLOR_OFF}";
             done
         done
-
-        chmod -R 777 "${rootRepositoryPath}";
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

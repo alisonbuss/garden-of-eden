@@ -23,21 +23,17 @@ function ScriptVSCode {
         util.print.out '%s\n' "Iniciando a instalação do VS Code na maquina..."; 
 
         wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O ./binaries/vscode.deb;
-        chmod -R 777 ./binaries/vscode.deb;
 
-        dpkg -i ./binaries/vscode.deb;
-	    apt-get install -f;
-
-        # Remove o download do VS Code
-        #rm ./binaries/vscode.deb;
+        sudo dpkg -i ./binaries/vscode.deb;
+	    sudo apt-get install -f;
     }
 
     # @descr: Função de desinstalação.
     __uninstall() {
         util.print.out '%s\n' "Iniciando a desinstalação do VS Code na maquina..."; 
         
-        apt-get remove --auto-remove code;
-        apt-get purge --auto-remove code;
+        sudo apt-get remove --auto-remove code;
+        sudo apt-get purge --auto-remove code;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
