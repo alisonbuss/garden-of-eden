@@ -4,7 +4,7 @@
   <br/>Garden of Eden
 </h1>
 
-O **Garden of Eden** é um projeto Shell Script para provisionamento básico de um ambiente de desenvolvimento para uma distribuição Ubuntu, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis. 
+O **Garden of Eden** é um projeto Shell Script para provisionamento básico de um ambiente de desenvolvimento para uma distribuição Ubuntu Desktop, podendo ser ampliado para distribuições Fedora, openSUSE, Arch Linux, Red Hat Enterprise Linux e as demais distribuição disponíveis. 
 
 O **Garden of Eden** provisiona os seguentes recursos:
 
@@ -260,10 +260,6 @@ $ make version
 # OU
 $ make list-environment
 $ make run-environment
-
-# OU
-$ make list-personalize
-$ make run-personalize
 ```
 
 ## A estrutura do projeto Garden of Eden. 
@@ -337,6 +333,15 @@ Caso tu queiras criar um script de instalação de um programa do seu interesse,
 
 Diretório: ./shell-script/dist-ubuntu/personalize/script-example.sh
 
+> **Nota:**
+>
+> *Por padrão, os seguintes recursos serão disponibilizados para todos os scripts de shell, através **./start-divine-creation.sh**:*
+>
+> **1)** *Duas variáveis de ambientes **[LOCAL_DIR, RUN_JQ]**.*
+>
+> **2)** *Importe de utilitários shell **./shell-script/tools/utility.sh**.*
+>
+
 Arquivo:
 
 ```bash
@@ -370,8 +375,14 @@ function ScriptExample {
     # @fonts: Fontes de referências
     # @param: Parametros (--aa='aaa', --bb='bbb')
     __print_version() {
-        util.print.out '%s\n' "Iniciando o Teste do Example na maquina..."; 
-        util.print.out '%s\n' "--> Print Version: ${version}"; 
+        util.print.out '%s\n' "Iniciando o Teste do Example na maquina...";
+        util.print.out '%s\n' "--> Print Version: ${version}";
+
+        util.print.out '%s\n' "--> Print value: ${version}"; 
+
+        echo "Print value [LOCAL_DIR]: $LOCAL_DIR";
+        
+        cat ./shell-script/tools/utility.sh;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
