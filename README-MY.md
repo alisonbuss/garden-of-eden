@@ -3,7 +3,7 @@
 
 > **Nota:**
 >
-> ***Esse ambiente disponibiliza meus recursos personalizados, como tema, papel de parece, programas de multimídias e codecs, clone dos meus repositórios GitHub e entre outros...***
+> ***Este ambiente oferece recursos personalizados, como tema, papel de parede, programas multimídia e codecs, clone dos meus repositórios GitHub e muito mais...***
 
 ### O **Garden of Eden - Personalize** provisiona os seguentes recursos:
 
@@ -175,14 +175,14 @@ $ make run-personalize
 1. **Formatação:**
    * Nome da Sessão: **Admin**
    * Nome do Computador: **cpu-master**
-   * Name do usuario: **dev**
+   * Nome do Usuário: **dev**
    * Senha: **3366677**
 2. **Pós Formatação:**
-   * Configuração: Dispositivos: Monitores: Ajustar para uma unica tela.
-   * Configuração: Energia: Desabilitar proteção de tela e suspensão automática.
-   * Configuração: Wi-Fi: Se conectar a uma rede.
-   * Disco: Editar opções de montagem. 
-   * Atualizar o sistema. 
+   * Configuração: Dispositivos: Monitores: Ajustar para uma unica tela
+   * Configuração: Energia: Desabilitar proteção de tela e suspensão automática
+   * Configuração: Wi-Fi: Conectar-se com uma rede
+   * Disco: Editar opções de montagem
+   * Atualizar o sistema
 3. **Executar o Garden Of Eden:**
    * $ make list-environment
    * $ make run-environment  
