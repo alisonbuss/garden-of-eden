@@ -27,8 +27,9 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Instala o **VS Code**
 - Instala o **GitKraken**
 - Instala o **StarUML**
-- Instala o **Chrome**
 - Instala o **NetBeans**
+- Instala o **Postman**
+- Instala o **Chrome**
 
 > **Nota:**
 >
@@ -144,10 +145,13 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
                 { "script": "script-staruml.sh", "action": "install", "execute": true,
                     "param": { "version": "3.1.0" }
                 },
-                { "script": "script-chrome.sh", "action": "install", "execute": true,
+                { "script": "script-netbeans.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-netbeans.sh", "action": "install", "execute": true,
+                { "script": "script-postman.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
                 }
             ]

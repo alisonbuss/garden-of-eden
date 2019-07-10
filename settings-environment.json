@@ -69,10 +69,13 @@
                 { "script": "script-staruml.sh", "action": "install", "execute": true,
                     "param": { "version": "3.1.0" }
                 },
-                { "script": "script-chrome.sh", "action": "install", "execute": true,
+                { "script": "script-netbeans.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-netbeans.sh", "action": "install", "execute": true,
+                { "script": "script-postman.sh", "action": "install", "execute": true,
+                    "param": null
+                },
+                { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
                 }
             ]

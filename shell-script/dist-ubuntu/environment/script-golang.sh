@@ -42,7 +42,7 @@ function ScriptGoLang {
             wget "https://storage.googleapis.com/golang/go${version}.linux-amd64.tar.gz" -O ./binaries/go.tar.gz;
 
             util.print.out '%s\n' "Extracting GoLang...";
-            tar -C $HOME -xzf ./binaries/go.tar.gz;
+            tar -xzf ./binaries/go.tar.gz -C $HOME;
             mv $HOME/go $HOME/.go;
 
             # Setando variáveis de ambiente.

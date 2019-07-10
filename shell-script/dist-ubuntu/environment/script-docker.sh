@@ -54,7 +54,7 @@ function ScriptDocker {
 
         util.print.out '%s\n' "Extracting Docker...";
         # Extract the archive using the tar utility. The dockerd and docker binaries are extracted.
-        tar -C ./binaries -xzvf ./binaries/docker.tgz;
+        tar -xzvf ./binaries/docker.tgz -C ./binaries;
 
         # Move the binaries to a directory on your executable path, such as /usr/bin/
         sudo cp -f -v ./binaries/docker/* /usr/local/bin/;
