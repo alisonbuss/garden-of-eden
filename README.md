@@ -11,7 +11,7 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Gerar **chave SSH**
 - Instala o **Git**
 - Instala o **JDK**
-- Instala o **pyenv (Python Version Manager)**
+- Instala o **Pyenv (Python Version Manager)**
 - Instala o **NVM (Node Version Manager)**
 - Instala o **Node.js usando NVM**
 - Instala o **RVM (Ruby Version Manager)**
