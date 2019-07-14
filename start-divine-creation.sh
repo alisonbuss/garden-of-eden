@@ -165,7 +165,7 @@ function StartDivineCreation {
         cat "./support-files/files/header.txt";
         util.print.out '%b' "${COLOR_OFF}";
         
-        util.print.info "Reading File: '${settingFile}'";
+        util.print.info " Reading File: '${settingFile}'";
         sleep 1s;
 
         util.print.out '%b\n' "${ON_BLUE}${B_WHITE}--> TIPO DO SISTEMA DA MAQUINA: ${COLOR_OFF}";

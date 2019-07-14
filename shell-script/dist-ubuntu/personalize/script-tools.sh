@@ -20,6 +20,7 @@ function ScriptTools {
         util.print.out '%s\n' "Iniciando a instalação das Ferramentas na maquina..."; 
 
         sudo apt-get install -y tree;
+        sudo apt-get install -y net-tools;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

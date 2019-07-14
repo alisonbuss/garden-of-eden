@@ -180,6 +180,10 @@ Os parâmetros do **"scripts": [{...}, ...]** do ultimo item citado acima, consi
 
 ## Executando o Garden of Eden. 
 
+<p align="center">
+    <img src="https://github.com/alisonbuss/garden-of-eden/raw/master/support-files/files/print.png"/>
+</p>
+
 ### Primeiro passo, baixar o projeto de um repositório do GitHub via CLI(Linux Command Line):
 
 Abra terminal no seu linux e execute os comandos abaixo: 
