@@ -303,7 +303,7 @@ function StartDivineCreation {
         # set parameters
         local _params="$@";
         
-        clear; case $_params in
+        case $_params in
             *--run*|*-r*) { 
                 __prepareScriptsExecution "$@"; 
             };;
