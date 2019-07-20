@@ -3,6 +3,8 @@
 #-----------------------|DOCUMENTATION|-----------------------#
 # @descr: Instalação de Ferramentas comuns na maquina 
 # @fonts: https://vitux.com/linux-tree-command/
+#         https://github.com/ytdl-org/youtube-dl
+#         http://ytdl-org.github.io/youtube-dl/download.html
 # @example:
 #       bash script-tools.sh --action='install' --param='{}'   
 #-------------------------------------------------------------#
@@ -21,6 +23,12 @@ function ScriptTools {
 
         sudo apt-get install -y tree;
         sudo apt-get install -y net-tools;
+
+        # Command-line program to download videos from YouTube.com and other video sites
+        sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;
+        sudo chmod a+rx /usr/local/bin/youtube-dl;
+
+        youtube-dl --version;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.
