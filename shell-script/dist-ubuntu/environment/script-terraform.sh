@@ -35,6 +35,11 @@ function ScriptTerraform {
         mkdir -p "$HOME/.terraform";
 
         terraform -v;
+
+        # wget "http://mirrors.kernel.org/ubuntu/pool/universe/g/graphviz/graphviz_2.40.1-6_amd64.deb" -O "./binaries/graphviz.deb";
+        # sudo dpkg -i ./binaries/graphviz.deb;
+	    # sudo apt-get install -f;
+        sudo apt-get install graphviz;
     }
 
     # @descr: Função de desinstalação.

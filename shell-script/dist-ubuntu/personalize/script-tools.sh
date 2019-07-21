@@ -21,6 +21,7 @@ function ScriptTools {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação das Ferramentas na maquina..."; 
 
+        sudo apt-get install -y ctop;
         sudo apt-get install -y tree;
         sudo apt-get install -y net-tools;
 
