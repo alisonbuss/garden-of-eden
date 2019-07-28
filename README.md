@@ -11,7 +11,7 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Gerar **chave SSH**
 - Instala o **Git**
 - Instala o **JDK**
-- Instala o **.NET Core**
+- Instala o **SDK .NET Core**
 - Instala o **Pyenv (Python Version Manager)**
 - Instala o **NVM (Node Version Manager)**
 - Instala o **Node.js usando NVM**
