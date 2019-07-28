@@ -21,6 +21,9 @@
                 { "script": "script-jdk.sh", "action": "install", "execute": true,
                     "param": { "version": "12" }
                 },
+                { "script": "script-dotnet-sdk.sh", "action": "install", "execute": true,
+                    "param": { "version": "2.2" }
+                },
                 { "script": "script-pyenv.sh", "action": "install", "execute": true,
                     "param": null
                 },
