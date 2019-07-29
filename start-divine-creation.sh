@@ -51,7 +51,7 @@ Documentação:
 source ./shell-script/tools/utility.sh;
 
 export readonly LOCAL_DIR="$PWD";
-export readonly RUN_JQ="./binaries/jq-linux64-v1.6";
+export readonly RUN_JQ="./binaries/jq-linux64-v1.6" && chmod +x $RUN_JQ;
 
 function StartDivineCreation {
 
