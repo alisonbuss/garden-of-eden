@@ -5,6 +5,9 @@
 # @fonts: https://vitux.com/linux-tree-command/
 #         https://github.com/ytdl-org/youtube-dl
 #         http://ytdl-org.github.io/youtube-dl/download.html
+#         https://ohmyz.sh/
+#         https://medium.com/@rgdev/como-instalar-oh-my-zsh-c0f96218fd90
+#         https://medium.com/@leandroembu/produtividade-com-tilix-no-gnu-linux-35912366e8a9
 # @example:
 #       bash script-tools.sh --action='install' --param='{}'   
 #-------------------------------------------------------------#
@@ -24,6 +27,10 @@ function ScriptTools {
         sudo apt-get install -y ctop;
         sudo apt-get install -y tree;
         sudo apt-get install -y net-tools;
+
+        sudo apt-get install tilix;
+        sudo apt-get install zsh;
+        sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
 
         # Command-line program to download videos from YouTube.com and other video sites
         sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;
