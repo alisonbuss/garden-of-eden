@@ -53,7 +53,9 @@ function ScriptVirtualBox {
         local nameVirtualBox="VirtualBox-${tagVersion}-Linux_amd64.run";
         local nameExtensionPack="Oracle_VM_VirtualBox_Extension_Pack-${tagVersion}.vbox-extpack";
 
+        # wget "https://download.virtualbox.org/virtualbox/5.2.40/VirtualBox-5.2.40-137108-Linux_amd64.run" -O "./binaries/virtualbox-5.2.run";
         wget "https://download.virtualbox.org/virtualbox/${version}/${nameVirtualBox}" -O "./binaries/virtualbox.run";
+        # wget "https://download.virtualbox.org/virtualbox/5.2.40/Oracle_VM_VirtualBox_Extension_Pack-5.2.40.vbox-extpack" -O "./binaries/Oracle_VM_VirtualBox_Extension_Pack-5.2.34.vbox-extpack";
         wget "https://download.virtualbox.org/virtualbox/${version}/${nameExtensionPack}" -O "./binaries/${nameExtensionPack}";
 
         # Instalar algumas dependências

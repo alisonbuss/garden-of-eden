@@ -22,9 +22,6 @@
                 { "script": "script-tools.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-cfssl.sh", "action": "install", "execute": false,
-                    "param": null
-                },
                 { "script": "script-psensor.sh", "action": "install", "execute": true,
                     "param": null
                 },

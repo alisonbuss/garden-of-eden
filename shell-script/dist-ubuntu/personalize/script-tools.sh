@@ -8,6 +8,9 @@
 #         https://ohmyz.sh/
 #         https://medium.com/@rgdev/como-instalar-oh-my-zsh-c0f96218fd90
 #         https://medium.com/@leandroembu/produtividade-com-tilix-no-gnu-linux-35912366e8a9
+#         https://blog.rocketseat.com.br/terminal-com-oh-my-zsh-spaceship-dracula-e-mais/
+#         https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#frisk
+#         https://terminalroot.com.br/2018/02/como-instalar-e-usar-o-shell-zsh-e-o-oh-my-zsh.html
 # @example:
 #       bash script-tools.sh --action='install' --param='{}'   
 #-------------------------------------------------------------#
@@ -24,13 +27,10 @@ function ScriptTools {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação das Ferramentas na maquina..."; 
 
+        sudo apt-get install -y curl;
         sudo apt-get install -y ctop;
         sudo apt-get install -y tree;
         sudo apt-get install -y net-tools;
-
-        sudo apt-get install tilix;
-        sudo apt-get install zsh;
-        sh -c "$(wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)";
 
         # Command-line program to download videos from YouTube.com and other video sites
         sudo wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl;

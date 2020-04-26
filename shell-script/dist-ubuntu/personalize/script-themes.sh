@@ -31,11 +31,11 @@ function ScriptThemes {
         util.print.out '%s\n' "Iniciando a instalação do Themes na maquina..."; 
 
         # GNOME THEME
-        sudo add-apt-repository -y ppa:system76/pop;
-        sudo apt-get update;
+        #sudo add-apt-repository -y ppa:system76/pop;
+        #sudo apt-get update;
         
-        sudo apt-get install -y pop-theme;
-        sudo apt-get install -y pop-icon-theme;
+        #sudo apt-get install -y pop-theme;
+        #sudo apt-get install -y pop-icon-theme;
 
          # GNOME TWEAKS 
         sudo apt-get install -y gnome-tweak-tool;
@@ -44,9 +44,9 @@ function ScriptThemes {
         sudo apt-get install -y chrome-gnome-shell;
 
         # CHANGE THEME 
-        gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark';
-        gsettings set org.gnome.desktop.interface icon-theme 'Pop';
-        gsettings set org.gnome.desktop.interface cursor-theme 'Pop';
+        #gsettings set org.gnome.desktop.interface gtk-theme 'Pop-dark';
+        #gsettings set org.gnome.desktop.interface icon-theme 'Pop';
+        #gsettings set org.gnome.desktop.interface cursor-theme 'Pop';
 
         util.print.out '%s\n' "Instale esses plugins no firefox..."; 
         util.print.out '%s\n' "  --> https://extensions.gnome.org/extension/19/user-themes/"; 

@@ -9,12 +9,12 @@
 #         https://www.edivaldobrito.com.br/oracle-java-11-no-ubuntu/
 #         https://www.javahelps.com/2017/09/install-oracle-jdk-9-on-linux.html
 # @example:
-#       bash script-jdk.sh --action='install' --param='{"version":"8"}'
+#       bash script-oracle-jdk.sh --action='install' --param='{"version":"8"}'
 #   OR
-#       bash script-jdk.sh --action='uninstall' --param='{"version":"8"}'    
+#       bash script-oracle-jdk.sh --action='uninstall' --param='{"version":"8"}'    
 #-------------------------------------------------------------#
 
-# @descr: Função principal do script-jdk.sh
+# @descr: Função principal do script-oracle-jdk.sh
 # @param: 
 #    action | text: (install, uninstall)
 #    param | json: '{"version":"..."}'
