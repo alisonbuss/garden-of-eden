@@ -295,13 +295,15 @@ Descrição das pastas e arquivos do projeto:
 │   ├── dist-ubuntu
 │   │   ├── environment
 │   │   │   ├── script-ansible.sh
+│   │   |   ├── script-cfssl.sh
 │   │   │   ├── script-chrome.sh
 │   │   │   ├── script-docker-compose.sh
 │   │   │   ├── script-docker.sh
 │   │   │   ├── script-gitkraken.sh
 │   │   │   ├── script-git.sh
 │   │   │   ├── script-golang.sh
-│   │   │   ├── script-jdk.sh
+│   │   │   ├── script-open-jdk.sh
+│   │   │   ├── script-oracle-jdk.sh
 │   │   │   ├── script-keyssh.sh
 │   │   │   ├── script-netbeans.sh
 │   │   │   ├── script-nodejs.sh
@@ -314,17 +316,17 @@ Descrição das pastas e arquivos do projeto:
 │   │   │   ├── script-terraform.sh
 │   │   │   ├── script-vagrant.sh
 │   │   │   ├── script-virtualbox.sh
-│   │   │   └── script-vscode.sh
+│   │   │   ├── script-vscode.sh
+│   │   │   └── script-zsh.sh
 │   │   └── personalize
 │   │       ├── script-brasero.sh
-│   │       ├── script-cfssl.sh
 │   │       ├── script-example.sh
 │   │       ├── script-gnomebaker.sh
 │   │       ├── script-multimedia.sh
 │   │       ├── script-psensor.sh
 │   │       ├── script-repositories-git.sh
-│   │       ├── script-tools.sh
-│   │       └── script-themes.sh
+│   │       ├── script-themes.sh
+│   │       └── script-tools.sh
 │   └── tools
 │       └── utility.sh
 ├── support-files............................'Pasta de apoio, onde se encontra os arquivos variados, como configurações, logo, wallpaper etc.'
