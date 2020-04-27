@@ -28,7 +28,7 @@ function ScriptStarUML {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do StarUML na maquina..."; 
 
-        sudo wget "http://staruml.io/download/releases/StarUML-${version}-x86_64.AppImage" -O /usr/local/bin/staruml.AppImage;
+        sudo wget "http://staruml.io/download/releases/StarUML-${version}.AppImage" -O /usr/local/bin/staruml.AppImage;
         sudo chmod +x /usr/local/bin/staruml.AppImage;
 
         mkdir -p $HOME/.local/share/icons;

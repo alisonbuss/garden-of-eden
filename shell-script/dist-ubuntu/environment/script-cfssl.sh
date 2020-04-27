@@ -18,6 +18,8 @@ function ScriptCFSSL {
     
     # @descr: Variavel que define a ação que o script ira realizar.
     local ACTION=$(util.getParameterValue "(--action=|-a=)" "$@");
+    # @descr: Variavel de parametros JSON.
+    local PARAM_JSON=$(util.getParameterValue "(--param=|-p=)" "$@");
 
     # @descr: Variavel da versão de instalação.
     local version=$(echo ${PARAM_JSON} | $RUN_JQ -r '.version');
