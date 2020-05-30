@@ -7,7 +7,7 @@
             "logsPath": "./logs/dist-ubuntu/environment",
             "scriptsPath": "./shell-script/dist-ubuntu/environment",
             "scripts": [
-                { "script": "script-zsh.sh", "action": "install", "execute": true,
+                { "script": "script-zsh.sh", "action": "install", "execute": false,
                     "param": null
                 },
                 { "script": "script-keyssh.sh", "action": "recreate", "execute": true,
@@ -28,6 +28,9 @@
                     "param": { "version": "3.1" }
                 },
                 { "script": "script-pyenv.sh", "action": "install", "execute": false,
+                    "param": null
+                },
+                { "script": "script-python2.sh", "action": "install", "execute": true,
                     "param": null
                 },
                 { "script": "script-nvm.sh", "action": "install", "execute": true,
@@ -51,17 +54,22 @@
                 { "script": "script-ansible.sh", "action": "install", "execute": true,
                     "param": null
                 },
+                { "script": "script-virtualbox.sh", "action": "install", "execute": true,
+                    "param": { "version": "5.2.40", "tagVersion": "5.2.40-137108" }
+                },
                 { "script": "script-docker.sh", "action": "install", "execute": true,
                     "param": { "version": "19.03.8" }
                 },
                 { "script": "script-docker-compose.sh", "action": "install", "execute": true,
                     "param": { "version": "1.25.5" }
                 },
-                { "script": "script-virtualbox.sh", "action": "install", "execute": true,
-                    "param": { "version": "5.2.40", "tagVersion": "5.2.40-137108" }
+                { "script": "script-docker-machine.sh", "action": "install", "execute": true,
+                    "param": { "version": "0.16.2" },
+                    "warning": "Contains dependency on VirtualBox"
                 },
                 { "script": "script-vagrant.sh", "action": "install", "execute": true,
-                    "param": { "version": "2.2.7" }
+                    "param": { "version": "2.2.7" },
+                    "warning": "Contains dependency on VirtualBox"
                 },
                 { "script": "script-packer.sh", "action": "install", "execute": true,
                     "param": { "version": "1.5.5" }

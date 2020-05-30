@@ -21,6 +21,7 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Instala o **Ansible**
 - Instala o **Docker**
 - Instala o **Docker Compose**
+- Instala o **Docker Machine**
 - Instala o **VirtualBox**
 - Instala o **Vagrant**
 - Instala o **Packer**
