@@ -34,6 +34,7 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Instala o **Chrome**
 - Instala o **Zsh**
 
+
 > **Nota:**
 >
 > **1)** *Este projeto foi TESTADO no **Ubuntu 17.10 (Artful Aardvark)**, **Ubuntu 18.10 (Cosmic Cuttlefish)** e **Ubuntu 19.04 (Disco Dingo)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada da "NET...".*
