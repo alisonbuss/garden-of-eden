@@ -92,6 +92,9 @@
                 { "script": "script-postman.sh", "action": "install", "execute": true,
                     "param": null
                 },
+                { "script": "script-insomnia-core.sh", "action": "install", "execute": true,
+                    "param": { "version": "7.1.1" }
+                },
                 { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
                 }

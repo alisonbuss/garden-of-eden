@@ -31,9 +31,9 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Instala o **StarUML**
 - Instala o **NetBeans**
 - Instala o **Postman**
+- Instala o **Insomnia Core**
 - Instala o **Chrome**
 - Instala o **Zsh**
-
 
 > **Nota:**
 >
