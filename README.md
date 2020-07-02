@@ -33,7 +33,7 @@ O **Garden of Eden** provisiona os seguentes recursos:
 - Instala o **Postman**
 - Instala o **Insomnia Core**
 - Instala o **Chrome**
-- Instala o **Zsh**
+- Instala o **Hyper**
 
 > **Nota:**
 >
@@ -87,9 +87,6 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
             "logsPath": "./logs/dist-ubuntu/environment",
             "scriptsPath": "./shell-script/dist-ubuntu/environment",
             "scripts": [
-                { "script": "script-zsh.sh", "action": "install", "execute": true,
-                    "param": null
-                },
                 { "script": "script-keyssh.sh", "action": "recreate", "execute": true,
                     "param": {
                         "comment": "Que reinaste o anjo caído!",
@@ -108,6 +105,9 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
                     "param": { "version": "3.1" }
                 },
                 { "script": "script-pyenv.sh", "action": "install", "execute": false,
+                    "param": null
+                },
+                { "script": "script-python2.sh", "action": "install", "execute": true,
                     "param": null
                 },
                 { "script": "script-nvm.sh", "action": "install", "execute": true,
@@ -131,17 +131,22 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
                 { "script": "script-ansible.sh", "action": "install", "execute": true,
                     "param": null
                 },
+                { "script": "script-virtualbox.sh", "action": "install", "execute": true,
+                    "param": { "version": "5.2.40", "tagVersion": "5.2.40-137108" }
+                },
                 { "script": "script-docker.sh", "action": "install", "execute": true,
                     "param": { "version": "19.03.8" }
                 },
                 { "script": "script-docker-compose.sh", "action": "install", "execute": true,
                     "param": { "version": "1.25.5" }
                 },
-                { "script": "script-virtualbox.sh", "action": "install", "execute": true,
-                    "param": { "version": "5.2.40", "tagVersion": "5.2.40-137108" }
+                { "script": "script-docker-machine.sh", "action": "install", "execute": true,
+                    "param": { "version": "0.16.2" },
+                    "warning": "Contains dependency on VirtualBox"
                 },
                 { "script": "script-vagrant.sh", "action": "install", "execute": true,
-                    "param": { "version": "2.2.7" }
+                    "param": { "version": "2.2.7" },
+                    "warning": "Contains dependency on VirtualBox"
                 },
                 { "script": "script-packer.sh", "action": "install", "execute": true,
                     "param": { "version": "1.5.5" }
@@ -164,8 +169,14 @@ Arquivo principal do ambiente padrão: **settings-environment.json**
                 { "script": "script-postman.sh", "action": "install", "execute": true,
                     "param": null
                 },
+                { "script": "script-insomnia-core.sh", "action": "install", "execute": true,
+                    "param": { "version": "7.1.1" }
+                },
                 { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
+                },
+                { "script": "script-hyper.sh", "action": "install", "execute": true,
+                    "param": { "version": "3.0.2" }
                 }
             ]
         }
@@ -319,7 +330,7 @@ Descrição das pastas e arquivos do projeto:
 │   │   │   ├── script-vagrant.sh
 │   │   │   ├── script-virtualbox.sh
 │   │   │   ├── script-vscode.sh
-│   │   │   └── script-zsh.sh
+│   │   │   └── ...
 │   │   └── personalize
 │   │       ├── script-brasero.sh
 │   │       ├── script-example.sh
@@ -328,15 +339,19 @@ Descrição das pastas e arquivos do projeto:
 │   │       ├── script-psensor.sh
 │   │       ├── script-repositories-git.sh
 │   │       ├── script-themes.sh
-│   │       └── script-tools.sh
+│   │       ├── script-tools.sh
+│   │       └── ...
 │   └── tools
 │       └── utility.sh
 ├── support-files............................'Pasta de apoio, onde se encontra os arquivos variados, como configurações, logo, wallpaper etc.'
 │   ├── logo-garden-of-eden.png
-│   ├── docker-configs
-│   │   ├── containerd.service
-│   │   ├── docker.service
-│   │   └── docker.socket
+|   ├── configs
+|   │   ├── docker
+|   │   │   ├── containerd.service
+|   │   │   ├── docker.service
+|   │   │   └── docker.socket
+|   │   └── starship
+|   │       └── starship.toml
 │   ├── files
 │   │   ├── end-bender.gif
 │   │   └── header.txt

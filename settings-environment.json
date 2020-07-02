@@ -7,7 +7,7 @@
             "logsPath": "./logs/dist-ubuntu/environment",
             "scriptsPath": "./shell-script/dist-ubuntu/environment",
             "scripts": [
-                { "script": "script-zsh.sh", "action": "install", "execute": false,
+                { "script": "script-tools.sh", "action": "install", "execute": true,
                     "param": null
                 },
                 { "script": "script-keyssh.sh", "action": "recreate", "execute": true,
@@ -97,6 +97,9 @@
                 },
                 { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
+                },
+                { "script": "script-hyper.sh", "action": "install", "execute": true,
+                    "param": { "version": "3.0.2" }
                 }
             ]
         }

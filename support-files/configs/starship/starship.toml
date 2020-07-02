@@ -1,0 +1,51 @@
+
+# disable starship from forcing a new line to be taken. Solved the empty line 
+# at start of terminal
+add_newline = true
+
+# The line_break module separates the prompt into two lines.
+[line_break]
+disabled = false
+
+# The character module shows a character (usually an arrow) beside where the text is entered in your terminal.
+[character]
+symbol = "➜"
+error_symbol = "➜"
+use_symbol_for_status = true
+vicmd_symbol = ""
+style_success = "bold #00A652"
+style_failure = "bold #df382c"
+disabled = false
+
+# The username module shows active user's username.
+[username]
+style_root = "bold red"
+style_user = "bold yellow"
+show_always = false
+disabled = false
+
+# The hostname module shows the system hostname.
+[hostname]
+ssh_only = false
+prefix = "💻️  "
+suffix = ""
+trim_at = "."
+style = "bold dimmed green"
+disabled = false
+
+# The directory module shows the path to your current directory, truncated to three parent folders.
+[directory]
+truncation_length = 33
+truncate_to_repo = false
+prefix = "📂️  "
+style = "bold cyan"
+disabled = false
+
+# The time module shows the current local time.
+[time]
+use_12hr = false
+format = "🕙  %T"
+style = "bold yellow"
+utc_time_offset = "local"
+time_range = "-"
+disabled = true

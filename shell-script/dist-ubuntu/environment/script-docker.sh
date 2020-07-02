@@ -61,13 +61,13 @@ function ScriptDocker {
         sudo chmod 755 /usr/local/bin/{containerd,containerd-shim,ctr,docker,dockerd,docker-init,docker-proxy,runc};
 
         # Moving the configuration files:
-        sudo cp -f -v ./support-files/docker-configs/docker.socket /etc/systemd/system/docker.socket;
+        sudo cp -f -v ./support-files/configs/docker/docker.socket /etc/systemd/system/docker.socket;
         sudo chmod 644 /etc/systemd/system/docker.socket;
 
-        sudo cp -f -v ./support-files/docker-configs/docker.service /etc/systemd/system/docker.service;
+        sudo cp -f -v ./support-files/configs/docker/docker.service /etc/systemd/system/docker.service;
         sudo chmod 644 /etc/systemd/system/docker.service;
 
-        sudo cp -f -v ./support-files/docker-configs/containerd.service /etc/systemd/system/containerd.service;
+        sudo cp -f -v ./support-files/configs/docker/containerd.service /etc/systemd/system/containerd.service;
         sudo chmod 644 /etc/systemd/system/containerd.service;
 
         # Create the docker group:
