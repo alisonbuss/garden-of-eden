@@ -51,6 +51,33 @@ function ScriptJDK {
         sudo apt-get install -y "oracle-java$version-set-default";
 
         java -version;
+
+        # Install the Apache Maven 3.6.3.
+
+        # sudo apt-get install -y maven;
+
+        # OR:
+
+        wget "https://downloads.apache.org/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz" -O ./binaries/apache-maven.tar.gz;
+        
+        util.print.out '%s\n' "Extracting Apache Maven...";
+        sudo tar -xzf ./binaries/apache-maven.tar.gz -C /opt;
+   
+        # Setando variáveis de ambiente.
+        touch /etc/profile.d/maven.sh
+        {
+            echo '#/bin/bash';
+            echo '# Apache Maven';
+            echo 'export M2_HOME=/opt/maven';
+            echo 'export MAVEN_HOME=/opt/maven';
+            echo 'export PATH=/opt/maven/bin:${PATH}';
+        } > /etc/profile.d/maven.sh;
+        
+        sudo chmod +x /etc/profile.d/maven.sh;
+        
+        source /etc/profile.d/maven.sh;
+
+        mvn -version;
     }
 
     # # @descr: Função de instalação.

@@ -37,7 +37,7 @@ O **Garden of Eden** provisiona os seguentes recursos:
 
 > **Nota:**
 >
-> **1)** *Este projeto foi TESTADO no **Ubuntu 17.10 (Artful Aardvark)**, **Ubuntu 18.10 (Cosmic Cuttlefish)** e **Ubuntu 19.04 (Disco Dingo)** e o provisionamento levou aproximadamente **45 minutos** por conta da internet discada da "NET...".*
+> **1)** *Este projeto foi TESTADO no **Ubuntu 17.10 (Artful Aardvark)**, **Ubuntu 18.10 (Cosmic Cuttlefish)**, **Ubuntu 19.04 (Disco Dingo)** e **Ubuntu 20.04 LTS (Focal Fossa)** e o provisionamento levou aproximadamente **33 minutos** por conta da internet discada da "NET...".*
 >
 > **2)** *O intuito do projeto **Garden of Eden** é acadêmico, ou seja, para fins de conhecimento prático, não sou um profissional linux, qualquer opinião, sugestão, será bem vinda.* 
 >
