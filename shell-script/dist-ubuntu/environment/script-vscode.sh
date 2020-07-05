@@ -26,6 +26,18 @@ function ScriptVSCode {
 
         sudo dpkg -i ./binaries/vscode.deb;
 	    sudo apt-get install -f;
+
+        code --version;
+
+        # Util
+        code --install-extension christian-kohler.path-intellisense;
+
+        # Docker
+        code --install-extension ms-azuretools.vscode-docker;
+
+        # Themes
+        code --install-extension GitHub.github-vscode-theme;
+        code --install-extension vscode-icons-team.vscode-icons;
     }
 
     # @descr: Função de desinstalação.
