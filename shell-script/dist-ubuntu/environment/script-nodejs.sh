@@ -41,10 +41,20 @@ function ScriptNodeJS {
         util.print.out '%s' "Version NPM: ";
         npm -v;
 
+        # Listar pacotes globais npm instalados localmente
+        npm list -g --depth=0
+        # Listar pacotes npm instalados localmente
+        #npm list --depth=0 
+
         # @fonts: https://www.computerhope.com/unix/uchown.htm
         #         http://manpages.ubuntu.com/manpages/trusty/man1/chown.1.html
         # CUIDADO COM ESSE COMMANDO FILHO DA PUTA, DEU UM BUG DU INFERNU.
         sudo chown -R $USER:$(id -gn $USER) $HOME/.config;
+    
+        # App Web para visualizar e verificar os pacotes npm locais.
+        # cd c:\your-prject-folder
+        #npm install -g npm-gui
+        #npm-gui localhost:9000 
     }
 
     # @descr: Função de desinstalação.
