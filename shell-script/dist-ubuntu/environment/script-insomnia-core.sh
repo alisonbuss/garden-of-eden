@@ -23,25 +23,30 @@ function ScriptInsomniaCore {
     # @descr: Função de instalação.
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do Insomnia Core na maquina..."; 
+        
+        sudo wget "https://github.com/Kong/insomnia/releases/download/core%40${version}/Insomnia.Core-${version}.deb" -O ./binaries/insomnia-core.deb;
 
-        sudo wget "https://github.com/Kong/insomnia/releases/download/v${version}/Insomnia-${version}.AppImage" -O /usr/local/bin/insomnia-core.AppImage;
-        sudo chmod +x /usr/local/bin/insomnia-core.AppImage;
+        sudo dpkg -i ./binaries/insomnia-core.deb;
+	    sudo apt-get install -f;
 
-        mkdir -p $HOME/.local/share/icons;
-        cp -f -v ./binaries/logo-insomnia.png $HOME/.local/share/icons/logo-insomnia.png;
+        # sudo wget "https://github.com/Kong/insomnia/releases/download/v7.1.1/Insomnia-7.1.1.AppImage" -O /usr/local/bin/insomnia-core.AppImage;
+        # sudo chmod +x /usr/local/bin/insomnia-core.AppImage;
+
+        # mkdir -p $HOME/.local/share/icons;
+        # cp -f -v ./binaries/logo-insomnia.png $HOME/.local/share/icons/logo-insomnia.png;
    
-        mkdir -p $HOME/.local/share/applications;
-        touch $HOME/.local/share/applications/insomnia-core.desktop
-        {
-            echo '[Desktop Entry]';
-            echo 'Type=Application';
-            echo 'Name=Insomnia Core';
-            echo 'Comment=The Desktop API client for REST and GraphQL';
-            echo 'Icon='$HOME'/.local/share/icons/logo-insomnia.png';
-            echo 'Exec="/usr/local/bin/insomnia-core.AppImage" %U';
-            echo 'Terminal=false';
-            echo 'Categories=Development;';
-        } > $HOME/.local/share/applications/insomnia-core.desktop;
+        # mkdir -p $HOME/.local/share/applications;
+        # touch $HOME/.local/share/applications/insomnia-core.desktop
+        # {
+        #     echo '[Desktop Entry]';
+        #     echo 'Type=Application';
+        #     echo 'Name=Insomnia Core';
+        #     echo 'Comment=The Desktop API client for REST and GraphQL';
+        #     echo 'Icon='$HOME'/.local/share/icons/logo-insomnia.png';
+        #     echo 'Exec="/usr/local/bin/insomnia-core.AppImage" %U';
+        #     echo 'Terminal=false';
+        #     echo 'Categories=Development;';
+        # } > $HOME/.local/share/applications/insomnia-core.desktop;
 
     }
 

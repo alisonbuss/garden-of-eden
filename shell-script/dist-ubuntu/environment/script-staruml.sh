@@ -28,24 +28,29 @@ function ScriptStarUML {
     __install() {
         util.print.out '%s\n' "Iniciando a instalação do StarUML na maquina..."; 
 
-        sudo wget "http://staruml.io/download/releases/StarUML-${version}.AppImage" -O /usr/local/bin/staruml.AppImage;
-        sudo chmod +x /usr/local/bin/staruml.AppImage;
+        sudo wget "https://staruml.io/download/releases-v4/StarUML_${version}_amd64.deb" -O ./binaries/staruml.deb;
 
-        mkdir -p $HOME/.local/share/icons;
-        wget "http://staruml.io/image/staruml_logo.png" -O $HOME/.local/share/icons/staruml_logo.png;
+        sudo dpkg -i ./binaries/staruml.deb;
+	    sudo apt-get install -f;
+
+        # sudo wget "http://staruml.io/download/releases/StarUML-3.2.2.AppImage" -O /usr/local/bin/staruml.AppImage;
+        # sudo chmod +x /usr/local/bin/staruml.AppImage;
+
+        # mkdir -p $HOME/.local/share/icons;
+        # wget "http://staruml.io/image/staruml_logo.png" -O $HOME/.local/share/icons/staruml_logo.png;
    
-        mkdir -p $HOME/.local/share/applications;
-        touch $HOME/.local/share/applications/staruml.desktop
-        {
-            echo '[Desktop Entry]';
-            echo 'Type=Application';
-            echo 'Name=StarUML';
-            echo 'Comment=A sophisticated software modeler';
-            echo 'Icon='$HOME'/.local/share/icons/staruml_logo.png';
-            echo 'Exec="/usr/local/bin/staruml.AppImage" %U';
-            echo 'Terminal=false';
-            echo 'Categories=Development;';
-        } > $HOME/.local/share/applications/staruml.desktop;
+        # mkdir -p $HOME/.local/share/applications;
+        # touch $HOME/.local/share/applications/staruml.desktop
+        # {
+        #     echo '[Desktop Entry]';
+        #     echo 'Type=Application';
+        #     echo 'Name=StarUML';
+        #     echo 'Comment=A sophisticated software modeler';
+        #     echo 'Icon='$HOME'/.local/share/icons/staruml_logo.png';
+        #     echo 'Exec="/usr/local/bin/staruml.AppImage" %U';
+        #     echo 'Terminal=false';
+        #     echo 'Categories=Development;';
+        # } > $HOME/.local/share/applications/staruml.desktop;
     }
 
     # @descr: Função é chamada qndo a um erro de tipo de ação.

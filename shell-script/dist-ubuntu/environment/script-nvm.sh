@@ -46,6 +46,8 @@ function ScriptNVM {
         source $HOME/.bashrc;
 
         echo -n "Version NVM: " && nvm --version;
+
+        nvm ls;
     }
 
     # @descr: Função de desinstalação.

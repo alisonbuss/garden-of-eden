@@ -32,6 +32,8 @@ function ScriptNodeJS {
         source $HOME/.profile;
         source $HOME/.bashrc;
 
+        nvm ls;
+
         nvm install "$version";
         nvm use "$version";
 

@@ -10,7 +10,7 @@
                 { "script": "script-tools.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-keyssh.sh", "action": "recreate", "execute": true,
+                { "script": "script-keyssh.sh", "action": "recreate", "execute": false,
                     "param": {
                         "comment": "Que reinaste o anjo caído!",
                         "nameKey": "id_rsa",
@@ -18,7 +18,7 @@
                         "passwordKey": ""
                     }
                 },
-                { "script": "script-git.sh", "action": "install", "execute": true,
+                { "script": "script-git.sh", "action": "install", "execute": false,
                     "param": { "name": "SeuUsuario", "email": "SeuUsuario@mail.com" }
                 },
                 { "script": "script-open-jdk.sh", "action": "install", "execute": true,
@@ -34,10 +34,10 @@
                     "param": null
                 },
                 { "script": "script-nvm.sh", "action": "install", "execute": true,
-                    "param": { "version": "0.35.3" }
+                    "param": { "version": "0.38.0" }
                 },
                 { "script": "script-nodejs.sh", "action": "install-by-nvm", "execute": true,
-                    "param": { "version": "12.16.2" }
+                    "param": { "version": "14.16.1" }
                 },
                 { "script": "script-rvm.sh",  "action": "install", "execute": false,
                     "param": null
@@ -46,10 +46,10 @@
                     "param": { "version": "2.5.5" }
                 },
                 { "script": "script-golang.sh", "action": "install", "execute": true,
-                    "param": { "version": "1.14.2" }
+                    "param": { "version": "1.16.4" }
                 },
                 { "script": "script-cfssl.sh", "action": "install", "execute": true,
-                    "param": { "version": "1.4.1" }
+                    "param": { "version": "1.5.0" }
                 },
                 { "script": "script-ansible.sh", "action": "install", "execute": true,
                     "param": null
@@ -58,24 +58,24 @@
                     "param": { "version": "5.2.40", "tagVersion": "5.2.40-137108" }
                 },
                 { "script": "script-docker.sh", "action": "install", "execute": true,
-                    "param": { "version": "19.03.8" }
+                    "param": { "version": "20.10.6" }
                 },
                 { "script": "script-docker-compose.sh", "action": "install", "execute": true,
-                    "param": { "version": "1.25.5" }
+                    "param": { "version": "1.29.2" }
                 },
                 { "script": "script-docker-machine.sh", "action": "install", "execute": true,
                     "param": { "version": "0.16.2" },
                     "warning": "Contains dependency on VirtualBox"
                 },
                 { "script": "script-vagrant.sh", "action": "install", "execute": true,
-                    "param": { "version": "2.2.7" },
+                    "param": { "version": "2.2.16" },
                     "warning": "Contains dependency on VirtualBox"
                 },
                 { "script": "script-packer.sh", "action": "install", "execute": true,
-                    "param": { "version": "1.5.5" }
+                    "param": { "version": "1.7.2" }
                 },
                 { "script": "script-terraform.sh", "action": "install", "execute": true,
-                    "param": { "version": "0.12.24" }
+                    "param": { "version": "0.15.4" }
                 },
                 { "script": "script-vscode.sh", "action": "install", "execute": true,
                     "param": null
@@ -84,7 +84,7 @@
                     "param": null
                 },
                 { "script": "script-staruml.sh", "action": "install", "execute": true,
-                    "param": { "version": "3.2.2" }
+                    "param": { "version": "4.0.1" }
                 },
                 { "script": "script-netbeans.sh", "action": "install", "execute": false,
                     "param": null
@@ -92,8 +92,8 @@
                 { "script": "script-postman.sh", "action": "install", "execute": true,
                     "param": null
                 },
-                { "script": "script-insomnia-core.sh", "action": "install", "execute": true,
-                    "param": { "version": "7.1.1" }
+                { "script": "script-insomnia-core.sh", "action": "install", "execute": false,
+                    "param": { "version": "2021.3.0" }
                 },
                 { "script": "script-chrome.sh", "action": "install", "execute": true,
                     "param": null
